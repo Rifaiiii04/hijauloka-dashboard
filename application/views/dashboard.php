@@ -83,3 +83,11 @@
 
 <!-- Menutup div utama dari header -->
 </div>
+
+<script>
+  // Konversi data PHP ke JS
+  const chartData = {
+    bestProducts: <?= json_encode($best_products) ?>,
+    monthlySales: <?= json_encode($monthly_sales) ?>
+  };
+</script>
