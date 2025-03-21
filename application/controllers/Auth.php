@@ -22,7 +22,7 @@ class Auth extends CI_Controller {
         $admin = $this->Admin_model->get_admin_by_email($email);
 
         if ($admin && password_verify($password, $admin->password)) {
-            // Set session
+    
             $session_data = [
                 'id_admin' => $admin->id_admin,
                 'nama' => $admin->nama,
@@ -38,7 +38,7 @@ class Auth extends CI_Controller {
     }
 
     public function reset_password() {
-        // Pastikan hanya admin yang bisa melakukan reset
+ 
         if (!$this->session->userdata('logged_in')) {
             show_error('Akses ditolak!', 403);
             return;

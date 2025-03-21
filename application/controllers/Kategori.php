@@ -16,7 +16,7 @@ class Kategori extends CI_Controller {
     public function store() {
         $data = [
             'nama_kategori' => $this->input->post('nama_kategori'),
-            'id_admin' => 1 // Ganti sesuai ID admin yang login
+            'id_admin' => 1 
         ];
 
         if ($this->input->post('id_kategori')) {

@@ -10,14 +10,13 @@ class Pesanan extends CI_Controller {
         $this->load->library('form_validation'); // Memuat library form validation
     }
 
-    // Menampilkan daftar pesanan
     public function index() {
         $data['pesanan'] = $this->Pesanan_model->get_all_pesanan();
         $data['users'] = $this->db->get('user')->result();
         $data['products'] = $this->db->get('product')->result();
         $this->load->view('pesanan', $data);
     }
-    // Menambahkan pesanan baru
+
     public function create() {
         $this->load->model('Produk_model');
         
@@ -26,8 +25,7 @@ class Pesanan extends CI_Controller {
         $jumlah = $this->input->post('jumlah');
         $stts_pemesanan = $this->input->post('stts_pemesanan');
         $total_harga = 0;
-    
-        // Hitung total harga sekaligus validasi stok
+  
         foreach ($produk as $index => $id_product) {
             $product = $this->Produk_model->get_by_id($id_product);
             if(!$product || $product->stok < $jumlah[$index]) {
@@ -37,10 +35,9 @@ class Pesanan extends CI_Controller {
             $total_harga += $product->harga * $jumlah[$index];
         }
     
-        $this->db->trans_start(); // Mulai transaksi
+        $this->db->trans_start();
     
         try {
-            // Simpan data order HANYA SEKALI
             $order_data = [
                 'id_user' => $id_user,
                 'tgl_pemesanan' => date('Y-m-d H:i:s'),
@@ -69,7 +66,7 @@ class Pesanan extends CI_Controller {
                 $this->db->insert('order_items', $order_item);
             }
     
-            $this->db->trans_commit(); // Commit jika semua sukses
+            $this->db->trans_commit();
             redirect('pesanan');
     
         } catch (Exception $e) {

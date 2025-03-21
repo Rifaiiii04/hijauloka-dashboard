@@ -12,7 +12,7 @@ class Dashboard extends CI_Controller {
     }
 
     public function index() {
-        $data['stok_tanaman'] = $this->Produk_model->get_stok_tanaman(); // Ambil data stok
+        $data['stok_tanaman'] = $this->Produk_model->get_stok_tanaman(); 
         $this->load->view('dashboard', $data);
     }
 }
