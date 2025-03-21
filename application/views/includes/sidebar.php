@@ -25,5 +25,11 @@
                 <span class="text-base">Pesanan</span>
             </a>
         </li>
+        <li>
+            <a href="<?= base_url('user'); ?>" class="flex items-center gap-3 p-3 rounded-lg hover:bg-green-700 hover:text-white transition duration-300 <?= ($this->uri->segment(1) == 'user') ? 'bg-green-600' : '' ?>">
+                <i class="fa-solid fa-user text-lg"></i>
+                <span class="text-base">User</span>
+            </a>
+        </li>
     </ul>
 </aside>
