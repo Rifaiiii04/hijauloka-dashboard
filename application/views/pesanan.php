@@ -123,7 +123,7 @@
             </select>
 
             <div class="flex justify-end space-x-2">
-                <button type="button" onclick="closeModal()" class="bg-gray-400 text-white px-4 py-2 rounded-md">Batal</button>
+                <button type="button" onclick="closeModal()" class=" text-white px-4 py-2 rounded-md" style="background-color: red;">Batal</button>
                 <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">Simpan</button>
             </div>
         </form>
@@ -147,7 +147,7 @@
             </select>
 
             <div class="flex justify-end space-x-2">
-                <button type="button" onclick="closeEditModal()" class="bg-gray-400 text-white px-4 py-2 rounded-md">Batal</button>
+                <button type="button" onclick="closeEditModal()" class="px-4 py-2 text-white rounded-md" style="background-color: red;">Batal</button>
                 <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">Simpan</button>
             </div>
         </form>
