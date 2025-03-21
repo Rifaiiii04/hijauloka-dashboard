@@ -12,17 +12,11 @@ class Pesanan extends CI_Controller {
 
     // Menampilkan daftar pesanan
     public function index() {
-        // Ambil data pesanan
         $data['pesanan'] = $this->Pesanan_model->get_all_pesanan();
-    
-        // Ambil data user dan produk untuk dropdown
         $data['users'] = $this->db->get('user')->result();
         $data['products'] = $this->db->get('product')->result();
-    
         $this->load->view('pesanan', $data);
-   
     }
-
     // Menambahkan pesanan baru
     public function create() {
         // Ambil data dari form
@@ -122,10 +116,10 @@ class Pesanan extends CI_Controller {
     }
 
     // Ambil data status untuk modal edit (AJAX)
-public function get_status($id_order) {
-    $order = $this->Pesanan_model->get_pesanan_by_id($id_order);
-    echo json_encode($order);
-}
+    public function get_status($id_order) {
+        $order = $this->Pesanan_model->get_pesanan_by_id($id_order);
+        echo json_encode($order);
+    }
 
 // Update status pesanan
 public function update() {
@@ -136,6 +130,7 @@ public function update() {
         'stts_pemesanan' => $stts_pemesanan
     ];
     
+    // Panggil model untuk update
     $this->Pesanan_model->update_pesanan($id_order, $data);
     redirect('pesanan');
 }

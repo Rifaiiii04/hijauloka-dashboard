@@ -50,49 +50,23 @@
                         <span>Tidak ada produk</span>
                     <?php endif; ?>
                 </td>
-                <td class="border border-gray-300 p-2"><?= $p->tgl_pemesanan ?? 'N/A'; ?></td>
+                <td class="border border-gray-300 p-2"><?= date('d-m-Y H:i', strtotime($p->tgl_pemesanan)) ?></td>
                 <td class="border border-gray-300 p-2">Rp<?= number_format($p->total_harga ?? 0, 0, ',', '.'); ?></td>
                 <td class="border border-gray-300 p-2"><?= ucfirst($p->stts_pemesanan ?? 'pending'); ?></td>
-                <td class="border border-gray-300 p-2"><?= $p->tgl_dikirim ?? 'N/A'; ?></td>
-                <td class="border border-gray-300 p-2"><?= $p->tgl_selesai ?? 'N/A'; ?></td>
-                <td class="border border-gray-300 p-2"><?= $p->tgl_batal ?? 'N/A'; ?></td>
+                <td class="border border-gray-300 p-2"><?= $p->tgl_dikirim ? date('d-m-Y H:i', strtotime($p->tgl_dikirim)) : '-' ?></td>
+                <td class="border border-gray-300 p-2"><?= $p->tgl_selesai ? date('d-m-Y H:i', strtotime($p->tgl_selesai)) : '-' ?></td>
+                <td class="border border-gray-300 p-2"><?= $p->tgl_batal ? date('d-m-Y H:i', strtotime($p->tgl_batal)) : '-' ?></td>
                 <td class="border border-gray-300 p-2">
-    <!-- Tombol Edit -->
-    <button onclick="openEditModal('<?= $p->id_order ?>')" class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600">Edit</button>
-    <!-- Tombol Hapus -->
-    <a href="<?= site_url('pesanan/delete/'. ($p->id_order ?? '')); ?>" class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 ml-2" onclick="return confirm('Hapus pesanan ini?')">Hapus</a>
-</td>
-
-<!-- Modal Edit Status -->
-<div id="modalEditPesanan" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-    <div class="bg-white p-6 rounded-lg shadow-lg w-96">
-        <h2 class="text-xl font-bold mb-4">Edit Status Pesanan</h2>
-        <form id="editForm" method="POST">
-            <input type="hidden" name="id_order" id="edit_id_order">
-            
-            <!-- Dropdown Status -->
-            <label class="block mb-2">Status</label>
-            <select name="stts_pemesanan" id="edit_status" class="w-full border p-2 rounded mb-3">
-                <option value="pending">Pending</option>
-                <option value="diproses">Diproses</option>
-                <option value="dikirim">Dikirim</option>
-                <option value="selesai">Selesai</option>
-                <option value="dibatalkan">Dibatalkan</option>
-            </select>
-
-            <div class="flex justify-end space-x-2">
-                <button type="button" onclick="closeEditModal()" class="bg-gray-400 text-white px-4 py-2 rounded-md">Batal</button>
-                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">Simpan</button>
-            </div>
-        </form>
-    </div>
-</div>
+                    <!-- Tombol Edit -->
+                    <button onclick="openEditModal('<?= $p->id_order ?>')" class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600">Edit</button>
+                    <!-- Tombol Hapus -->
+                    <a href="<?= site_url('pesanan/delete/'. ($p->id_order ?? '')); ?>" class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 ml-2" onclick="return confirm('Hapus pesanan ini?')">Hapus</a>
                 </td>
             </tr>
         <?php endforeach; ?>
     <?php else: ?>
         <tr>
-            <td colspan="7" class="text-center py-4">Tidak ada pesanan.</td>
+            <td colspan="10" class="text-center py-4">Tidak ada pesanan.</td>
         </tr>
     <?php endif; ?>
 </tbody>
@@ -106,7 +80,7 @@
 <div id="modalPesanan" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
     <div class="bg-white p-6 rounded-lg shadow-lg w-96">
         <h2 class="text-xl font-bold mb-4">Tambah Pesanan</h2>
-        <form action="<?= site_url('pesanan/create'); ?>" method="POST">
+        <form id="formTambahPesanan" action="<?= site_url('pesanan/create'); ?>" method="POST">
             <input type="hidden" name="id_admin" value="1">
             
             <!-- Field Pelanggan -->
@@ -156,6 +130,30 @@
     </div>
 </div>
 
+<div id="modalEditPesanan" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+        <h2 class="text-xl font-bold mb-4">Edit Status Pesanan</h2>
+        <form id="editForm" method="POST">
+            <input type="hidden" name="id_order" id="edit_id_order">
+            
+            <!-- Dropdown Status -->
+            <label class="block mb-2">Status</label>
+            <select name="stts_pemesanan" id="edit_status" class="w-full border p-2 rounded mb-3">
+                <option value="pending">Pending</option>
+                <option value="diproses">Diproses</option>
+                <option value="dikirim">Dikirim</option>
+                <option value="selesai">Selesai</option>
+                <option value="dibatalkan">Dibatalkan</option>
+            </select>
+
+            <div class="flex justify-end space-x-2">
+                <button type="button" onclick="closeEditModal()" class="bg-gray-400 text-white px-4 py-2 rounded-md">Batal</button>
+                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">Simpan</button>
+            </div>
+        </form>
+    </div>
+</div>
+
 <script>
     // Fungsi untuk menambah field produk
     function tambahProduk() {
@@ -184,22 +182,46 @@
     }
 
     function openModal() {
-        document.getElementById('modalPesanan').classList.remove('hidden');
-    }
+    document.getElementById('modalPesanan').classList.remove('hidden');
+}
 
-    function closeModal() {
-        document.getElementById('modalPesanan').classList.add('hidden');
-    }
+document.getElementById('formTambahPesanan').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    
+    fetch('<?= site_url('pesanan/create') ?>', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            window.location.reload(); // Reload jika sukses
+        } else {
+            alert('Gagal menyimpan pesanan!');
+        }
+    });
+});
+
+// Fungsi untuk menutup modal tambah pesanan
+function closeModal() {
+    document.getElementById('modalPesanan').classList.add('hidden');
+}
 
      // Fungsi untuk membuka modal edit
      function openEditModal(id_order) {
-        // Ambil data status pesanan via AJAX (contoh sederhana)
         fetch(`<?= site_url('pesanan/get_status/') ?>${id_order}`)
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) throw new Error("Gagal mengambil data");
+                return response.json();
+            })
             .then(data => {
                 document.getElementById('edit_id_order').value = id_order;
                 document.getElementById('edit_status').value = data.stts_pemesanan;
                 document.getElementById('modalEditPesanan').classList.remove('hidden');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Gagal memuat data pesanan!');
             });
     }
 
@@ -216,8 +238,14 @@
         fetch(`<?= site_url('pesanan/update') ?>`, {
             method: 'POST',
             body: formData
-        }).then(() => {
-            window.location.reload(); // Reload halaman setelah update
+        })
+        .then(response => {
+            if (!response.ok) throw new Error("Update gagal");
+            window.location.reload();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Gagal memperbarui status!');
         });
     });
 </script>
