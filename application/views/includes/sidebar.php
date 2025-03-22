@@ -31,5 +31,11 @@
                 <span class="text-base">User</span>
             </a>
         </li>
+        <li>
+            <a href="<?= base_url('transaksi'); ?>" class="flex items-center gap-3 p-3 rounded-lg hover:bg-green-700 hover:text-white transition duration-300 <?= ($this->uri->segment(1) == 'transaksi') ? 'bg-green-600' : '' ?>">
+            <i class="fa-solid fa-money-bills"></i>
+                <span class="text-base">Transaksi</span>
+            </a>
+        </li>
     </ul>
 </aside>
