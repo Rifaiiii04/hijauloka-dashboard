@@ -26,12 +26,11 @@ class Produk_model extends CI_Model {
         return $this->db->delete('product', ['id_product' => $id]);
     }
 
-    public function get_stok_tanaman()
-    {
+    public function get_stok_tanaman() {
         return $this->db->select('nama_product, stok')
                         ->from('product')
-                        ->where('stok >', 0) // Hanya ambil produk yang masih ada stoknya
-                        ->order_by('stok', 'DESC') // Urutkan stok dari yang tertinggi
+                        ->where('stok >', 0)
+                        ->order_by('stok', 'DESC')
                         ->get()
                         ->result();
     }

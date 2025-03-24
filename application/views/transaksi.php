@@ -37,7 +37,7 @@
                 </thead>
                 <tbody>
                     <?php if (!empty($transaksi)) : ?>
-                        <?php $no = 1; foreach ($transaksi as $t): ?>
+                        <?php foreach ($transaksi as $t): ?>
                             <tr class="hover:bg-gray-100">
                                 <td class="border border-gray-300 p-2"><?= isset($t->id_transaksi) ? $t->id_transaksi : $t->id_order; ?></td>
                                 <td class="border border-gray-300 p-2">
@@ -90,17 +90,17 @@
             <!-- Dropdown Pilih Pesanan -->
             <label class="block mb-2">Pilih Pesanan</label>
             <select name="order_id" class="w-full border p-2 rounded mb-3" required>
-    <option value="">-- Pilih Pesanan --</option>
-    <?php if (!empty($pesanan)) : ?>
-        <?php foreach ($pesanan as $p): ?>
-            <option value="<?= $p->id_order; ?>">
-                <?= isset($p->nama_pelanggan) ? $p->nama_pelanggan : 'Unknown'; ?> - <?= date('d-m-Y', strtotime($p->tgl_pemesanan)) ?> - Rp<?= number_format($p->total_harga, 0, ',', '.'); ?>
-            </option>
-        <?php endforeach; ?>
-    <?php else: ?>
-        <option value="">Data pesanan tidak tersedia</option>
-    <?php endif; ?>
-</select>
+                <option value="">-- Pilih Pesanan --</option>
+                <?php if (!empty($pesanan)) : ?>
+                    <?php foreach ($pesanan as $p): ?>
+                        <option value="<?= $p->id_order; ?>">
+                            <?= isset($p->nama_pelanggan) ? $p->nama_pelanggan : 'Unknown'; ?> - <?= date('d-m-Y', strtotime($p->tgl_pemesanan)) ?> - Rp<?= number_format($p->total_harga, 0, ',', '.'); ?>
+                        </option>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <option value="">Data pesanan tidak tersedia</option>
+                <?php endif; ?>
+            </select>
             <!-- Pilih Metode Pembayaran -->
             <label class="block mb-2">Metode Pembayaran</label>
             <select name="metode_pembayaran" class="w-full border p-2 rounded mb-3" required>

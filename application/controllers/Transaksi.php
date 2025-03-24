@@ -6,24 +6,20 @@ class Transaksi extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Transaksi_model');
-        $this->load->model('Pesanan_model'); // Untuk ambil data pesanan
-        // Pastikan pengguna sudah login
+        $this->load->model('Pesanan_model');
         if (!$this->session->userdata('logged_in')) {
             redirect('auth');
         }
     }
 
-    // Menampilkan dashboard transaksi
     public function index() {
         $data['title'] = 'Dashboard Transaksi';
-        // Ambil data transaksi dari tabel transaksi
         $data['transaksi'] = $this->Transaksi_model->get_all();
-        // Ambil semua pesanan dari tabel orders secara sederhana
         $all_orders = $this->Pesanan_model->get_all_orders();
         $filtered = [];
         if (!empty($all_orders)) {
             foreach ($all_orders as $order) {
-                // Tampilkan pesanan jika status pembayaran adalah 'belum_dibayar'
+                // Tampilkan pesanan jika status pembayaran adalah 'lunas'
                 if ($order->stts_pembayaran === 'lunas') {
                     $filtered[] = $order;
                 }
@@ -33,7 +29,6 @@ class Transaksi extends CI_Controller {
         $this->load->view('transaksi', $data);
     }
 
-    // Menampilkan detail transaksi (untuk modal detail)
     public function detail($id) {
         $transaksi = $this->Transaksi_model->get_by_id($id);
         if (!$transaksi) {
@@ -45,12 +40,10 @@ class Transaksi extends CI_Controller {
         $this->load->view('transaksi_detail_modal', $data);
     }
 
-    // Membuat transaksi baru secara manual dari pesanan yang dipilih
     public function create() {
         $order_id = $this->input->post('order_id');
         $metode_pembayaran = $this->input->post('metode_pembayaran');
 
-        // Ambil data pesanan terkait
         $order = $this->Pesanan_model->get_pesanan_by_id($order_id);
         if (!$order) {
             $this->session->set_flashdata('error', 'Pesanan tidak ditemukan.');
@@ -63,17 +56,41 @@ class Transaksi extends CI_Controller {
             'user_id'           => $order->id_user,
             'total_bayar'       => $order->total_harga,
             'metode_pembayaran' => $metode_pembayaran,
-            // Ambil status pembayaran dari pesanan (misalnya 'belum_dibayar')
             'status_pembayaran' => $order->stts_pembayaran,
             'tanggal_transaksi' => date('Y-m-d H:i:s'),
             'id_admin'          => $order->id_admin
         ];
 
+        $this->db->trans_start();
+
         $insert_id = $this->Transaksi_model->insert_transaksi($transaksi_data);
-        if ($insert_id) {
-            $this->session->set_flashdata('success', 'Transaksi berhasil ditambahkan.');
-        } else {
+        if (!$insert_id) {
+            $this->db->trans_rollback();
             $this->session->set_flashdata('error', 'Gagal menambahkan transaksi.');
+            redirect('transaksi');
+        }
+
+        $order_items = $this->db->get_where('order_items', ['id_order' => $order->id_order])->result();
+        if (!empty($order_items)) {
+            foreach ($order_items as $item) {
+                $detail_data = [
+                    'id_transaksi'  => $insert_id,
+                    'id_product'    => $item->id_product,
+                    'jumlah'        => $item->quantity,
+                    'harga_satuan'  => isset($item->harga) ? $item->harga : 0,
+                    'subtotal'      => $item->subtotal
+                ];
+                $this->db->insert('detail_transaksi', $detail_data);
+            }
+        }
+        // ------------------------------------------------
+
+        $this->db->trans_complete();
+
+        if ($this->db->trans_status() === FALSE) {
+            $this->session->set_flashdata('error', 'Terjadi kesalahan saat menyimpan transaksi.');
+        } else {
+            $this->session->set_flashdata('success', 'Transaksi berhasil ditambahkan.');
         }
         redirect('transaksi');
     }

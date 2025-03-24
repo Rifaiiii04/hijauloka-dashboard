@@ -1,40 +1,34 @@
-<?php
+<?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Pesanan extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('Pesanan_model'); // Load model Pesanan
-        $this->load->model('Produk_model');  // Load model Produk
-        $this->load->helper('url');          // Load helper URL
-        $this->load->library('form_validation'); // Load library form validation
+        $this->load->model('Pesanan_model');
+        $this->load->model('Produk_model');
+        $this->load->helper('url');
+        $this->load->library('form_validation');
     }
 
-    // Menampilkan daftar pesanan
     public function index() {
-        // Gunakan method get_all_pesanan() yang ada di model Pesanan_model
         $data['pesanan'] = $this->Pesanan_model->get_all_pesanan();
         $data['users']   = $this->db->get('user')->result();
         $data['products']= $this->db->get('product')->result();
         $this->load->view('pesanan', $data);
     }
 
-    // Membuat pesanan baru
     public function create() {
-        // Ambil data dari form
         $id_user         = $this->input->post('id_user');
-        $produk          = $this->input->post('produk');      // Array produk
-        $jumlah          = $this->input->post('jumlah');      // Array jumlah tiap produk
+        $produk          = $this->input->post('produk');
+        $jumlah          = $this->input->post('jumlah');
         $stts_pemesanan  = $this->input->post('stts_pemesanan');
         $stts_pembayaran = $this->input->post('stts_pembayaran');
         $id_admin        = $this->input->post('id_admin');
         $total_harga     = 0;
     
-        // Debug POST data
         error_log("POST data: " . print_r($this->input->post(), true));
     
-        // Validasi stok produk
         foreach ($produk as $index => $id_product) {
             $product = $this->Produk_model->get_by_id($id_product);
             if (!$product) {
@@ -48,7 +42,6 @@ class Pesanan extends CI_Controller {
             $total_harga += $product->harga * $jumlah[$index];
         }
     
-        // Mulai transaksi database
         $this->db->trans_start();
     
         try {
@@ -65,7 +58,6 @@ class Pesanan extends CI_Controller {
                 throw new Exception("Insert pesanan gagal.");
             }
     
-            // Simpan detail pesanan dan update stok
             foreach ($produk as $index => $id_product) {
                 $product = $this->Produk_model->get_by_id($id_product);
                 $new_stock = $product->stok - $jumlah[$index];
@@ -90,7 +82,6 @@ class Pesanan extends CI_Controller {
         redirect('pesanan');
     }
 
-    // Menghapus pesanan
     public function delete($id_order) {
         $pesanan = $this->Pesanan_model->get_pesanan_by_id($id_order);
         if (!$pesanan) {
@@ -98,23 +89,19 @@ class Pesanan extends CI_Controller {
             redirect('pesanan');
         }
     
-        // Hapus detail pesanan terlebih dahulu
         $this->db->where('id_order', $id_order);
         $this->db->delete('order_items');
     
-        // Hapus pesanan dari tabel orders
         $this->Pesanan_model->delete_pesanan($id_order);
         $this->session->set_flashdata('success', 'Pesanan berhasil dihapus.');
         redirect('pesanan');
     }
 
-    // Mengambil data pesanan via AJAX untuk form edit status
     public function get_status($id_order) {
         $order = $this->Pesanan_model->get_pesanan_by_id($id_order);
         echo json_encode($order);
     }
 
-    // Mengupdate status pesanan (edit hanya status)
     public function update_status() {
         $id_order = $this->input->post('id_order');
         $stts_pemesanan = $this->input->post('stts_pemesanan');

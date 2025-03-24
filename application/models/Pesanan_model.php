@@ -8,7 +8,7 @@ class Pesanan_model extends CI_Model {
         $this->load->database();
     }
 
-    // Mengambil semua data pesanan dengan join lengkap (untuk tampilan detail)
+
     public function get_all_pesanan() {
         $this->db->select('
             orders.*, 
@@ -52,17 +52,14 @@ class Pesanan_model extends CI_Model {
         return array_values($result);
     }
 
-    // Metode sederhana untuk mengambil data orders (tanpa join kompleks)
     public function get_all_orders() {
         return $this->db->get('orders')->result();
     }
 
-    // Mengambil data pesanan berdasarkan id_order
     public function get_pesanan_by_id($id_order) {
         return $this->db->get_where('orders', ['id_order' => $id_order])->row();
     }
 
-    // Insert pesanan baru ke tabel orders
     public function insert($data) {
         $this->db->insert('orders', $data);
         return $this->db->insert_id();
