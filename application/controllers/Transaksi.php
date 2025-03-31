@@ -19,7 +19,7 @@ class Transaksi extends CI_Controller {
         $filtered = [];
         if (!empty($all_orders)) {
             foreach ($all_orders as $order) {
-                // Tampilkan pesanan jika status pembayaran adalah 'lunas'
+             
                 if ($order->stts_pembayaran === 'lunas') {
                     $filtered[] = $order;
                 }
@@ -50,7 +50,7 @@ class Transaksi extends CI_Controller {
             redirect('transaksi');
         }
 
-        // Persiapkan data transaksi
+    
         $transaksi_data = [
             'order_id'          => $order->id_order,
             'user_id'           => $order->id_user,

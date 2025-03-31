@@ -10,7 +10,7 @@
                     <tr>
                         <th class="border border-gray-300 p-2 text-white">No</th>
                         <th class="border border-gray-300 p-2 text-white">Nama</th>
-                        <th class="border border-gray-300 p-2 text-white">Deskripsi</th>
+                        <!-- <th class="border border-gray-300 p-2 text-white">Deskripsi</th> -->
                         <th class="border border-gray-300 p-2 text-white">Kategori</th>
                         <th class="border border-gray-300 p-2 text-white">Harga</th>
                         <th class="border border-gray-300 p-2 text-white">Stok</th>
@@ -23,7 +23,7 @@
                     <tr class="hover:bg-gray-100 max-h-14">
                         <td class="border border-gray-300 p-2"><?= $no++; ?></td>
                         <td class="border border-gray-300 p-2"><?= $p->nama_product; ?></td>
-                        <td class="border border-gray-300 p-2 max-w-32"><?= $p->desk_product; ?></td>
+                        <!-- <td class="border border-gray-300 p-2 max-w-32 max-h-5 overflow-x-auto"><?= $p->desk_product; ?></td> -->
                         <td class="border border-gray-300 p-2"><?= $p->nama_kategori; ?></td>
                         <td class="border border-gray-300 p-2">Rp <?= number_format($p->harga, 2, ',', '.'); ?></td>
                         <td class="border border-gray-300 p-2"><?= $p->stok; ?></td>
@@ -31,8 +31,8 @@
                             <img src="<?= base_url('uploads/' . $p->gambar); ?>" class="w-16 h-16">
                         </td>
                         <td class="border border-gray-300 p-2">
-                            <button onclick="editProduk(<?= $p->id_product; ?>)" class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600">Edit</button>
-                            <button onclick="hapusProduk(<?= $p->id_product; ?>)" class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 ml-2">Hapus</button>
+                            <button onclick="editProduk(<?= $p->id_product; ?>)" class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button onclick="hapusProduk(<?= $p->id_product; ?>)" class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 ml-2"><i class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
                     <?php endforeach; ?>

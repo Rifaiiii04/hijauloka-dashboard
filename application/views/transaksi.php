@@ -25,7 +25,7 @@
     <div class="bg-white shadow-lg rounded-xl p-6">
         <div class="overflow-x-auto">
             <table class="w-full border-collapse border border-gray-300 text-center">
-                <thead style="background-color: #007bff;">
+                <thead style="background-color: #08644C;">
                     <tr>
                         <th class="border border-gray-300 p-2 text-white">ID Transaksi</th>
                         <th class="border border-gray-300 p-2 text-white">Tanggal</th>

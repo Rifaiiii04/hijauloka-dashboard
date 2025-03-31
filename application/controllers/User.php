@@ -7,11 +7,11 @@ class User extends CI_Controller {
         parent::__construct();
         $this->load->model('User_model');
         if (!$this->session->userdata('id_admin')) {
-            redirect('login'); // Redirect ke halaman login jika admin belum login
+            redirect('login'); 
         }
     }
 
-    // Tampilkan halaman user management
+
     public function index() {
         $data['users'] = $this->User_model->get_all();
         $this->load->view('user_management', $data);

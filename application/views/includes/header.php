@@ -18,4 +18,4 @@
         </nav>
     </header>
 
-    <div class="flex pt-20"> <!-- Memperbaiki struktur div utama -->
+    <div class="flex pt-20"> 

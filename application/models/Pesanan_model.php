@@ -65,18 +65,17 @@ class Pesanan_model extends CI_Model {
         return $this->db->insert_id();
     }
 
-    // Update pesanan (misalnya update status)
     public function update_status($id_order, $data) {
         $this->db->where('id_order', $id_order);
         return $this->db->update('orders', $data);
     }
 
-    // Menghapus pesanan dan detailnya
+
     public function delete_pesanan($id_order) {
-        // Hapus detail terlebih dahulu
+   
         $this->db->where('id_order', $id_order);
         $this->db->delete('order_items');
-        // Hapus pesanan
+    
         $this->db->where('id_order', $id_order);
         return $this->db->delete('orders');
     }

@@ -62,10 +62,9 @@
     </div>
 </main>
 
-<!-- Load Chart.js Library -->
 <script src="<?= base_url('assets/js/chart.js'); ?>"></script>
 
-<!-- Script untuk inisialisasi Pie Chart -->
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const chartData = {
