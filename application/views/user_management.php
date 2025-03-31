@@ -1,6 +1,45 @@
 <?php $this->load->view('includes/header'); ?>
 <?php $this->load->view('includes/sidebar'); ?>
 
+<style>
+    .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pagination li {
+    margin: 0 5px;
+}
+
+.pagination li a {
+    display: block;
+    padding: 8px 12px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    color: #08644C;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.pagination li.active a {
+    background-color: #08644C;
+    color: white;
+    border-color: #08644C;
+}
+
+.pagination li a:hover {
+    background-color: #e9ecef;
+}
+</style>
+
 <main class="flex-1 ml-64 p-6 overflow-auto">
     <div class="mt-10 bg-white shadow-lg rounded-lg p-6">
         <h2 class="text-xl font-bold text-gray-800 mb-4">User Management</h2>
@@ -46,6 +85,14 @@
                     <?php endforeach; ?>
                 </tbody>
             </table>
+<div class="mt-4 flex justify-between items-center">
+    <div class="text-sm text-gray-600">
+        Menampilkan <?= count($users) ?> dari <?= $total_rows ?> pengguna
+    </div>
+    <div class="pagination">
+        <?= $pagination ?>
+    </div>
+</div>
         </div>
     </div>
 </main>
