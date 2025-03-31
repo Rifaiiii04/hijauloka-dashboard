@@ -2,10 +2,13 @@
 class Produk_model extends CI_Model {
     
     public function get_all() {
-        $this->db->select('product.*, category.nama_kategori');
-        $this->db->join('category', 'category.id_kategori = product.id_kategori', 'left');
+        $this->db->select("product.*, GROUP_CONCAT(category.nama_kategori SEPARATOR ', ') as nama_kategori");
+        $this->db->join('product_category', 'product_category.id_product = product.id_product', 'left');
+        $this->db->join('category', 'category.id_kategori = product_category.id_kategori', 'left');
+        $this->db->group_by('product.id_product');
         return $this->db->get('product')->result();
     }
+    
 
     public function get_by_id($id) {
         $this->db->select('product.*, category.nama_kategori');

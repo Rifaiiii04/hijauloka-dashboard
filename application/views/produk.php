@@ -28,7 +28,13 @@
                         <td class="border border-gray-300 p-2">Rp <?= number_format($p->harga, 2, ',', '.'); ?></td>
                         <td class="border border-gray-300 p-2"><?= $p->stok; ?></td>
                         <td class="border border-gray-300 p-2">
-                            <img src="<?= base_url('uploads/' . $p->gambar); ?>" class="w-16 h-16">
+                        <?php 
+$gambarArr = explode(',', $p->gambar);
+foreach ($gambarArr as $gmbr): ?>
+    <img src="<?= base_url('uploads/' . trim($gmbr)); ?>" class="w-16 h-16 inline-block mr-1">
+<?php endforeach; ?>
+
+
                         </td>
                         <td class="border border-gray-300 p-2">
                             <button onclick="editProduk(<?= $p->id_product; ?>)" class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600"><i class="fa-solid fa-pen-to-square"></i></button>
@@ -45,40 +51,44 @@
     </div>
 </main>
 
-<!-- Modal Tambah/Edit Produk -->
-<div id="modalProduk" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden">
-    <div class="bg-white p-6 rounded-lg shadow-lg w-1/3">
+<!-- Modal Tambah Produk -->
+<div id="modalProduk" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center hidden overflow-auto">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-2xl mx-4 my-16">
         <h2 class="text-xl font-bold mb-4" id="modalTitle">Tambah Produk</h2>
         <form id="produkForm" action="<?= base_url('produk/store') ?>" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="id_product" id="id_product">
-            <div class="mb-4">
-                <label class="block">Nama Produk</label>
-                <input type="text" name="nama_product" id="nama_product" class="w-full border p-2 rounded-lg" required>
+            <div class="mb-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                    <label class="block">Nama Produk</label>
+                    <input type="text" name="nama_product" id="nama_product" class="w-full border p-2 rounded-lg" required>
+                </div>
+                <div>
+                    <label class="block">Harga</label>
+                    <input type="number" name="harga" id="harga" class="w-full border p-2 rounded-lg" required>
+                </div>
             </div>
             <div class="mb-4">
                 <label class="block">Deskripsi</label>
                 <textarea name="desk_product" id="desk_product" class="w-full border p-2 rounded-lg" required></textarea>
             </div>
-            <div class="mb-4">
+            <dib class="mb-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
                 <label class="block">Kategori</label>
-                <select name="id_kategori" id="id_kategori" class="w-full border p-2 rounded-lg" required>
-                    <option value="">-- Pilih Kategori --</option>
-                    <?php foreach ($kategori as $k): ?>
-                    <option value="<?= $k->id_kategori; ?>"><?= $k->nama_kategori; ?></option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
+    <?php foreach ($kategori as $k): ?>
+        <label class="inline-flex items-center mr-4">
+            <input type="checkbox" name="id_kategori[]" value="<?= $k->id_kategori; ?>" class="form-checkbox">
+            <span class="ml-2"><?= $k->nama_kategori; ?></span>
+        </label>
+    <?php endforeach; ?>
+                </div>
+                <div>
+                    <label class="block">Stok</label>
+                    <input type="number" name="stok" id="stok" class="w-full border p-2 rounded-lg" required>
+                </div>
+            </dib>
             <div class="mb-4">
-                <label class="block">Harga</label>
-                <input type="number" name="harga" id="harga" class="w-full border p-2 rounded-lg" required>
-            </div>
-            <div class="mb-4">
-                <label class="block">Stok</label>
-                <input type="number" name="stok" id="stok" class="w-full border p-2 rounded-lg" required>
-            </div>
-            <div class="mb-4">
-                <label class="block">Gambar</label>
-                <input type="file" name="gambar" class="w-full border p-2 rounded-lg">
+                <label class="block">Gambar (minimal 1, maksimal 5)</label>
+                <input type="file" name="gambar[]" class="w-full border p-2 rounded-lg" multiple required>
             </div>
             <div class="text-right">
                 <button type="button" onclick="closeModal()" class="bg-gray-500 text-white px-4 py-2 rounded-md">Batal</button>
@@ -89,39 +99,44 @@
 </div>
 
 <!-- Modal Edit Produk -->
-<div id="modalEditProduk" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden">
-    <div class="bg-white p-6 rounded-lg shadow-lg w-1/3">
+<div id="modalEditProduk" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center hidden overflow-auto">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-2xl mx-4 my-16">
         <h2 class="text-xl font-bold mb-4">Edit Produk</h2>
         <form id="editProdukForm" action="<?= base_url('produk/update') ?>" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="id_product" id="edit_id_product">
-            <div class="mb-4">
-                <label class="block">Nama Produk</label>
-                <input type="text" name="nama_product" id="edit_nama_product" class="w-full border p-2 rounded-lg" required>
+            <div class="mb-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                    <label class="block">Nama Produk</label>
+                    <input type="text" name="nama_product" id="edit_nama_product" class="w-full border p-2 rounded-lg" required>
+                </div>
+                <div>
+                    <label class="block">Harga</label>
+                    <input type="number" name="harga" id="edit_harga" class="w-full border p-2 rounded-lg" required>
+                </div>
             </div>
             <div class="mb-4">
                 <label class="block">Deskripsi</label>
                 <textarea name="desk_product" id="edit_desk_product" class="w-full border p-2 rounded-lg" required></textarea>
             </div>
-            <div class="mb-4">
+            <div class="mb-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
                 <label class="block">Kategori</label>
-                <select name="id_kategori" id="edit_id_kategori" class="w-full border p-2 rounded-lg" required>
-                    <option value="">-- Pilih Kategori --</option>
-                    <?php foreach ($kategori as $k): ?>
-                    <option value="<?= $k->id_kategori; ?>"><?= $k->nama_kategori; ?></option>
-                    <?php endforeach; ?>
-                </select>
+    <?php foreach ($kategori as $k): ?>
+        <label class="inline-flex items-center mr-4">
+            <input type="checkbox" name="id_kategori[]" value="<?= $k->id_kategori; ?>" class="form-checkbox">
+            <span class="ml-2"><?= $k->nama_kategori; ?></span>
+        </label>
+    <?php endforeach; ?>
+                </div>
+                <div>
+                    <label class="block">Stok</label>
+                    <input type="number" name="stok" id="edit_stok" class="w-full border p-2 rounded-lg" required>
+                </div>
             </div>
             <div class="mb-4">
-                <label class="block">Harga</label>
-                <input type="number" name="harga" id="edit_harga" class="w-full border p-2 rounded-lg" required>
-            </div>
-            <div class="mb-4">
-                <label class="block">Stok</label>
-                <input type="number" name="stok" id="edit_stok" class="w-full border p-2 rounded-lg" required>
-            </div>
-            <div class="mb-4">
-                <label class="block">Gambar</label>
-                <input type="file" name="gambar" class="w-full border p-2 rounded-lg">
+                <label class="block">Gambar (minimal 1, maksimal 5)</label>
+                <input type="file" name="gambar[]" class="w-full border p-2 rounded-lg" multiple>
+                <!-- Simpan nama file lama dalam format comma separated -->
                 <input type="hidden" name="gambar_lama" id="edit_gambar_lama">
             </div>
             <div class="text-right">
@@ -132,39 +147,12 @@
     </div>
 </div>
 
-
 <script>
     function tambahProduk() {
         document.getElementById('produkForm').reset();
         document.getElementById('modalTitle').innerText = "Tambah Produk";
         document.getElementById('produkForm').action = "<?= base_url('produk/store') ?>";
         document.getElementById('modalProduk').classList.remove('hidden');
-    }
-
-    function editProduk(id) {
-        fetch(`<?= base_url('produk/edit/') ?>${id}`)
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('modalTitle').innerText = "Edit Produk";
-                document.getElementById('produkForm').action = "<?= base_url('produk/update') ?>";
-                document.getElementById('id_product').value = data.id_product;
-                document.getElementById('nama_product').value = data.nama_product;
-                document.getElementById('desk_product').value = data.desk_product;
-                document.getElementById('id_kategori').value = data.id_kategori;
-                document.getElementById('harga').value = data.harga;
-                document.getElementById('stok').value = data.stok;
-                document.getElementById('modalProduk').classList.remove('hidden');
-            });
-    }
-
-    function hapusProduk(id) {
-        if (confirm('Yakin ingin menghapus produk ini?')) {
-            window.location.href = `<?= base_url('produk/delete/') ?>${id}`;
-        }
-    }
-
-    function closeModal() {
-        document.getElementById('modalProduk').classList.add('hidden');
     }
 
     function editProduk(id) {
@@ -182,8 +170,18 @@
             });
     }
 
+    function hapusProduk(id) {
+        if (confirm('Yakin ingin menghapus produk ini?')) {
+            window.location.href = "<?= base_url('produk/delete/') ?>" + id;
+        }
+    }
+
+    function closeModal() {
+        document.getElementById('modalProduk').classList.add('hidden');
+    }
+
     function closeModalEdit() {
         document.getElementById('modalEditProduk').classList.add('hidden');
     }
-    
 </script>
+
