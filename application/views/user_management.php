@@ -4,6 +4,13 @@
 <main class="flex-1 ml-64 p-6 overflow-auto">
     <div class="mt-10 bg-white shadow-lg rounded-lg p-6">
         <h2 class="text-xl font-bold text-gray-800 mb-4">User Management</h2>
+        
+        <!-- Search Input -->
+        <div class="mb-4">
+            <input type="text" id="searchInput" placeholder="Cari pengguna..." 
+                   class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+        </div>
+
         <div class="overflow-x-auto">
             <table class="w-full max-h-64 border-collapse border border-gray-300 text-center">
                 <thead style="background-color: #08644C;">
@@ -44,6 +51,33 @@
 </main>
 
 <script>
+
+    document.getElementById('searchInput').addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        const rows = document.querySelectorAll('tbody tr');
+        let visibleRowIndex = 1;
+
+        rows.forEach(row => {
+            const cells = row.getElementsByTagName('td');
+            const nama = cells[1].textContent.toLowerCase();
+            const email = cells[2].textContent.toLowerCase();
+            const alamat = cells[3].textContent.toLowerCase();
+            const noTlp = cells[4].textContent.toLowerCase();
+            
+            const matches = nama.includes(searchTerm) || 
+                            email.includes(searchTerm) || 
+                            alamat.includes(searchTerm) || 
+                            noTlp.includes(searchTerm);
+
+            row.style.display = matches ? 'table-row' : 'none';
+            
+         
+            if (matches) {
+                cells[0].textContent = visibleRowIndex++;
+            }
+        });
+    });
+
     function hapusUser(id) {
         if (confirm('Yakin ingin menghapus user ini?')) {
             window.location.href = `<?= base_url('user/delete/') ?>${id}`;
