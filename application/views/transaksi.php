@@ -50,14 +50,14 @@
                                 <td class="border border-gray-300 p-2">
                                     <?php 
                                         $status = !empty($t->status_pembayaran) ? $t->status_pembayaran : 'Tidak tersedia';
-                                        $status_class = ($status === 'lunas') ? 'bg-green-500 text-white' : 'bg-red-500 text-white';
+                                        $status_class = ($status === 'lunas') ? 'bg-green-500 p-3 text-white' : 'bg-red-500 p-3 text-white';
                                     ?>
                                     <span class="px-2 py-1 rounded-full <?= $status_class; ?>">
                                         <?= htmlspecialchars($status); ?>
                                     </span>
                                 </td>
                                 <td class="border border-gray-300 p-2">
-                                    <button onclick="openDetailModal(<?= isset($t->id_transaksi) ? $t->id_transaksi : $t->id_order; ?>)" class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600">Detail</button>
+                                    <button onclick="openDetailModal(<?= isset($t->id_transaksi) ? $t->id_transaksi : $t->id_order; ?>)" class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600"><i class="fa-solid fa-circle-info"></i></button>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -144,7 +144,7 @@
 </div>
 
 <script>
-    // Fungsi untuk membuka modal detail transaksi
+
     function openDetailModal(id) {
         fetch("<?= site_url('transaksi/detail/'); ?>" + id)
             .then(response => response.text())
@@ -162,7 +162,7 @@
         document.getElementById("detailModal").classList.add("hidden");
     }
 
-    // Fungsi untuk membuka dan menutup modal tambah transaksi
+
     function openTransaksiModal() {
         document.getElementById('modalTransaksi').classList.remove('hidden');
     }
@@ -171,7 +171,7 @@
         document.getElementById('modalTransaksi').classList.add('hidden');
     }
 
-    // Fungsi untuk membuka modal edit status pesanan via AJAX
+  
     function openEditModal(id_order) {
         fetch("<?= site_url('pesanan/get_status/') ?>" + id_order)
             .then(response => {

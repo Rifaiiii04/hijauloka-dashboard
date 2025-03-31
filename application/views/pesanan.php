@@ -18,13 +18,13 @@
     <div class="flex justify-between items-center mb-6">
         <h1 class="text-3xl font-extrabold text-gray-800">Daftar Pesanan</h1>
         <button onclick="openModal()" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">
-            Tambah Pesanan
+        <i class="fa-solid fa-plus"></i>  Tambah Pesanan
         </button>
     </div>
     <div class="bg-white shadow-lg rounded-xl p-6">
         <div class="overflow-x-auto">
             <table class="w-full border-collapse border border-gray-300 text-center">
-                <thead class="bg-green-500">
+                <thead style="background-color: #08644C;">
                     <tr>
                         <th class="border border-gray-300 p-2 text-white">No</th>
                         <th class="border border-gray-300 p-2 text-white">Nama Pelanggan</th>
@@ -57,16 +57,16 @@
                                 <td class="border border-gray-300 p-2">Rp<?= number_format($p->total_harga ?? 0, 0, ',', '.'); ?></td>
                                 <td class="border border-gray-300 p-2"><?= ucfirst($p->stts_pemesanan ?? 'pending'); ?></td>
                                 <td class="border border-gray-300 p-2">
-                                    <span class="px-2 py-1 rounded-full <?php echo ($p->stts_pembayaran === 'lunas') ? 'bg-green-500 text-white' : 'bg-red-500 text-white'; ?>">
+                                    <span class="px-2 py-1 rounded-full <?php echo ($p->stts_pembayaran === 'lunas') ? 'bg-green-500 p-3 text-white' : 'bg-red-500 p-3 text-white'; ?>">
                                         <?= htmlspecialchars($p->stts_pembayaran); ?>
                                     </span>
                                 </td>
                                 <td class="border border-gray-300 p-2">
                                     <button onclick="openEditModal('<?= $p->id_order; ?>')" class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600">
-                                        Edit
+                                    <i class="fa-solid fa-pen-to-square"></i>
                                     </button>
                                     <a href="<?= site_url('pesanan/delete/' . $p->id_order); ?>" class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 ml-2" onclick="return confirm('Hapus pesanan ini?')">
-                                        Hapus
+                                    <i class="fa-solid fa-trash"></i>
                                     </a>
                                 </td>
                             </tr>

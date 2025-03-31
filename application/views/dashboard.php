@@ -25,7 +25,7 @@
     <div class="mt-10 flex flex-wrap justify-between gap-6">
         <!-- Pie Chart - Tanaman Terlaris -->
         <div class="shadow-lg rounded-lg p-6 flex-1 min-w-[48%]">
-            <h2 class="text-xl font-bold text-center mb-4 text-white rounded-md" style="background-color: #28a745;">Tanaman Terlaris</h2>
+            <h2 class="text-xl font-bold text-center mb-4 text-white rounded-md" style="background-color: #08644C;"">Tanaman Terlaris</h2>
             <div class="flex justify-center">
                 <canvas id="myPieChart" class="w-44 h-44"></canvas>
             </div>
@@ -36,7 +36,7 @@
             <h2 class="text-xl font-bold text-center mb-4 text-white rounded-md" style="background-color: #28a745;">Stok Tanaman</h2>
             <div class="overflow-x-auto">
                 <table class="w-full border-collapse border border-gray-300 text-center">
-                    <thead style="background-color: #28a745;">
+                    <thead style="background-color: #08644C;">
                         <tr>
                             <th class="border border-gray-300 p-2 text-white">Nama</th>
                             <th class="border border-gray-300 p-2 text-white">Stok</th>

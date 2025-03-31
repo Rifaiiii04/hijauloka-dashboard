@@ -6,7 +6,7 @@
         <h2 class="text-xl font-bold text-gray-800 mb-4">User Management</h2>
         <div class="overflow-x-auto">
             <table class="w-full max-h-64 border-collapse border border-gray-300 text-center">
-                <thead class="bg-green-500">
+                <thead style="background-color: #08644C;">
                     <tr>
                         <th class="border border-gray-300 p-2 text-white">No</th>
                         <th class="border border-gray-300 p-2 text-white">Nama</th>

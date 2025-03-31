@@ -6,7 +6,7 @@
         <h2 class="text-xl font-bold text-gray-800 mb-4">Daftar Produk</h2>
         <div class="overflow-x-auto">
             <table class="w-full max-h-64 border-collapse border border-gray-300 text-center">
-                <thead class="bg-green-500">
+                <thead style="background-color: #08644C;">
                     <tr>
                         <th class="border border-gray-300 p-2 text-white">No</th>
                         <th class="border border-gray-300 p-2 text-white">Nama</th>
@@ -46,7 +46,7 @@ foreach ($gambarArr as $gmbr): ?>
             </table>
         </div>
         <div class="mt-10 text-right">
-            <button onclick="tambahProduk()" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">+ Tambah Produk</button>
+            <button onclick="tambahProduk()" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"><i class="fa-solid fa-plus"></i>  Tambah Produk</button>
         </div>
     </div>
 </main>
@@ -156,19 +156,40 @@ foreach ($gambarArr as $gmbr): ?>
     }
 
     function editProduk(id) {
-        fetch("<?= base_url('produk/edit/') ?>" + id)
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('edit_id_product').value = data.produk.id_product;
-                document.getElementById('edit_nama_product').value = data.produk.nama_product;
-                document.getElementById('edit_desk_product').value = data.produk.desk_product;
-                document.getElementById('edit_id_kategori').value = data.produk.id_kategori;
-                document.getElementById('edit_harga').value = data.produk.harga;
-                document.getElementById('edit_stok').value = data.produk.stok;
-                document.getElementById('edit_gambar_lama').value = data.produk.gambar;
-                document.getElementById('modalEditProduk').classList.remove('hidden');
+    console.log("Memanggil editProduk dengan ID:", id);
+    fetch("<?= base_url('produk/edit/') ?>" + id)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("HTTP error! Status: " + response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Data dari server:", data);
+            if (!data.produk) {
+                alert("Data produk tidak ditemukan!");
+                return;
+            }
+            document.getElementById('edit_id_product').value = data.produk.id_product;
+            document.getElementById('edit_nama_product').value = data.produk.nama_product;
+            document.getElementById('edit_desk_product').value = data.produk.desk_product;
+            document.getElementById('edit_harga').value = data.produk.harga;
+            document.getElementById('edit_stok').value = data.produk.stok;
+            document.getElementById('edit_gambar_lama').value = data.produk.gambar;
+
+            let kategoriCheckboxes = document.querySelectorAll('input[name="id_kategori[]"]');
+            kategoriCheckboxes.forEach(checkbox => {
+                checkbox.checked = data.selected_categories.includes(checkbox.value);
             });
-    }
+
+            document.getElementById('modalEditProduk').classList.remove('hidden');
+        })
+        .catch(error => {
+            console.error("Error fetching data:", error);
+            alert("Terjadi kesalahan saat mengambil data produk.");
+        });
+}
+
 
     function hapusProduk(id) {
         if (confirm('Yakin ingin menghapus produk ini?')) {

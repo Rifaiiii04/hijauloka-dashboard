@@ -6,7 +6,7 @@
         <h2 class="text-xl font-bold text-gray-800 mb-4">Daftar Kategori</h2>
         <div class="overflow-x-auto">
             <table class="w-full border-collapse border border-gray-300 text-center">
-                <thead class="bg-green-500">
+                <thead style="background-color: #08644C;">
                     <tr>
                         <th class="border border-gray-300 p-2 text-white">No</th>
                         <th class="border border-gray-300 p-2 text-white">Nama Kategori</th>
@@ -19,8 +19,8 @@
                         <td class="border border-gray-300 p-2"><?= $no++; ?></td>
                         <td class="border border-gray-300 p-2"><?= $k->nama_kategori; ?></td>
                         <td class="border border-gray-300 p-2">
-                            <button onclick="editKategori(<?= $k->id_kategori; ?>)" class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600">Edit</button>
-                            <button onclick="hapusKategori(<?= $k->id_kategori; ?>)" class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 ml-2">Hapus</button>
+                            <button onclick="editKategori(<?= $k->id_kategori; ?>)" class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button onclick="hapusKategori(<?= $k->id_kategori; ?>)" class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 ml-2"><i class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
                     <?php endforeach; ?>
@@ -28,7 +28,7 @@
             </table>
         </div>
         <div class="mt-10 text-right">
-            <button onclick="tambahKategori()" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">+ Tambah Kategori</button>
+            <button onclick="tambahKategori()" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"><i class="fa-solid fa-plus"></i> Tambah Kategori</button>
         </div>
     </div>
 </main>
