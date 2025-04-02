@@ -12,9 +12,12 @@ class Pesanan extends CI_Controller {
     }
 
     public function index() {
-        $data['pesanan'] = $this->Pesanan_model->get_all_pesanan();
-        $data['users']   = $this->db->get('user')->result();
-        $data['products']= $this->db->get('product')->result();
+        $keyword = $this->input->get('cariPesanan');
+    
+        $data['pesanan'] = $this->Pesanan_model->get_all_pesanan($keyword);
+        $data['users'] = $this->db->get('user')->result();
+        $data['products'] = $this->db->get('product')->result();
+        
         $this->load->view('pesanan', $data);
     }
 

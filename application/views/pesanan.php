@@ -21,6 +21,17 @@
         <i class="fa-solid fa-plus"></i>  Tambah Pesanan
         </button>
     </div>
+<form action="<?= site_url('pesanan') ?>" method="get">
+    <div class="container w-[340px] h-14 flex">
+        <input type="text" 
+               class="w-full h-11 border-2 border-black/60 rounded-lg p-2" 
+               placeholder="Cari Pesanan..." 
+               name="cariPesanan"
+               value="<?= isset($_GET['cariPesanan']) ? htmlspecialchars($_GET['cariPesanan']) : '' ?>">
+        <button class="text-xl font-semibold ml-2 h-11 bg-green-600 text-white p-2 text-center rounded-lg hover:bg-green-700 transition duration-300" 
+                type="submit">Cari</button>
+    </div>
+</form>
     <div class="bg-white shadow-lg rounded-xl p-6">
         <div class="overflow-x-auto">
             <table class="w-full border-collapse border border-gray-300 text-center">

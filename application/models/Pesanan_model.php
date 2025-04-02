@@ -8,8 +8,7 @@ class Pesanan_model extends CI_Model {
         $this->load->database();
     }
 
-
-    public function get_all_pesanan() {
+    public function get_all_pesanan($keyword = null) {
         $this->db->select('
             orders.*, 
             user.nama AS nama_pelanggan, 
@@ -22,6 +21,18 @@ class Pesanan_model extends CI_Model {
         $this->db->join('user', 'user.id_user = orders.id_user', 'left');
         $this->db->join('order_items', 'order_items.id_order = orders.id_order', 'left');
         $this->db->join('product', 'product.id_product = order_items.id_product', 'left');
+
+        // Tambah kondisi pencarian jika ada keyword
+        if(!empty($keyword)) {
+            $this->db->group_start();
+            $this->db->like('user.nama', $keyword);
+            $this->db->or_like('product.nama_product', $keyword);
+            $this->db->or_like('orders.id_order', $keyword);
+            $this->db->or_like('orders.stts_pemesanan', $keyword);
+            $this->db->or_like('orders.stts_pembayaran', $keyword);
+            $this->db->group_end();
+        }
+
         $query = $this->db->get();
 
         $result = [];
@@ -70,12 +81,12 @@ class Pesanan_model extends CI_Model {
         return $this->db->update('orders', $data);
     }
 
-
     public function delete_pesanan($id_order) {
-   
+        // Hapus dulu item pesanan
         $this->db->where('id_order', $id_order);
         $this->db->delete('order_items');
     
+        // Kemudian hapus pesanan
         $this->db->where('id_order', $id_order);
         return $this->db->delete('orders');
     }
