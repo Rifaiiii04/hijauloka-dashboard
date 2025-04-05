@@ -23,4 +23,14 @@ class Laporan_model extends CI_Model {
         ");
         return $query->result();
     }
+
+    public function get_current_month_revenue() {
+        $query = $this->db->query("
+            SELECT SUM(total_bayar) as total
+            FROM transaksi
+            WHERE MONTH(tanggal_transaksi) = MONTH(CURDATE())
+              AND YEAR(tanggal_transaksi) = YEAR(CURDATE())
+        ");
+        return $query->row()->total ?? 0;
+    }
 }

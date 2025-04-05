@@ -44,4 +44,13 @@ class Transaksi_model extends CI_Model {
         $this->db->insert('transaksi', $data);
         return $this->db->insert_id();
     }
+
+    public function get_today_orders_count() {
+        $query = $this->db->query("
+            SELECT COUNT(*) as total
+            FROM transaksi
+            WHERE DATE(tanggal_transaksi) = CURDATE()
+        ");
+        return $query->row()->total ?? 0;
+    }
 }

@@ -40,4 +40,14 @@ class Produk_model extends CI_Model {
                         ->get()
                         ->result();
     }
+
+    public function get_stok_summary() {
+        $query = $this->db->query("
+            SELECT 
+                SUM(stok) as total_stok,
+                COUNT(id_product) as jenis_tanaman
+            FROM product
+        ");
+        return $query->row();
+    }
 }
