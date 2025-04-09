@@ -94,13 +94,16 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     if (pieData.products && pieData.products.length > 0) {
+        // Filter products with sales more than 5
+        const filteredProducts = pieData.products.filter(p => p.total >= 5);
+        
         const pieCtx = document.getElementById('myPieChart').getContext('2d');
         new Chart(pieCtx, {
             type: "pie",
             data: {
-                labels: pieData.products.map(p => p.nama_product),
+                labels: filteredProducts.map(p => p.nama_product),
                 datasets: [{
-                    data: pieData.products.map(p => p.total),
+                    data: filteredProducts.map(p => p.total),
                     backgroundColor: [
                         '#08644C',
                         '#28a745',
@@ -116,6 +119,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 plugins: {
                     legend: {
                         position: 'bottom'
+                    },
+                    title: {
+                        display: true,
+                        text: 'Produk dengan penjualan > 5 unit',
+                        padding: {
+                            bottom: 10
+                        }
                     }
                 }
             }

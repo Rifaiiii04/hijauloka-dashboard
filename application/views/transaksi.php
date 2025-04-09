@@ -23,6 +23,12 @@
         </button>
     </div>
     <div class="bg-white shadow-lg rounded-xl p-6">
+        <!-- Search Bar -->
+        <div class="flex justify-end mb-4">
+            <input type="text" id="searchInput" placeholder="Cari transaksi..." 
+                   class="w-64 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200 ease-in-out">
+            <!-- <i class="fas fa-search absolute right-3 top-3 text-gray-400"></i> -->
+        </div>
         <div class="overflow-x-auto">
             <table class="w-full border-collapse border border-gray-300 text-center">
                 <thead style="background-color: #08644C;">
@@ -35,7 +41,7 @@
                         <th class="border border-gray-300 p-2 text-white">Aksi</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="transactionTableBody">
                     <?php if (!empty($transaksi)) : ?>
                         <?php foreach ($transaksi as $t): ?>
                             <tr class="hover:bg-gray-100">
@@ -71,6 +77,26 @@
         </div>
     </div>
 </main>
+
+<script>
+// Search function for transactions
+document.getElementById('searchInput').addEventListener('input', function() {
+    const searchValue = this.value.toLowerCase();
+    const tableBody = document.getElementById('transactionTableBody');
+    const rows = tableBody.getElementsByTagName('tr');
+
+    for (let row of rows) {
+        const idTransaksi = row.getElementsByTagName('td')[0].textContent.toLowerCase();
+        const namaPelanggan = row.getElementsByTagName('td')[2].textContent.toLowerCase();
+        
+        if (idTransaksi.includes(searchValue) || namaPelanggan.includes(searchValue)) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    }
+});
+</script>
 
 <!-- Modal Detail Transaksi -->
 <div id="detailModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">

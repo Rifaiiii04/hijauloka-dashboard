@@ -3,7 +3,22 @@
 
 <main class="flex-1 ml-64 p-6 overflow-auto">
     <div class="mt-10 bg-white shadow-lg rounded-lg p-6">
-        <h2 class="text-xl font-bold text-gray-800 mb-4">Daftar Produk</h2>
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-xl font-bold text-gray-800">Daftar Produk</h2>
+            
+            <!-- Search Bar -->
+            <div class="flex gap-4">
+                <div class="relative">
+                    <input type="text" id="searchInput" placeholder="Cari produk..." 
+                           class="w-64 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200 ease-in-out">
+                    <!-- <i class="fas fa-search absolute top-56  text-gray-400"></i> -->
+                </div>
+                <button onclick="tambahProduk()" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition duration-200 ease-in-out">
+                    <i class="fa-solid fa-plus"></i> Tambah Produk
+                </button>
+            </div>
+        </div>
+
         <div class="overflow-x-auto">
             <table class="w-full max-h-64 border-collapse border border-gray-300 text-center">
                 <thead style="background-color: #08644C;">
@@ -18,7 +33,7 @@
                         <th class="border border-gray-300 p-2 text-white">Aksi</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="productTableBody">
                     <?php $no = 1; foreach ($produk as $p): ?>
                     <tr class="hover:bg-gray-100 max-h-14">
                         <td class="border border-gray-300 p-2"><?= $no++; ?></td>
@@ -44,9 +59,6 @@ foreach ($gambarArr as $gmbr): ?>
                     <?php endforeach; ?>
                 </tbody>
             </table>
-        </div>
-        <div class="mt-10 text-right">
-            <button onclick="tambahProduk()" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"><i class="fa-solid fa-plus"></i>  Tambah Produk</button>
         </div>
     </div>
 </main>
@@ -204,5 +216,24 @@ foreach ($gambarArr as $gmbr): ?>
     function closeModalEdit() {
         document.getElementById('modalEditProduk').classList.add('hidden');
     }
+
+
+// Add this new search function
+document.getElementById('searchInput').addEventListener('input', function() {
+    const searchValue = this.value.toLowerCase();
+    const tableBody = document.getElementById('productTableBody');
+    const rows = tableBody.getElementsByTagName('tr');
+
+    for (let row of rows) {
+        const namaProduk = row.getElementsByTagName('td')[1].textContent.toLowerCase();
+        const kategori = row.getElementsByTagName('td')[2].textContent.toLowerCase();
+        
+        if (namaProduk.includes(searchValue) || kategori.includes(searchValue)) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    }
+});
 </script>
 
