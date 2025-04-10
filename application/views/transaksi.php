@@ -33,7 +33,7 @@
             <table class="w-full border-collapse border border-gray-300 text-center">
                 <thead style="background-color: #08644C;">
                     <tr>
-                        <th class="border border-gray-300 p-2 text-white">ID Transaksi</th>
+                        <!-- <th class="border border-gray-300 p-2 text-white">ID Transaksi</th> -->
                         <th class="border border-gray-300 p-2 text-white">Tanggal</th>
                         <th class="border border-gray-300 p-2 text-white">Nama Pelanggan</th>
                         <th class="border border-gray-300 p-2 text-white">Total Bayar</th>
@@ -45,7 +45,7 @@
                     <?php if (!empty($transaksi)) : ?>
                         <?php foreach ($transaksi as $t): ?>
                             <tr class="hover:bg-gray-100">
-                                <td class="border border-gray-300 p-2"><?= isset($t->id_transaksi) ? $t->id_transaksi : $t->id_order; ?></td>
+                                <!-- <td class="border border-gray-300 p-2"><?= isset($t->id_transaksi) ? $t->id_transaksi : $t->id_order; ?></td> -->
                                 <td class="border border-gray-300 p-2">
                                     <?= !empty($t->tanggal_transaksi) ? date('d M Y', strtotime($t->tanggal_transaksi)) : 'Tanggal tidak tersedia'; ?>
                                 </td>
@@ -114,8 +114,8 @@ document.getElementById('searchInput').addEventListener('input', function() {
         <h2 class="text-xl font-bold mb-4">Tambah Transaksi</h2>
         <form id="formTambahTransaksi" action="<?= site_url('transaksi/create') ?>" method="POST">
             <!-- Dropdown Pilih Pesanan -->
-            <label class="block mb-2">Pilih Pesanan</label>
-            <select name="order_id" class="w-full border p-2 rounded mb-3" required>
+            <label class="block mb-2 text-gray-700 font-semibold">Pilih Pesanan</label>
+            <select name="order_id" class="w-full border p-2 rounded mb-3 bg-gray-50 border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200 ease-in-out" required>
                 <option value="">-- Pilih Pesanan --</option>
                 <?php if (!empty($pesanan)) : ?>
                     <?php foreach ($pesanan as $p): ?>
