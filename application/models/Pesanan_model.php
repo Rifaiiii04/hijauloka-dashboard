@@ -160,4 +160,14 @@ class Pesanan_model extends CI_Model {
         $this->db->where('id_order', $id_order);
         return $this->db->delete('orders');
     }
+
+    public function get_unpaid_orders() {
+        return $this->db->select('orders.*, user.nama as nama_pelanggan')
+                        ->from('orders')
+                        ->join('user', 'user.id_user = orders.id_user', 'left')
+                        ->where('orders.stts_pembayaran', 'belum_dibayar')
+                        ->order_by('orders.tgl_pemesanan', 'DESC')
+                        ->get()
+                        ->result();
+    }
 }

@@ -13,18 +13,25 @@ class Transaksi extends CI_Controller {
     }
 
     public function index() {
-        $data['title'] = 'Dashboard Transaksi';
-        $data['transaksi'] = $this->Transaksi_model->get_all();
-        $all_orders = $this->Pesanan_model->get_all_pesanan();  // Changed from get_all_orders
-        $filtered = [];
-        if (!empty($all_orders)) {
-            foreach ($all_orders as $order) {
-                if ($order->stts_pembayaran === 'lunas') {
-                    $filtered[] = $order;
-                }
-            }
-        }
-        $data['pesanan'] = $filtered;
+        // Get current page from URL
+        $page = ($this->input->get('page')) ? $this->input->get('page') : 1;
+        $per_page = 10; // Items per page
+        
+        // Calculate offset
+        $offset = ($page - 1) * $per_page;
+        
+        // Get total rows for pagination
+        $total_rows = $this->Transaksi_model->count_all_transactions();
+        
+        // Get transactions for current page
+        $data['transaksi'] = $this->Transaksi_model->get_transactions($per_page, $offset);
+        $data['pesanan'] = $this->Pesanan_model->get_unpaid_orders();
+        
+        // Pagination data
+        $data['current_page'] = $page;
+        $data['per_page'] = $per_page;
+        $data['total_rows'] = $total_rows;
+        
         $this->load->view('transaksi', $data);
     }
 

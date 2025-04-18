@@ -53,4 +53,18 @@ class Transaksi_model extends CI_Model {
         ");
         return $query->row()->total ?? 0;
     }
+
+    public function count_all_transactions() {
+        return $this->db->count_all('transaksi');
+    }
+
+    public function get_transactions($limit, $offset) {
+        $this->db->select('transaksi.*, user.nama as nama_pelanggan');
+        $this->db->from('transaksi');
+        $this->db->join('orders', 'orders.id_order = transaksi.order_id', 'left');  // Changed from id_order to order_id
+        $this->db->join('user', 'user.id_user = orders.id_user', 'left');
+        $this->db->limit($limit, $offset);
+        $this->db->order_by('transaksi.tanggal_transaksi', 'DESC');
+        return $this->db->get()->result();
+    }
 }
