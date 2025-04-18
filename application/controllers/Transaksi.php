@@ -15,11 +15,10 @@ class Transaksi extends CI_Controller {
     public function index() {
         $data['title'] = 'Dashboard Transaksi';
         $data['transaksi'] = $this->Transaksi_model->get_all();
-        $all_orders = $this->Pesanan_model->get_all_orders();
+        $all_orders = $this->Pesanan_model->get_all_pesanan();  // Changed from get_all_orders
         $filtered = [];
         if (!empty($all_orders)) {
             foreach ($all_orders as $order) {
-             
                 if ($order->stts_pembayaran === 'lunas') {
                     $filtered[] = $order;
                 }

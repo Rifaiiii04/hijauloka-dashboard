@@ -6,17 +6,27 @@ class Pesanan extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Pesanan_model');
-        $this->load->model('Produk_model');
-        $this->load->helper('url');
-        $this->load->library('form_validation');
+        $this->load->model('Produk_model');   // Changed from Product_model
+        $this->load->model('User_model');
+        $this->load->library('pagination');
     }
 
     public function index() {
         $keyword = $this->input->get('cariPesanan');
-    
-        $data['pesanan'] = $this->Pesanan_model->get_all_pesanan($keyword);
-        $data['users'] = $this->db->get('user')->result();
-        $data['products'] = $this->db->get('product')->result();
+        $page = ($this->input->get('page')) ? $this->input->get('page') : 1;
+        $per_page = 10;
+        
+        $total_rows = $this->Pesanan_model->count_all_orders($keyword);
+        $offset = ($page - 1) * $per_page;
+        
+        $data['pesanan'] = $this->Pesanan_model->get_orders($per_page, $offset, $keyword);
+        $data['products'] = $this->Produk_model->get_all();
+        $data['users'] = $this->User_model->get_all();
+        
+        // Pagination data
+        $data['current_page'] = $page;
+        $data['per_page'] = $per_page;
+        $data['total_rows'] = $total_rows;
         
         $this->load->view('pesanan', $data);
     }

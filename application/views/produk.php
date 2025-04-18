@@ -59,6 +59,10 @@ foreach ($gambarArr as $gmbr): ?>
                     <?php endforeach; ?>
                 </tbody>
             </table>
+            <!-- Add pagination links after the table -->
+            <div class="mt-4 flex justify-center">
+                <?php echo $this->pagination->create_links(); ?>
+            </div>
         </div>
     </div>
 </main>
@@ -111,7 +115,7 @@ foreach ($gambarArr as $gmbr): ?>
 </div>
 
 <!-- Modal Edit Produk -->
-<div id="modalEditProduk" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center hidden overflow-auto">
+<div id="modalEditProduk" class="fixed inset-0 flex items-center justify-center hidden overflow-auto">
     <div class="bg-white p-6 rounded-lg shadow-lg max-w-2xl mx-4 my-16">
         <h2 class="text-xl font-bold mb-4">Edit Produk</h2>
         <form id="editProdukForm" action="<?= base_url('produk/update') ?>" method="POST" enctype="multipart/form-data">

@@ -89,6 +89,33 @@
                     <?php endif; ?>
                 </tbody>
             </table>
+        <!-- Add pagination links -->
+        <div class="mt-4 flex justify-center">
+            <nav class="pagination">
+                <?php 
+                    $current_page = ($this->input->get('page')) ? $this->input->get('page') : 1;
+                    $total_pages = ceil($total_rows / $per_page);
+                    
+                    if ($total_pages > 1):
+                ?>
+                    <div class="flex gap-2">
+                        <?php if ($current_page > 1): ?>
+                            <a href="<?= site_url('pesanan?page=' . ($current_page - 1)) ?>" class="px-3 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">&laquo;</a>
+                        <?php endif; ?>
+
+                        <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                            <a href="<?= site_url('pesanan?page=' . $i) ?>" 
+                               class="px-3 py-2 <?= ($i == $current_page) ? 'bg-green-500 text-white' : 'bg-gray-200 hover:bg-gray-300' ?> rounded-lg">
+                                <?= $i ?>
+                            </a>
+                        <?php endfor; ?>
+
+                        <?php if ($current_page < $total_pages): ?>
+                            <a href="<?= site_url('pesanan?page=' . ($current_page + 1)) ?>" class="px-3 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">&raquo;</a>
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
+            </nav>
         </div>
     </div>
 </main>

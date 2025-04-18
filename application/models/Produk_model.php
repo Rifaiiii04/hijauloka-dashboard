@@ -50,4 +50,17 @@ class Produk_model extends CI_Model {
         ");
         return $query->row();
     }
+
+    public function count_all_products() {
+        return $this->db->count_all('product');
+    }
+
+    public function get_products($limit, $start) {
+        $this->db->select("product.*, GROUP_CONCAT(category.nama_kategori SEPARATOR ', ') as nama_kategori");
+        $this->db->join('product_category', 'product_category.id_product = product.id_product', 'left');
+        $this->db->join('category', 'category.id_kategori = product_category.id_kategori', 'left');
+        $this->db->group_by('product.id_product');
+        $this->db->limit($limit, $start);
+        return $this->db->get('product')->result();
+    }
 }

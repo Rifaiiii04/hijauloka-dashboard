@@ -6,19 +6,44 @@ class Produk extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Produk_model');
-        $this->load->model('Kategori_model');
-        if (!$this->session->userdata('id_admin')) {
-            echo json_encode([
-                'success' => false, 
-                'message' => 'Admin tidak ditemukan. Pastikan sudah login.'
-            ]);
-            exit;
-        }
+        $this->load->model('Kategori_model');  // Add this line
+        $this->load->library('pagination');
     }
 
     public function index() {
-        $data['produk']   = $this->Produk_model->get_all();
-        $data['kategori'] = $this->Kategori_model->get_all();
+        // Now use $this->Kategori_model instead of $this->kategori_model
+        $config['base_url'] = base_url('produk/index');
+        $config['total_rows'] = $this->Produk_model->count_all_products();
+        $config['per_page'] = 10;
+        $config['uri_segment'] = 3;
+        
+        // Pagination styling
+        $config['full_tag_open'] = '<div class="flex gap-2">';
+        $config['full_tag_close'] = '</div>';
+        $config['first_link'] = 'First';
+        $config['last_link'] = 'Last';
+        $config['first_tag_open'] = '<div class="px-3 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">';
+        $config['first_tag_close'] = '</div>';
+        $config['prev_link'] = '&laquo';
+        $config['prev_tag_open'] = '<div class="px-3 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">';
+        $config['prev_tag_close'] = '</div>';
+        $config['next_link'] = '&raquo';
+        $config['next_tag_open'] = '<div class="px-3 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">';
+        $config['next_tag_close'] = '</div>';
+        $config['last_tag_open'] = '<div class="px-3 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">';
+        $config['last_tag_close'] = '</div>';
+        $config['cur_tag_open'] = '<div class="px-3 py-2 bg-green-500 text-white rounded-lg">';
+        $config['cur_tag_close'] = '</div>';
+        $config['num_tag_open'] = '<div class="px-3 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">';
+        $config['num_tag_close'] = '</div>';
+    
+        $this->pagination->initialize($config);
+        
+        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        
+        $data['produk'] = $this->Produk_model->get_products($config['per_page'], $page);
+        $data['kategori'] = $this->Kategori_model->get_all();  // Updated this line
+        
         $this->load->view('produk', $data);
     }
 
