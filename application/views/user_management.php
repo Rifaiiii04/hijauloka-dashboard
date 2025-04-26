@@ -85,13 +85,31 @@
                     <?php endforeach; ?>
                 </tbody>
             </table>
-<div class="mt-4 flex justify-between items-center">
-    <div class="text-sm text-gray-600">
-        Menampilkan <?= count($users) ?> dari <?= $total_rows ?> pengguna
-    </div>
-    <div class="pagination">
-        <?= $pagination ?>
-    </div>
+<!-- Add after your table -->
+        <div class="mt-4 flex justify-center">
+            <nav class="pagination">
+                <?php if ($total_pages > 1): ?>
+                    <div class="flex gap-2">
+                        <?php if ($current_page > 1): ?>
+                            <a href="<?= site_url('user?page=' . ($current_page - 1)) ?>" 
+                               class="px-3 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">&laquo; Previous</a>
+                        <?php endif; ?>
+
+                        <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                            <a href="<?= site_url('user?page=' . $i) ?>" 
+                               class="px-3 py-2 <?= ($i == $current_page) ? 'bg-green-500 text-white' : 'bg-gray-200 hover:bg-gray-300' ?> rounded-lg">
+                                <?= $i ?>
+                            </a>
+                        <?php endfor; ?>
+
+                        <?php if ($current_page < $total_pages): ?>
+                            <a href="<?= site_url('user?page=' . ($current_page + 1)) ?>" 
+                               class="px-3 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">Next &raquo;</a>
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
+            </nav>
+        </div>
 </div>
         </div>
     </div>

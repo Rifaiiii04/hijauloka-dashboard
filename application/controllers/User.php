@@ -12,43 +12,24 @@ class User extends CI_Controller {
     }
 
     public function index() {
-        // Load pagination library
-        $this->load->library('pagination');
+        // Get current page from URL
+        $page = ($this->input->get('page')) ? $this->input->get('page') : 1;
+        $per_page = 10;
         
-        // Konfigurasi pagination
-        $config['base_url'] = base_url('user/index');
-        $config['total_rows'] = $this->User_model->count_all();
-        $config['per_page'] = 10; // Jumlah data per halaman
-        $config['uri_segment'] = 3;
+        // Calculate offset
+        $offset = ($page - 1) * $per_page;
         
-        // Styling pagination
-        $config['full_tag_open'] = '<nav><ul class="pagination">';
-        $config['full_tag_close'] = '</ul></nav>';
-        $config['first_link'] = 'First';
-        $config['last_link'] = 'Last';
-        $config['first_tag_open'] = '<li class="page-item">';
-        $config['first_tag_close'] = '</li>';
-        $config['prev_link'] = '&laquo';
-        $config['prev_tag_open'] = '<li class="page-item">';
-        $config['prev_tag_close'] = '</li>';
-        $config['next_link'] = '&raquo';
-        $config['next_tag_open'] = '<li class="page-item">';
-        $config['next_tag_close'] = '</li>';
-        $config['last_tag_open'] = '<li class="page-item">';
-        $config['last_tag_close'] = '</li>';
-        $config['cur_tag_open'] = '<li class="page-item active"><a class="page-link" href="#">';
-        $config['cur_tag_close'] = '</a></li>';
-        $config['num_tag_open'] = '<li class="page-item">';
-        $config['num_tag_close'] = '</li>';
-        $config['attributes'] = array('class' => 'page-link');
-
-        $this->pagination->initialize($config);
-
-        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        // Get total rows for pagination
+        $total_rows = $this->User_model->count_all();
         
-        $data['users'] = $this->User_model->get_paginated($config['per_page'], $page);
-        $data['pagination'] = $this->pagination->create_links();
-        $data['total_rows'] = $config['total_rows'];
+        // Get users for current page
+        $data['users'] = $this->User_model->get_paginated($per_page, $offset);
+        
+        // Pagination data
+        $data['current_page'] = $page;
+        $data['per_page'] = $per_page;
+        $data['total_rows'] = $total_rows;
+        $data['total_pages'] = ceil($total_rows / $per_page);
 
         $this->load->view('user_management', $data);
     }
