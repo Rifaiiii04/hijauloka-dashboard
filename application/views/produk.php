@@ -1,6 +1,55 @@
 <?php $this->load->view('includes/header'); ?>
 <?php $this->load->view('includes/sidebar'); ?>
 
+<style>
+.toggle-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.toggle-checkbox:checked + .toggle-slider {
+    background-color: #08644C;
+}
+
+.toggle-checkbox:checked + .toggle-slider:before {
+    transform: translateX(24px);
+}
+</style>
+
 <main class="flex-1 ml-64 p-6 overflow-auto">
     <div class="mt-10 bg-white shadow-lg rounded-lg p-6">
         <div class="flex justify-between items-center mb-6">
@@ -25,11 +74,11 @@
                     <tr>
                         <th class="border border-gray-300 p-2 text-white">No</th>
                         <th class="border border-gray-300 p-2 text-white">Nama</th>
-                        <!-- <th class="border border-gray-300 p-2 text-white">Deskripsi</th> -->
                         <th class="border border-gray-300 p-2 text-white">Kategori</th>
                         <th class="border border-gray-300 p-2 text-white">Harga</th>
                         <th class="border border-gray-300 p-2 text-white">Stok</th>
                         <th class="border border-gray-300 p-2 text-white">Gambar</th>
+                        <th class="border border-gray-300 p-2 text-white">Featured</th>
                         <th class="border border-gray-300 p-2 text-white">Aksi</th>
                     </tr>
                 </thead>
@@ -38,7 +87,6 @@
                     <tr class="hover:bg-gray-100 max-h-14">
                         <td class="border border-gray-300 p-2"><?= $no++; ?></td>
                         <td class="border border-gray-300 p-2"><?= $p->nama_product; ?></td>
-                        <!-- <td class="border border-gray-300 p-2 max-w-32 max-h-5 overflow-x-auto"><?= $p->desk_product; ?></td> -->
                         <td class="border border-gray-300 p-2"><?= $p->nama_kategori; ?></td>
                         <td class="border border-gray-300 p-2">Rp <?= number_format($p->harga, 2, ',', '.'); ?></td>
                         <td class="border border-gray-300 p-2"><?= $p->stok; ?></td>
@@ -51,9 +99,55 @@ foreach ($gambarArr as $gmbr): ?>
 
 
                         </td>
+                       
                         <td class="border border-gray-300 p-2">
-                            <button onclick="editProduk(<?= $p->id_product; ?>)" class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600"><i class="fa-solid fa-pen-to-square"></i></button>
-                            <button onclick="hapusProduk(<?= $p->id_product; ?>)" class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 ml-2"><i class="fa-solid fa-trash"></i></button>
+                            <button 
+                                onclick="toggleFeatured(<?= $p->id_product ?>, this)"
+                                data-featured="<?= isset($p->featured_position) ? '1' : '0' ?>"
+                                class="w-full px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ease-in-out <?= isset($p->featured_position) ? 'bg-green-500 text-white hover:bg-green-600' : 'bg-gray-200 text-gray-700 hover:bg-gray-300' ?>">
+                                <?= isset($p->featured_position) ? 'Featured' : 'Not Featured' ?>
+                            </button>
+                        </td>
+                       
+<!-- Add this JavaScript function -->
+<script>
+function toggleFeatured(productId, button) {
+    const isFeatured = button.getAttribute('data-featured') === '1';
+    const action = isFeatured ? 'remove_featured' : 'make_featured';
+    
+    fetch(`<?= base_url('produk/') ?>${action}/${productId}`, {
+        method: 'POST'
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            button.setAttribute('data-featured', isFeatured ? '0' : '1');
+            if (isFeatured) {
+                button.classList.remove('bg-green-500', 'text-white', 'hover:bg-green-600');
+                button.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+                button.textContent = 'Not Featured';
+            } else {
+                button.classList.remove('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+                button.classList.add('bg-green-500', 'text-white', 'hover:bg-green-600');
+                button.textContent = 'Featured';
+            }
+        } else {
+            alert(data.message || 'Gagal mengubah status featured');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Terjadi kesalahan saat mengubah status featured');
+    });
+}
+</script>
+<td>
+                            <button onclick="editProduk(<?= $p->id_product; ?>)" class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <button onclick="hapusProduk(<?= $p->id_product; ?>)" class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 ml-2">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
                         </td>
                     </tr>
                     <?php endforeach; ?>
@@ -239,5 +333,82 @@ document.getElementById('searchInput').addEventListener('input', function() {
         }
     }
 });
+
+function makeFeatured(productId) {
+    if (confirm('Jadikan produk ini sebagai featured product?')) {
+        fetch(`<?= base_url('produk/make_featured/') ?>${productId}`, {
+            method: 'POST'
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                location.reload();
+            } else {
+                alert(data.message || 'Gagal menambahkan ke featured products');
+            }
+        });
+    }
+}
+
+function removeFeatured(productId) {
+    if (confirm('Hapus produk ini dari featured products?')) {
+        fetch(`<?= base_url('produk/remove_featured/') ?>${productId}`, {
+            method: 'POST'
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                location.reload();
+            } else {
+                alert(data.message || 'Gagal menghapus dari featured products');
+            }
+        });
+    }
+}
 </script>
+
+<style>
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #08644C;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+</style>
 

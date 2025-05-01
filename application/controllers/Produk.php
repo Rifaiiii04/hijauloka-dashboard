@@ -215,4 +215,22 @@ class Produk extends CI_Controller {
 
         redirect('produk');
     }
+
+    public function make_featured($id_product) {
+        $result = $this->Produk_model->make_featured($id_product);
+        header('Content-Type: application/json');
+        echo json_encode([
+            'success' => $result,
+            'message' => $result ? 'Produk berhasil dijadikan featured' : 'Gagal mengatur featured product'
+        ]);
+    }
+
+    public function remove_featured($id_product) {
+        $result = $this->Produk_model->remove_featured($id_product);
+        header('Content-Type: application/json');
+        echo json_encode([
+            'success' => $result,
+            'message' => $result ? 'Produk berhasil dihapus dari featured' : 'Gagal menghapus featured product'
+        ]);
+    }
 }
