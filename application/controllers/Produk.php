@@ -217,20 +217,62 @@ class Produk extends CI_Controller {
     }
 
     public function make_featured($id_product) {
-        $result = $this->Produk_model->make_featured($id_product);
+        $response = array();
+        
+        try {
+            // Get the next available position
+            $this->db->select_max('position');
+            $query = $this->db->get('featured_products');
+            $next_position = ($query->row()->position ?? 0) + 1;
+            
+            $data = array(
+                'id_product' => $id_product,
+                'position' => $next_position
+            );
+            
+            if ($this->db->insert('featured_products', $data)) {
+                $response['success'] = true;
+                $response['message'] = 'Product successfully marked as featured';
+            } else {
+                throw new Exception('Database insert failed');
+            }
+        } catch (Exception $e) {
+            $response['success'] = false;
+            $response['message'] = 'Failed to mark product as featured: ' . $e->getMessage();
+        }
+        
         header('Content-Type: application/json');
-        echo json_encode([
-            'success' => $result,
-            'message' => $result ? 'Produk berhasil dijadikan featured' : 'Gagal mengatur featured product'
-        ]);
+        echo json_encode($response);
     }
 
     public function remove_featured($id_product) {
-        $result = $this->Produk_model->remove_featured($id_product);
+        $response = array();
+        
+        try {
+            $this->db->where('id_product', $id_product);
+            if ($this->db->delete('featured_products')) {
+                // Reorder remaining positions
+                $this->db->order_by('position', 'ASC');
+                $featured = $this->db->get('featured_products')->result();
+                
+                $position = 1;
+                foreach ($featured as $item) {
+                    $this->db->where('id_featured', $item->id_featured);
+                    $this->db->update('featured_products', ['position' => $position]);
+                    $position++;
+                }
+                
+                $response['success'] = true;
+                $response['message'] = 'Product successfully removed from featured';
+            } else {
+                throw new Exception('Database delete failed');
+            }
+        } catch (Exception $e) {
+            $response['success'] = false;
+            $response['message'] = 'Failed to remove product from featured: ' . $e->getMessage();
+        }
+        
         header('Content-Type: application/json');
-        echo json_encode([
-            'success' => $result,
-            'message' => $result ? 'Produk berhasil dihapus dari featured' : 'Gagal menghapus featured product'
-        ]);
+        echo json_encode($response);
     }
 }

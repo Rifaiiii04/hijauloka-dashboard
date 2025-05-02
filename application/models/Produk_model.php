@@ -58,12 +58,14 @@ class Produk_model extends CI_Model {
     }
 
     public function get_products($limit, $start) {
-        $this->db->select("product.*, GROUP_CONCAT(category.nama_kategori SEPARATOR ', ') as nama_kategori");
-        $this->db->join('product_category', 'product_category.id_product = product.id_product', 'left');
-        $this->db->join('category', 'category.id_kategori = product_category.id_kategori', 'left');
-        $this->db->group_by('product.id_product');
+        $this->db->select('p.*, k.nama_kategori, fp.position as featured_position');
+        $this->db->from('product p');
+        $this->db->join('product_category pc', 'p.id_product = pc.id_product', 'left');
+        $this->db->join('category k', 'pc.id_kategori = k.id_kategori', 'left');  // Changed 'kategori' to 'category'
+        $this->db->join('featured_products fp', 'p.id_product = fp.id_product', 'left');
         $this->db->limit($limit, $start);
-        return $this->db->get('product')->result();
+        $this->db->group_by('p.id_product');
+        return $this->db->get()->result();
     }
 
     public function make_featured($id_product) {

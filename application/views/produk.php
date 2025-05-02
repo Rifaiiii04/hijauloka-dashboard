@@ -105,32 +105,30 @@ foreach ($gambarArr as $gmbr): ?>
                                 onclick="toggleFeatured(<?= $p->id_product ?>, this)"
                                 data-featured="<?= isset($p->featured_position) ? '1' : '0' ?>"
                                 class="w-full px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ease-in-out <?= isset($p->featured_position) ? 'bg-green-500 text-white hover:bg-green-600' : 'bg-gray-200 text-gray-700 hover:bg-gray-300' ?>">
-                                <?= isset($p->featured_position) ? 'Featured' : 'Not Featured' ?>
+                                <?= isset($p->featured_position) ? 'Featured (Position: ' . $p->featured_position . ')' : 'Not Featured' ?>
                             </button>
                         </td>
-                       
-<!-- Add this JavaScript function -->
+
+<!-- Update the JavaScript function -->
 <script>
 function toggleFeatured(productId, button) {
     const isFeatured = button.getAttribute('data-featured') === '1';
     const action = isFeatured ? 'remove_featured' : 'make_featured';
     
     fetch(`<?= base_url('produk/') ?>${action}/${productId}`, {
-        method: 'POST'
+        method: 'POST',
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest'
+        }
     })
     .then(response => response.json())
     .then(data => {
         if (data.success) {
+            // Update button without page reload
             button.setAttribute('data-featured', isFeatured ? '0' : '1');
-            if (isFeatured) {
-                button.classList.remove('bg-green-500', 'text-white', 'hover:bg-green-600');
-                button.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
-                button.textContent = 'Not Featured';
-            } else {
-                button.classList.remove('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
-                button.classList.add('bg-green-500', 'text-white', 'hover:bg-green-600');
-                button.textContent = 'Featured';
-            }
+            button.className = `w-full px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ease-in-out ${isFeatured ? 'bg-gray-200 text-gray-700 hover:bg-gray-300' : 'bg-green-500 text-white hover:bg-green-600'}`;
+            button.textContent = isFeatured ? 'Not Featured' : 'Featured';
+            window.location.reload(); // Reload to update positions
         } else {
             alert(data.message || 'Gagal mengubah status featured');
         }
@@ -334,37 +332,8 @@ document.getElementById('searchInput').addEventListener('input', function() {
     }
 });
 
-function makeFeatured(productId) {
-    if (confirm('Jadikan produk ini sebagai featured product?')) {
-        fetch(`<?= base_url('produk/make_featured/') ?>${productId}`, {
-            method: 'POST'
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                location.reload();
-            } else {
-                alert(data.message || 'Gagal menambahkan ke featured products');
-            }
-        });
-    }
-}
-
-function removeFeatured(productId) {
-    if (confirm('Hapus produk ini dari featured products?')) {
-        fetch(`<?= base_url('produk/remove_featured/') ?>${productId}`, {
-            method: 'POST'
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                location.reload();
-            } else {
-                alert(data.message || 'Gagal menghapus dari featured products');
-            }
-        });
-    }
-}
+// Remove the makeFeatured and removeFeatured functions here
+// Keep the remaining styles below
 </script>
 
 <style>
