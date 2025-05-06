@@ -9,7 +9,6 @@
         <strong>Total Bayar:</strong> 
         <?= !empty($transaksi->total_bayar) ? 'Rp ' . number_format($transaksi->total_bayar, 0, ',', '.') : 'Tidak tersedia'; ?>
     </p>
-    <p><strong>Status Pembayaran:</strong> <?= $transaksi->status_pembayaran; ?></p>
 
     <hr class="my-4">
 

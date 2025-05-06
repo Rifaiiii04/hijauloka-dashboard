@@ -37,7 +37,6 @@
                         <th class="border border-gray-300 p-2 text-white">Tanggal</th>
                         <th class="border border-gray-300 p-2 text-white">Nama Pelanggan</th>
                         <th class="border border-gray-300 p-2 text-white">Total Bayar</th>
-                        <th class="border border-gray-300 p-2 text-white">Status Pembayaran</th>
                         <th class="border border-gray-300 p-2 text-white">Aksi</th>
                     </tr>
                 </thead>
@@ -52,15 +51,6 @@
                                 <td class="border border-gray-300 p-2"><?= isset($t->nama_pelanggan) ? $t->nama_pelanggan : 'Tidak diketahui'; ?></td>
                                 <td class="border border-gray-300 p-2">
                                     <?= !empty($t->total_bayar) ? 'Rp ' . number_format($t->total_bayar, 0, ',', '.') : 'Total tidak tersedia'; ?>
-                                </td>
-                                <td class="border border-gray-300 p-2">
-                                    <?php 
-                                        $status = !empty($t->status_pembayaran) ? $t->status_pembayaran : 'Tidak tersedia';
-                                        $status_class = ($status === 'lunas') ? 'bg-green-500 p-3 text-white' : 'bg-red-500 p-3 text-white';
-                                    ?>
-                                    <span class="px-2 py-1 rounded-full <?= $status_class; ?>">
-                                        <?= htmlspecialchars($status); ?>
-                                    </span>
                                 </td>
                                 <td class="border border-gray-300 p-2">
                                     <button onclick="openDetailModal(<?= isset($t->id_transaksi) ? $t->id_transaksi : $t->id_order; ?>)" class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600"><i class="fa-solid fa-circle-info"></i></button>

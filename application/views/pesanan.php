@@ -16,10 +16,7 @@
 <!-- Konten Utama -->
 <main class="flex-1 ml-64 p-6 overflow-auto">
     <div class="flex justify-between items-center mb-6">
-        <h1 class="text-3xl font-extrabold text-gray-800">Daftar Pesanan</h1>
-        <button onclick="openModal()" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">
-        <i class="fa-solid fa-plus"></i>  Tambah Pesanan
-        </button>
+        <h1 class="text-3xl font-extrabold text-gray-800">Dashboard Pesanan</h1>
     </div>
 <form action="<?= site_url('pesanan') ?>" method="get">
     <div class="container w-[340px] h-14 flex">
@@ -43,7 +40,6 @@
                         <th class="border border-gray-300 p-2 text-white">Tanggal Pesan</th>
                         <th class="border border-gray-300 p-2 text-white">Total Harga</th>
                         <th class="border border-gray-300 p-2 text-white">Status Pesanan</th>
-                        <th class="border border-gray-300 p-2 text-white">Status Pembayaran</th>
                         <th class="border border-gray-300 p-2 text-white">Aksi</th>
                     </tr>
                 </thead>
@@ -67,11 +63,6 @@
                                 <td class="border border-gray-300 p-2"><?= date('d-m-Y H:i', strtotime($p->tgl_pemesanan)); ?></td>
                                 <td class="border border-gray-300 p-2">Rp<?= number_format($p->total_harga ?? 0, 0, ',', '.'); ?></td>
                                 <td class="border border-gray-300 p-2"><?= ucfirst($p->stts_pemesanan ?? 'pending'); ?></td>
-                                <td class="border border-gray-300 p-2">
-                                    <span class="px-2 py-1 rounded-full <?php echo ($p->stts_pembayaran === 'lunas') ? 'bg-green-500 p-3 text-white' : 'bg-red-500 p-3 text-white'; ?>">
-                                        <?= htmlspecialchars($p->stts_pembayaran); ?>
-                                    </span>
-                                </td>
                                 <td class="border border-gray-300 p-2">
                                     <button onclick="openEditModal('<?= $p->id_order; ?>')" class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600">
                                     <i class="fa-solid fa-pen-to-square"></i>
@@ -152,7 +143,7 @@
             <button type="button" onclick="tambahProduk()" class="bg-blue-500 text-white px-3 py-1 rounded-md mb-3">
                 + Tambah Produk
             </button>
-            <!-- Status Pesanan & Pembayaran -->
+            <!-- Status Pesanan -->
             <label class="block mb-2">Status Pesanan</label>
             <select name="stts_pemesanan" class="w-full border p-2 rounded mb-3" required>
                 <option value="pending">Pending</option>
@@ -160,11 +151,6 @@
                 <option value="dikirim">Dikirim</option>
                 <option value="selesai">Selesai</option>
                 <option value="dibatalkan">Dibatalkan</option>
-            </select>
-            <label class="block mb-2">Status Pembayaran</label>
-            <select name="stts_pembayaran" class="w-full border p-2 rounded mb-3" required>
-                <option value="belum_dibayar">Belum Dibayar</option>
-                <option value="lunas">Lunas</option>
             </select>
             <div class="flex justify-end space-x-2">
                 <button type="button" onclick="closeModal()" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">Batal</button>
@@ -187,11 +173,6 @@
                 <option value="dikirim">Dikirim</option>
                 <option value="selesai">Selesai</option>
                 <option value="dibatalkan">Dibatalkan</option>
-            </select>
-            <label class="block mb-2">Status Pembayaran</label>
-            <select name="stts_pembayaran" id="edit_status_pembayaran" class="w-full border p-2 rounded mb-3" required>
-                <option value="belum_dibayar">Belum Dibayar</option>
-                <option value="lunas">Lunas</option>
             </select>
             <div class="flex justify-end space-x-2">
                 <button type="button" onclick="closeEditModal()" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">Batal</button>
@@ -244,7 +225,6 @@
             .then(data => {
                 document.getElementById('edit_id_order').value = id_order;
                 document.getElementById('edit_status').value = data.stts_pemesanan;
-                document.getElementById('edit_status_pembayaran').value = data.stts_pembayaran;
                 document.getElementById('modalEditPesanan').classList.remove('hidden');
             })
             .catch(error => {
