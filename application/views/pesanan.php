@@ -1,221 +1,289 @@
 <?php $this->load->view('includes/header'); ?>
 <?php $this->load->view('includes/sidebar'); ?>
 
-<!-- Flashdata Alert -->
-<?php if($this->session->flashdata('error')): ?>
-    <script>
-        alert("<?= $this->session->flashdata('error'); ?>");
-    </script>
-<?php endif; ?>
-<?php if($this->session->flashdata('success')): ?>
-    <script>
-        alert("<?= $this->session->flashdata('success'); ?>");
-    </script>
-<?php endif; ?>
-
-<!-- Konten Utama -->
-<main class="flex-1 ml-64 p-6 overflow-auto">
-    <div class="flex justify-between items-center mb-6">
-        <h1 class="text-3xl font-extrabold text-gray-800">Dashboard Pesanan</h1>
+<!-- Toast Notification -->
+<?php if($this->session->flashdata('error') || $this->session->flashdata('success')): ?>
+<div id="toast" class="fixed top-4 right-4 z-50 bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-300 opacity-100 translate-y-0">
+    <div class="flex items-center p-4 <?= $this->session->flashdata('error') ? 'bg-red-50 border-l-4 border-red-500' : 'bg-green-50 border-l-4 border-green-500' ?>">
+        <div class="flex-shrink-0 mr-3">
+            <i class="fas <?= $this->session->flashdata('error') ? 'fa-exclamation-circle text-red-500' : 'fa-check-circle text-green-500' ?>"></i>
+        </div>
+        <div class="flex-1">
+            <p class="text-sm font-medium <?= $this->session->flashdata('error') ? 'text-red-800' : 'text-green-800' ?>">
+                <?= $this->session->flashdata('error') ?: $this->session->flashdata('success') ?>
+            </p>
+        </div>
+        <div class="ml-3">
+            <button onclick="document.getElementById('toast').classList.add('opacity-0', 'translate-y-[-20px]')" class="text-gray-400 hover:text-gray-500">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
     </div>
-<form action="<?= site_url('pesanan') ?>" method="get">
-    <div class="container w-[340px] h-14 flex">
-        <input type="text" 
-               class="w-full h-11 border-2 border-black/60 rounded-lg p-2" 
-               placeholder="Cari Pesanan..." 
-               name="cariPesanan"
-               value="<?= isset($_GET['cariPesanan']) ? htmlspecialchars($_GET['cariPesanan']) : '' ?>">
-        <button class="text-xl font-semibold ml-2 h-11 bg-green-600 text-white p-2 text-center rounded-lg hover:bg-green-700 transition duration-300" 
-                type="submit">Cari</button>
-    </div>
-</form>
-    <div class="bg-white shadow-lg rounded-xl p-6">
-        <div class="overflow-x-auto">
-            <table class="w-full border-collapse border border-gray-300 text-center">
-                <thead style="background-color: #08644C;">
-                    <tr>
-                        <th class="border border-gray-300 p-2 text-white">No</th>
-                        <th class="border border-gray-300 p-2 text-white">Nama Pelanggan</th>
-                        <th class="border border-gray-300 p-2 text-white">Produk</th>
-                        <th class="border border-gray-300 p-2 text-white">Tanggal Pesan</th>
-                        <th class="border border-gray-300 p-2 text-white">Total Harga</th>
-                        <th class="border border-gray-300 p-2 text-white">Status Pesanan</th>
-                        <th class="border border-gray-300 p-2 text-white">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php if (!empty($pesanan)): ?>
-                        <?php $no = 1; foreach ($pesanan as $p): ?>
-                            <tr class="hover:bg-gray-100">
-                                <td class="border border-gray-300 p-2"><?= $no++; ?></td>
-                                <td class="border border-gray-300 p-2"><?= isset($p->nama_pelanggan) ? $p->nama_pelanggan : 'N/A'; ?></td>
-                                <td class="border border-gray-300 p-2">
-                                    <?php if (!empty($p->produk)): ?>
-                                        <ul>
-                                            <?php foreach ($p->produk as $prod): ?>
-                                                <li><?= $prod->nama_produk ?? 'N/A'; ?> (<?= $prod->quantity ?? 0; ?> pcs) - Rp<?= number_format($prod->subtotal ?? 0, 0, ',', '.'); ?></li>
-                                            <?php endforeach; ?>
-                                        </ul>
-                                    <?php else: ?>
-                                        <span>Tidak ada produk</span>
-                                    <?php endif; ?>
-                                </td>
-                                <td class="border border-gray-300 p-2"><?= date('d-m-Y H:i', strtotime($p->tgl_pemesanan)); ?></td>
-                                <td class="border border-gray-300 p-2">Rp<?= number_format($p->total_harga ?? 0, 0, ',', '.'); ?></td>
-                                <td class="border border-gray-300 p-2"><?= ucfirst($p->stts_pemesanan ?? 'pending'); ?></td>
-                                <td class="border border-gray-300 p-2">
-                                    <button onclick="openEditModal('<?= $p->id_order; ?>')" class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600">
-                                    <i class="fa-solid fa-pen-to-square"></i>
-                                    </button>
-                                    <a href="<?= site_url('pesanan/delete/' . $p->id_order); ?>" class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 ml-2" onclick="return confirm('Hapus pesanan ini?')">
-                                    <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    <?php else: ?>
-                        <tr>
-                            <td colspan="8" class="border border-gray-300 p-2 text-center">Tidak ada pesanan.</td>
-                        </tr>
-                    <?php endif; ?>
-                </tbody>
-            </table>
-        <!-- Add pagination links -->
-        <div class="mt-4 flex justify-center">
-            <nav class="pagination">
-                <?php 
-                    $current_page = ($this->input->get('page')) ? $this->input->get('page') : 1;
-                    $total_pages = ceil($total_rows / $per_page);
-                    
-                    if ($total_pages > 1):
-                ?>
-                    <div class="flex gap-2">
-                        <?php if ($current_page > 1): ?>
-                            <a href="<?= site_url('pesanan?page=' . ($current_page - 1)) ?>" class="px-3 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">&laquo;</a>
-                        <?php endif; ?>
+</div>
+<script>
+    setTimeout(() => {
+        const toast = document.getElementById('toast');
+        if (toast) {
+            toast.classList.add('opacity-0', 'translate-y-[-20px]');
+            setTimeout(() => toast.remove(), 300);
+        }
+    }, 5000);
+</script>
+<?php endif; ?>
 
-                        <?php for ($i = 1; $i <= $total_pages; $i++): ?>
-                            <a href="<?= site_url('pesanan?page=' . $i) ?>" 
-                               class="px-3 py-2 <?= ($i == $current_page) ? 'bg-green-500 text-white' : 'bg-gray-200 hover:bg-gray-300' ?> rounded-lg">
-                                <?= $i ?>
-                            </a>
-                        <?php endfor; ?>
-
-                        <?php if ($current_page < $total_pages): ?>
-                            <a href="<?= site_url('pesanan?page=' . ($current_page + 1)) ?>" class="px-3 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">&raquo;</a>
-                        <?php endif; ?>
+<!-- Main Content -->
+<main class="flex-1 ml-64 p-6 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <header class="mb-6">
+            <h1 class="text-2xl font-bold text-gray-800">Pesanan</h1>
+        </header>
+        
+        <!-- Stats Overview -->
+        <div class="grid grid-cols-4 gap-4 mb-6">
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                <div class="p-4 bg-green-500 text-white">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-medium">Total Pesanan</h3>
+                        <i class="fas fa-shopping-bag"></i>
                     </div>
+                    <p class="text-2xl font-bold mt-1"><?= $total_rows ?></p>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                <div class="p-4 bg-red-500 text-white">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-medium">Pending</h3>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <p class="text-2xl font-bold mt-1"><?= count(array_filter($pesanan, function($p) { return $p->stts_pemesanan === 'pending'; })) ?></p>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                <div class="p-4 bg-orange-500 text-white">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-medium">Dikirim</h3>
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <p class="text-2xl font-bold mt-1"><?= count(array_filter($pesanan, function($p) { return $p->stts_pemesanan === 'dikirim'; })) ?></p>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                <div class="p-4 bg-blue-500 text-white">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-medium">Selesai</h3>
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <p class="text-2xl font-bold mt-1"><?= count(array_filter($pesanan, function($p) { return $p->stts_pemesanan === 'selesai'; })) ?></p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Filters -->
+        <div class="bg-white rounded-lg shadow-sm mb-6">
+            <div class="p-4 border-b border-gray-100">
+                <h2 class="font-medium text-gray-700">Filter Pesanan</h2>
+            </div>
+            <div class="p-4">
+                <div class="flex flex-wrap gap-4">
+                    <div class="flex-1 min-w-[200px]">
+                        <div class="relative">
+                            <input type="text" 
+                                id="searchInput"
+                                class="w-full h-10 pl-10 pr-4 rounded-lg border border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-500" 
+                                placeholder="Cari nama pelanggan atau ID...">
+                            <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full sm:w-auto">
+                        <select id="statusFilter" class="w-full h-10 px-3 rounded-lg border border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-500">
+                            <option value="">Semua Status</option>
+                            <option value="pending">Pending</option>
+                            <option value="diproses">Diproses</option>
+                            <option value="dikirim">Dikirim</option>
+                            <option value="selesai">Selesai</option>
+                            <option value="dibatalkan">Dibatalkan</option>
+                        </select>
+                    </div>
+                    
+                    <button id="searchBtn" class="px-4 h-10 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors">
+                        <i class="fas fa-filter mr-2"></i>Filter
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Orders List -->
+        <?php if (!empty($pesanan)): ?>
+            <div class="flex flex-wrap gap-4 mb-6">
+                <?php foreach ($pesanan as $p): ?>
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-all duration-200 w-72">
+                        <!-- Order Header -->
+                        <div class="p-3 <?= getStatusColor(strtolower($p->stts_pemesanan ?? 'pending')) ?>">
+                            <div class="flex justify-between items-center">
+                                <h3 class="font-bold text-white text-base">Order #<?= $p->id_order ?></h3>
+                                <span class="px-2 py-1 rounded-full bg-white/20 text-white text-xs font-medium">
+                                    <?= ucfirst($p->stts_pemesanan ?? 'pending') ?>
+                                </span>
+                            </div>
+                            <p class="text-white/80 text-sm mt-1"><?= date('d M Y', strtotime($p->tgl_pemesanan)) ?></p>
+                        </div>
+                        
+                        <!-- Order Content -->
+                        <div class="p-4">
+                            <!-- Customer -->
+                            <div class="flex items-start mb-3">
+                                <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mr-2 mt-1">
+                                    <i class="fas fa-user text-gray-500"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500">Pelanggan</p>
+                                    <p class="font-medium"><?= isset($p->nama_pelanggan) ? $p->nama_pelanggan : 'N/A' ?></p>
+                                </div>
+                            </div>
+                            
+                            <!-- Products Summary -->
+                            <div class="mb-3">
+                                <p class="text-xs text-gray-500 mb-1">Produk (<?= count($p->produk ?? []) ?>)</p>
+                                <?php if (!empty($p->produk)): ?>
+                                    <div class="space-y-2">
+                                        <?php foreach ($p->produk as $index => $prod): ?>
+                                            <?php if ($index < 2): ?>
+                                                <div class="flex justify-between items-center">
+                                                    <div>
+                                                        <p class="font-medium"><?= $prod->nama_produk ?? 'N/A' ?> (<?= $prod->quantity ?? 0 ?>)</p>
+                                                    </div>
+                                                    <p class="font-medium">Rp<?= number_format($prod->subtotal ?? 0, 0, ',', '.') ?></p>
+                                                </div>
+                                            <?php endif; ?>
+                                        <?php endforeach; ?>
+                                        
+                                        <?php if (count($p->produk) > 2): ?>
+                                            <p class="text-sm text-gray-500 italic">+ <?= count($p->produk) - 2 ?> produk lainnya</p>
+                                        <?php endif; ?>
+                                    </div>
+                                <?php else: ?>
+                                    <p class="text-sm text-gray-500">Tidak ada produk</p>
+                                <?php endif; ?>
+                            </div>
+                            
+                            <!-- Total -->
+                            <div class="flex justify-between items-center pt-3 mt-2 border-t border-gray-100">
+                                <div>
+                                    <p class="text-xs text-gray-500">Total</p>
+                                    <p class="text-lg font-bold">Rp<?= number_format($p->total_harga ?? 0, 0, ',', '.') ?></p>
+                                </div>
+                                
+                                <div class="flex gap-2">
+                                    <button onclick="openEditModal('<?= $p->id_order ?>')" 
+                                            class="bg-green-500 text-white p-2 rounded-full hover:bg-green-600 transition-colors">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <a href="<?= site_url('pesanan/delete/' . $p->id_order) ?>" 
+                                       class="bg-red-500 text-white p-2 rounded-full hover:bg-red-600 transition-colors" 
+                                       onclick="return confirm('Apakah Anda yakin ingin menghapus pesanan ini?')">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php else: ?>
+            <div class="bg-white rounded-lg shadow-sm p-8 text-center mb-6">
+                <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-shopping-cart text-gray-400 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-700 mb-2">Belum Ada Pesanan</h3>
+                <p class="text-gray-500 max-w-md mx-auto">Pesanan baru akan muncul di sini secara otomatis ketika pelanggan melakukan pemesanan.</p>
+            </div>
+        <?php endif; ?>
+        
+        <!-- Pagination -->
+        <?php 
+            $current_page = ($this->input->get('page')) ? $this->input->get('page') : 1;
+            $total_pages = ceil($total_rows / $per_page);
+            
+            if ($total_pages > 1):
+        ?>
+        <div class="flex justify-center">
+            <nav class="inline-flex rounded-lg shadow-sm">
+                <?php if ($current_page > 1): ?>
+                    <a href="<?= site_url('pesanan?page=' . ($current_page - 1)) ?>" class="px-4 py-2 bg-white rounded-l-lg border border-gray-200 hover:bg-gray-50">&laquo;</a>
+                <?php endif; ?>
+
+                <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                    <a href="<?= site_url('pesanan?page=' . $i) ?>" 
+                       class="px-4 py-2 <?= ($i == $current_page) ? 'bg-green-500 text-white border-green-500' : 'bg-white hover:bg-gray-50 border-gray-200' ?> <?= ($i == 1 && $current_page == 1) ? 'rounded-l-lg' : '' ?> <?= ($i == $total_pages && $current_page == $total_pages) ? 'rounded-r-lg' : '' ?> border <?= ($i != 1) ? 'border-l-0' : '' ?>">
+                        <?= $i ?>
+                    </a>
+                <?php endfor; ?>
+
+                <?php if ($current_page < $total_pages): ?>
+                    <a href="<?= site_url('pesanan?page=' . ($current_page + 1)) ?>" class="px-4 py-2 bg-white rounded-r-lg border border-l-0 border-gray-200 hover:bg-gray-50">&raquo;</a>
                 <?php endif; ?>
             </nav>
         </div>
+        <?php endif; ?>
     </div>
 </main>
 
-<!-- Modal Tambah Pesanan -->
-<div id="modalPesanan" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-    <div class="bg-white p-6 rounded-lg shadow-lg w-96">
-        <h2 class="text-xl font-bold mb-4">Tambah Pesanan</h2>
-        <form id="formTambahPesanan" action="<?= site_url('pesanan/create'); ?>" method="POST">
-            <input type="hidden" name="id_admin" value="<?= $this->session->userdata('id_admin'); ?>">
-            <!-- Field Pelanggan -->
-            <label class="block mb-2">Nama Pelanggan</label>
-            <select name="id_user" class="w-full border p-2 rounded mb-3" required>
-                <?php foreach ($users as $user): ?>
-                    <option value="<?= $user->id_user; ?>"><?= $user->nama; ?></option>
-                <?php endforeach; ?>
-            </select>
-            <!-- Daftar Produk (Dinamis) -->
-            <div id="produkContainer">
-                <div class="produk-item mb-3">
-                    <label class="block mb-2">Produk</label>
-                    <select name="produk[]" class="w-full border p-2 rounded mb-2" required>
-                        <?php foreach ($products as $product): ?>
-                            <option value="<?= $product->id_product; ?>">
-                                <?= $product->nama_product ?> - Rp<?= number_format($product->harga, 0, ',', '.'); ?>
-                            </option>
-                        <?php endforeach; ?>
+<!-- Modal Edit Status -->
+<div id="modalEditPesanan" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div class="bg-white rounded-lg shadow-lg w-96 max-w-full mx-4 transform transition-all">
+        <div class="p-5 border-b border-gray-100">
+            <h2 class="text-xl font-bold text-gray-800">Update Status Pesanan</h2>
+        </div>
+        
+        <form id="editForm" method="POST" action="<?= site_url('pesanan/update_status'); ?>">
+            <div class="p-5">
+                <input type="hidden" name="id_order" id="edit_id_order">
+                
+                <div class="mb-4">
+                    <label class="block mb-2 font-medium text-gray-700">Status Pesanan</label>
+                    <select name="stts_pemesanan" id="edit_status" class="w-full p-3 rounded-lg border border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-500" required>
+                        <option value="pending">Pending</option>
+                        <option value="diproses">Diproses</option>
+                        <option value="dikirim">Dikirim</option>
+                        <option value="selesai">Selesai</option>
+                        <option value="dibatalkan">Dibatalkan</option>
                     </select>
-                    <label class="block mb-2">Jumlah</label>
-                    <input type="number" name="jumlah[]" class="w-full border p-2 rounded" required>
                 </div>
             </div>
-            <!-- Tombol Tambah Produk -->
-            <button type="button" onclick="tambahProduk()" class="bg-blue-500 text-white px-3 py-1 rounded-md mb-3">
-                + Tambah Produk
-            </button>
-            <!-- Status Pesanan -->
-            <label class="block mb-2">Status Pesanan</label>
-            <select name="stts_pemesanan" class="w-full border p-2 rounded mb-3" required>
-                <option value="pending">Pending</option>
-                <option value="diproses">Diproses</option>
-                <option value="dikirim">Dikirim</option>
-                <option value="selesai">Selesai</option>
-                <option value="dibatalkan">Dibatalkan</option>
-            </select>
-            <div class="flex justify-end space-x-2">
-                <button type="button" onclick="closeModal()" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">Batal</button>
-                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">Simpan</button>
-            </div>
-        </form>
-    </div>
-</div>
-
-<!-- Modal Edit Status Pesanan -->
-<div id="modalEditPesanan" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-    <div class="bg-white p-6 rounded-lg shadow-lg w-96">
-        <h2 class="text-xl font-bold mb-4">Edit Status Pesanan</h2>
-        <form id="editForm" method="POST" action="<?= site_url('pesanan/update_status'); ?>">
-            <input type="hidden" name="id_order" id="edit_id_order">
-            <label class="block mb-2">Status Pesanan</label>
-            <select name="stts_pemesanan" id="edit_status" class="w-full border p-2 rounded mb-3" required>
-                <option value="pending">Pending</option>
-                <option value="diproses">Diproses</option>
-                <option value="dikirim">Dikirim</option>
-                <option value="selesai">Selesai</option>
-                <option value="dibatalkan">Dibatalkan</option>
-            </select>
-            <div class="flex justify-end space-x-2">
-                <button type="button" onclick="closeEditModal()" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">Batal</button>
-                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">Simpan</button>
+            
+            <div class="p-5 border-t border-gray-100 flex justify-end space-x-3">
+                <button type="button" onclick="closeEditModal()" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+                    Batal
+                </button>
+                <button type="submit" class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors">
+                    Simpan Perubahan
+                </button>
             </div>
         </form>
     </div>
 </div>
 
 <script>
-    // Fungsi untuk menambah field produk
-    function tambahProduk() {
-        const container = document.getElementById('produkContainer');
-        const newItem = document.createElement('div');
-        newItem.className = 'produk-item mb-3';
-        newItem.innerHTML = `
-            <label class="block mb-2">Produk</label>
-            <select name="produk[]" class="w-full border p-2 rounded mb-2" required>
-                <?php foreach ($products as $product): ?>
-                    <option value="<?= $product->id_product; ?>">
-                        <?= $product->nama_product ?> - Rp<?= number_format($product->harga, 0, ',', '.'); ?>
-                    </option>
-                <?php endforeach; ?>
-            </select>
-            <label class="block mb-2">Jumlah</label>
-            <input type="number" name="jumlah[]" class="w-full border p-2 rounded" required>
-            <button type="button" onclick="hapusProduk(this)" class="bg-red-500 text-white px-2 py-1 rounded-md mt-2">Hapus</button>
-        `;
-        container.appendChild(newItem);
+    // Helper function for status colors
+    <?php
+    function getStatusColor($status) {
+        switch ($status) {
+            case 'pending': return 'bg-red-500';
+            case 'diproses': return 'bg-green-500';
+            case 'dikirim': return 'bg-yellow-500';
+            case 'selesai': return 'bg-blue-500';
+            case 'dibatalkan': return 'bg-gray-500';
+            default: return 'bg-gray-500';
+        }
     }
+    ?>
 
-    function hapusProduk(button) {
-        button.closest('.produk-item').remove();
-    }
-
-    function openModal() {
-        document.getElementById('modalPesanan').classList.remove('hidden');
-    }
-
-    function closeModal() {
-        document.getElementById('modalPesanan').classList.add('hidden');
-    }
-
+    // Edit modal functions
     function openEditModal(id_order) {
         fetch("<?= site_url('pesanan/get_status/') ?>" + id_order)
             .then(response => {
@@ -229,11 +297,82 @@
             })
             .catch(error => {
                 console.error("Error fetching order data:", error);
-                alert("Gagal memuat data pesanan!");
+                showToast("Gagal memuat data pesanan", "error");
             });
     }
 
     function closeEditModal() {
         document.getElementById('modalEditPesanan').classList.add('hidden');
+    }
+
+    // Search and filter functionality
+    document.getElementById('searchBtn').addEventListener('click', function() {
+        const searchTerm = document.getElementById('searchInput').value;
+        const statusFilter = document.getElementById('statusFilter').value;
+        
+        let url = '<?= site_url('pesanan') ?>';
+        let params = [];
+        
+        if (searchTerm) {
+            params.push('search=' + encodeURIComponent(searchTerm));
+        }
+        
+        if (statusFilter) {
+            params.push('status=' + encodeURIComponent(statusFilter));
+        }
+        
+        if (params.length > 0) {
+            url += '?' + params.join('&');
+        }
+        
+        window.location.href = url;
+    });
+
+    // Allow search on Enter key
+    document.getElementById('searchInput').addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            document.getElementById('searchBtn').click();
+        }
+    });
+
+    // Show toast notification
+    function showToast(message, type = 'success') {
+        const toast = document.createElement('div');
+        toast.className = 'fixed top-4 right-4 z-50 bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-300 opacity-0 translate-y-[-20px]';
+        
+        const bgColor = type === 'success' ? 'bg-green-50 border-l-4 border-green-500' : 'bg-red-50 border-l-4 border-red-500';
+        const textColor = type === 'success' ? 'text-green-800' : 'text-red-800';
+        const iconColor = type === 'success' ? 'text-green-500' : 'text-red-500';
+        const icon = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+        
+        toast.innerHTML = `
+            <div class="flex items-center p-4 ${bgColor}">
+                <div class="flex-shrink-0 mr-3">
+                    <i class="fas ${icon} ${iconColor}"></i>
+                </div>
+                <div class="flex-1">
+                    <p class="text-sm font-medium ${textColor}">${message}</p>
+                </div>
+                <div class="ml-3">
+                    <button onclick="this.parentElement.parentElement.parentElement.classList.add('opacity-0', 'translate-y-[-20px]')" class="text-gray-400 hover:text-gray-500">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(toast);
+        
+        // Trigger animation
+        setTimeout(() => {
+            toast.classList.remove('opacity-0', 'translate-y-[-20px]');
+            toast.classList.add('opacity-100', 'translate-y-0');
+        }, 10);
+        
+        // Auto dismiss
+        setTimeout(() => {
+            toast.classList.add('opacity-0', 'translate-y-[-20px]');
+            setTimeout(() => toast.remove(), 300);
+        }, 5000);
     }
 </script>
