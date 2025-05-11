@@ -1,122 +1,113 @@
-<?php $this->load->view('includes/header'); ?>
 <?php $this->load->view('includes/sidebar'); ?>
 
-<style>
-    .pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.pagination ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.pagination li {
-    margin: 0 5px;
-}
-
-.pagination li a {
-    display: block;
-    padding: 8px 12px;
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    color: #08644C;
-    text-decoration: none;
-    border-radius: 4px;
-}
-
-.pagination li.active a {
-    background-color: #08644C;
-    color: white;
-    border-color: #08644C;
-}
-
-.pagination li a:hover {
-    background-color: #e9ecef;
-}
-</style>
-
 <main class="flex-1 ml-64 p-6 overflow-auto">
-    <div class="mt-10 bg-white shadow-lg rounded-lg p-6">
-        <h2 class="text-xl font-bold text-gray-800 mb-4">User Management</h2>
-        
-        <!-- Search Input -->
-        <div class="mb-4">
-            <input type="text" id="searchInput" placeholder="Cari pengguna..." 
-                   class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+    <!-- Header Section -->
+    <div class="mb-6">
+        <h1 class="text-2xl font-bold text-gray-800">User Management</h1>
+        <p class="text-gray-600">Kelola data pengguna HijauLoka</p>
+    </div>
+
+    <!-- Main Content Card -->
+    <div class="bg-white rounded-2xl shadow-lg p-6">
+        <!-- Search Bar -->
+        <div class="mb-6">
+            <div class="relative">
+                <input type="text" 
+                       id="searchInput" 
+                       placeholder="Cari pengguna..." 
+                       class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+            </div>
         </div>
 
+        <!-- Table -->
         <div class="overflow-x-auto">
-            <table class="w-full max-h-64 border-collapse border border-gray-300 text-center">
-                <thead style="background-color: #08644C;">
-                    <tr>
-                        <th class="border border-gray-300 p-2 text-white">No</th>
-                        <th class="border border-gray-300 p-2 text-white">Nama</th>
-                        <th class="border border-gray-300 p-2 text-white">Email</th>
-                        <th class="border border-gray-300 p-2 text-white">Alamat</th>
-                        <th class="border border-gray-300 p-2 text-white">No. Telepon</th>
-                        <th class="border border-gray-300 p-2 text-white">Gambar Profil</th>
-                        <th class="border border-gray-300 p-2 text-white">Aksi</th>
+            <table class="w-full">
+                <thead>
+                    <tr class="bg-gray-50 border-b border-gray-200">
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Alamat</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No. Telepon</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Gambar Profil</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="bg-white divide-y divide-gray-200">
                     <?php $no = 1; foreach ($users as $user): ?>
-                    <tr class="hover:bg-gray-100 max-h-14">
-                        <td class="border border-gray-300 p-2"><?= $no++; ?></td>
-                        <td class="border border-gray-300 p-2"><?= $user->nama; ?></td>
-                        <td class="border border-gray-300 p-2"><?= $user->email; ?></td>
-                        <td class="border border-gray-300 p-2"><?= $user->alamat; ?></td>
-                        <td class="border border-gray-300 p-2"><?= $user->no_tlp; ?></td>
-                        <td class="border border-gray-300 p-2">
+                    <tr class="hover:bg-gray-50 transition-colors duration-200">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><?= $no++; ?></td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm font-medium text-gray-900"><?= $user->nama; ?></div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-500"><?= $user->email; ?></div>
+                        </td>
+                        <td class="px-6 py-4">
+                            <div class="text-sm text-gray-500"><?= $user->alamat; ?></div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-500"><?= $user->no_tlp; ?></div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
                             <?php if ($user->profile_image): ?>
-                                <img src="<?= base_url('uploads/profile/' . $user->profile_image); ?>" class="w-16 h-16 rounded-full">
+                                <img src="<?= base_url('uploads/profile/' . $user->profile_image); ?>" 
+                                     class="w-12 h-12 rounded-full object-cover border-2 border-gray-200">
                             <?php else: ?>
-                                <span class="text-gray-500">Tidak ada gambar</span>
+                                <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center">
+                                    <i class="fas fa-user text-gray-400"></i>
+                                </div>
                             <?php endif; ?>
                         </td>
-                        <td class="border border-gray-300 p-2">
-                            <button onclick="hapusUser(<?= $user->id_user; ?>)" class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600">Hapus</button>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm">
+                            <button onclick="hapusUser(<?= $user->id_user; ?>)" 
+                                    class="text-red-600 hover:text-red-900 transition-colors duration-200">
+                                <i class="fas fa-trash"></i>
+                            </button>
                         </td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
-<!-- Add after your table -->
-        <div class="mt-4 flex justify-center">
-            <nav class="pagination">
-                <?php if ($total_pages > 1): ?>
-                    <div class="flex gap-2">
-                        <?php if ($current_page > 1): ?>
-                            <a href="<?= site_url('user?page=' . ($current_page - 1)) ?>" 
-                               class="px-3 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">&laquo; Previous</a>
-                        <?php endif; ?>
+        </div>
 
-                        <?php for ($i = 1; $i <= $total_pages; $i++): ?>
-                            <a href="<?= site_url('user?page=' . $i) ?>" 
-                               class="px-3 py-2 <?= ($i == $current_page) ? 'bg-green-500 text-white' : 'bg-gray-200 hover:bg-gray-300' ?> rounded-lg">
-                                <?= $i ?>
-                            </a>
-                        <?php endfor; ?>
+        <!-- Pagination -->
+        <?php if ($total_pages > 1): ?>
+        <div class="mt-6 flex justify-center">
+            <nav class="flex items-center gap-2">
+                <?php if ($current_page > 1): ?>
+                    <a href="<?= site_url('user?page=' . ($current_page - 1)) ?>" 
+                       class="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-200">
+                        <i class="fas fa-chevron-left mr-1"></i>
+                        Previous
+                    </a>
+                <?php endif; ?>
 
-                        <?php if ($current_page < $total_pages): ?>
-                            <a href="<?= site_url('user?page=' . ($current_page + 1)) ?>" 
-                               class="px-3 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">Next &raquo;</a>
-                        <?php endif; ?>
-                    </div>
+                <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                    <a href="<?= site_url('user?page=' . $i) ?>" 
+                       class="px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200
+                              <?= ($i == $current_page) 
+                                  ? 'bg-green-600 text-white' 
+                                  : 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50' ?>">
+                        <?= $i ?>
+                    </a>
+                <?php endfor; ?>
+
+                <?php if ($current_page < $total_pages): ?>
+                    <a href="<?= site_url('user?page=' . ($current_page + 1)) ?>" 
+                       class="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-200">
+                        Next
+                        <i class="fas fa-chevron-right ml-1"></i>
+                    </a>
                 <?php endif; ?>
             </nav>
         </div>
-</div>
-        </div>
+        <?php endif; ?>
     </div>
 </main>
 
 <script>
-
     document.getElementById('searchInput').addEventListener('input', function() {
         const searchTerm = this.value.toLowerCase();
         const rows = document.querySelectorAll('tbody tr');
@@ -130,13 +121,12 @@
             const noTlp = cells[4].textContent.toLowerCase();
             
             const matches = nama.includes(searchTerm) || 
-                            email.includes(searchTerm) || 
-                            alamat.includes(searchTerm) || 
-                            noTlp.includes(searchTerm);
+                          email.includes(searchTerm) || 
+                          alamat.includes(searchTerm) || 
+                          noTlp.includes(searchTerm);
 
             row.style.display = matches ? 'table-row' : 'none';
             
-         
             if (matches) {
                 cells[0].textContent = visibleRowIndex++;
             }
@@ -144,7 +134,7 @@
     });
 
     function hapusUser(id) {
-        if (confirm('Yakin ingin menghapus user ini?')) {
+        if (confirm('Apakah Anda yakin ingin menghapus pengguna ini?')) {
             window.location.href = `<?= base_url('user/delete/') ?>${id}`;
         }
     }

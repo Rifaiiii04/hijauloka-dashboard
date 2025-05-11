@@ -1,4 +1,4 @@
-<?php $this->load->view('includes/header'); ?>
+
 <?php $this->load->view('includes/sidebar'); ?>
 
 <style>
@@ -48,59 +48,274 @@
 .toggle-checkbox:checked + .toggle-slider:before {
     transform: translateX(24px);
 }
+
+/* New styles for modern UI */
+.main-content {
+    background-color: #f9fafb;
+    min-height: 100vh;
+}
+
+.content-card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border: 1px solid #e5e7eb;
+}
+
+.search-input {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 0.625rem 1rem;
+    padding-left: 2.5rem;
+    width: 100%;
+    transition: all 0.2s;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #08644C;
+    box-shadow: 0 0 0 3px rgba(8, 100, 76, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+}
+
+.btn-primary {
+    background-color: #08644C;
+    color: white;
+    padding: 0.625rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #064c3a;
+}
+
+.table-modern {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table-modern th {
+    background-color: #f3f4f6;
+    padding: 1rem;
+    font-weight: 600;
+    text-align: left;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.table-modern td {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    color: #4b5563;
+}
+
+.table-modern tr:hover {
+    background-color: #f9fafb;
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.status-badge.stock-good {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.status-badge.stock-warning {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.status-badge.stock-empty {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.action-btn {
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s;
+}
+
+.action-btn.edit {
+    color: #2563eb;
+}
+
+.action-btn.edit:hover {
+    background-color: #eff6ff;
+}
+
+.action-btn.delete {
+    color: #dc2626;
+}
+
+.action-btn.delete:hover {
+    background-color: #fef2f2;
+}
+
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    max-width: 32rem;
+    width: 100%;
+    margin: 1rem;
+}
+
+.modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #08644C;
+    box-shadow: 0 0 0 3px rgba(8, 100, 76, 0.1);
+}
+
+.image-preview {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.image-preview img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.pagination a {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    color: #4b5563;
+    transition: all 0.2s;
+}
+
+.pagination a:hover {
+    background-color: #f3f4f6;
+}
+
+.pagination .active {
+    background-color: #08644C;
+    color: white;
+}
 </style>
 
-<main class="flex-1 ml-64 p-6 overflow-auto">
-    <div class="mt-10 bg-white shadow-lg rounded-lg p-6">
-        <div class="flex justify-between items-center mb-6">
-            <h2 class="text-xl font-bold text-gray-800">Daftar Produk</h2>
+<main class="flex-1 ml-64 p-6 overflow-auto main-content">
+    <div class="content-card p-6">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+            <h2 class="text-2xl font-bold text-gray-800">Daftar Produk</h2>
             
-            <!-- Search Bar -->
-            <div class="flex gap-4">
-                <div class="relative">
-                    <input type="text" id="searchInput" placeholder="Cari produk..." 
-                           class="w-64 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200 ease-in-out">
-                    <!-- <i class="fas fa-search absolute top-56  text-gray-400"></i> -->
+            <div class="flex flex-col md:flex-row gap-4 w-full md:w-auto">
+                <div class="relative flex-1 md:w-64">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="searchInput" placeholder="Cari produk..." class="search-input">
                 </div>
-                <button onclick="tambahProduk()" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition duration-200 ease-in-out">
-                    <i class="fa-solid fa-plus"></i> Tambah Produk
+                <button onclick="tambahProduk()" class="btn-primary flex items-center justify-center gap-2">
+                    <i class="fas fa-plus"></i>
+                    <span>Tambah Produk</span>
                 </button>
             </div>
         </div>
 
         <div class="overflow-x-auto">
-            <table class="w-full max-h-64 border-collapse border border-gray-300 text-center">
-                <thead style="background-color: #08644C;">
+            <table class="table-modern">
+                <thead>
                     <tr>
-                        <th class="border border-gray-300 p-2 text-white">No</th>
-                        <th class="border border-gray-300 p-2 text-white">Nama</th>
-                        <th class="border border-gray-300 p-2 text-white">Kategori</th>
-                        <th class="border border-gray-300 p-2 text-white">Harga</th>
-                        <th class="border border-gray-300 p-2 text-white">Stok</th>
-                        <th class="border border-gray-300 p-2 text-white">Gambar</th>
-                        <th class="border border-gray-300 p-2 text-white">Featured</th>
-                        <th class="border border-gray-300 p-2 text-white">Aksi</th>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Kategori</th>
+                        <th>Harga</th>
+                        <th>Stok</th>
+                        <th>Gambar</th>
+                        <th>Featured</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody id="productTableBody">
                     <?php $no = 1; foreach ($produk as $p): ?>
-                    <tr class="hover:bg-gray-100 max-h-14">
-                        <td class="border border-gray-300 p-2"><?= $no++; ?></td>
-                        <td class="border border-gray-300 p-2"><?= $p->nama_product; ?></td>
-                        <td class="border border-gray-300 p-2"><?= $p->nama_kategori; ?></td>
-                        <td class="border border-gray-300 p-2">Rp <?= number_format($p->harga, 2, ',', '.'); ?></td>
-                        <td class="border border-gray-300 p-2"><?= $p->stok; ?></td>
-                        <td class="border border-gray-300 p-2">
-                        <?php 
-$gambarArr = explode(',', $p->gambar);
-foreach ($gambarArr as $gmbr): ?>
-    <img src="<?= base_url('uploads/' . trim($gmbr)); ?>" class="w-16 h-16 inline-block mr-1">
-<?php endforeach; ?>
-
-
+                    <tr>
+                        <td><?= $no++; ?></td>
+                        <td class="font-medium"><?= $p->nama_product; ?></td>
+                        <td>
+                            <span class="status-badge stock-good">
+                                <?= $p->nama_kategori; ?>
+                            </span>
                         </td>
-                       
-                        <td class="border border-gray-300 p-2">
+                        <td>Rp <?= number_format($p->harga, 0, ',', '.'); ?></td>
+                        <td>
+                            <?php if ($p->stok <= 0): ?>
+                                <span class="status-badge stock-empty">Habis</span>
+                            <?php elseif ($p->stok <= 10): ?>
+                                <span class="status-badge stock-warning"><?= $p->stok ?></span>
+                            <?php else: ?>
+                                <span class="status-badge stock-good"><?= $p->stok ?></span>
+                            <?php endif; ?>
+                        </td>
+                        <td>
+                            <div class="image-preview">
+                                <?php 
+                                $gambarArr = explode(',', $p->gambar);
+                                foreach ($gambarArr as $gmbr): ?>
+                                    <img src="<?= base_url('uploads/' . trim($gmbr)); ?>" alt="Product Image">
+                                <?php endforeach; ?>
+                            </div>
+                        </td>
+                        <td>
                             <button 
                                 onclick="toggleFeatured(<?= $p->id_product ?>, this)"
                                 data-featured="<?= isset($p->featured_position) ? '1' : '0' ?>"
@@ -108,99 +323,84 @@ foreach ($gambarArr as $gmbr): ?>
                                 <?= isset($p->featured_position) ? 'Featured (Position: ' . $p->featured_position . ')' : 'Not Featured' ?>
                             </button>
                         </td>
-
-<!-- Update the JavaScript function -->
-<script>
-function toggleFeatured(productId, button) {
-    const isFeatured = button.getAttribute('data-featured') === '1';
-    const action = isFeatured ? 'remove_featured' : 'make_featured';
-    
-    fetch(`<?= base_url('produk/') ?>${action}/${productId}`, {
-        method: 'POST',
-        headers: {
-            'X-Requested-With': 'XMLHttpRequest'
-        }
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            // Update button without page reload
-            button.setAttribute('data-featured', isFeatured ? '0' : '1');
-            button.className = `w-full px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ease-in-out ${isFeatured ? 'bg-gray-200 text-gray-700 hover:bg-gray-300' : 'bg-green-500 text-white hover:bg-green-600'}`;
-            button.textContent = isFeatured ? 'Not Featured' : 'Featured';
-            window.location.reload(); // Reload to update positions
-        } else {
-            alert(data.message || 'Gagal mengubah status featured');
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('Terjadi kesalahan saat mengubah status featured');
-    });
-}
-</script>
-<td>
-                            <button onclick="editProduk(<?= $p->id_product; ?>)" class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </button>
-                            <button onclick="hapusProduk(<?= $p->id_product; ?>)" class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 ml-2">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
+                        <td>
+                            <div class="flex gap-2">
+                                <button onclick="editProduk(<?= $p->id_product; ?>)" class="action-btn edit">
+                                    <i class="fas fa-pen-to-square"></i>
+                                </button>
+                                <button onclick="hapusProduk(<?= $p->id_product; ?>)" class="action-btn delete">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
                         </td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
-            <!-- Add pagination links after the table -->
-            <div class="mt-4 flex justify-center">
-                <?php echo $this->pagination->create_links(); ?>
-            </div>
+        </div>
+
+        <div class="pagination">
+            <?php echo $this->pagination->create_links(); ?>
         </div>
     </div>
 </main>
 
-<!-- Modal Tambah Produk -->
-<div id="modalProduk" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center hidden overflow-auto">
-    <div class="bg-white p-6 rounded-lg shadow-lg max-w-2xl mx-4 my-16">
-        <h2 class="text-xl font-bold mb-4" id="modalTitle">Tambah Produk</h2>
-        <form id="produkForm" action="<?= base_url('produk/store') ?>" method="POST" enctype="multipart/form-data">
+<!-- Keep existing modal HTML structure but add new classes -->
+<div id="modalProduk" class="fixed inset-0 modal-overlay flex items-center justify-center hidden">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="text-xl font-bold text-gray-800" id="modalTitle">Tambah Produk</h2>
+        </div>
+        <form id="produkForm" action="<?= base_url('produk/store') ?>" method="POST" enctype="multipart/form-data" class="modal-body">
+            <!-- Keep existing form structure but add new classes -->
             <input type="hidden" name="id_product" id="id_product">
-            <div class="mb-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                    <label class="block">Nama Produk</label>
-                    <input type="text" name="nama_product" id="nama_product" class="w-full border p-2 rounded-lg" required>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="form-group">
+                    <label class="form-label">Nama Produk</label>
+                    <input type="text" name="nama_product" id="nama_product" class="form-input" required>
                 </div>
-                <div>
-                    <label class="block">Harga</label>
-                    <input type="number" name="harga" id="harga" class="w-full border p-2 rounded-lg" required>
+                <div class="form-group">
+                    <label class="form-label">Harga</label>
+                    <input type="number" name="harga" id="harga" class="form-input" required>
                 </div>
             </div>
-            <div class="mb-4">
-                <label class="block">Deskripsi</label>
-                <textarea name="desk_product" id="desk_product" class="w-full border p-2 rounded-lg" required></textarea>
+
+            <div class="form-group">
+                <label class="form-label">Deskripsi</label>
+                <textarea name="desk_product" id="desk_product" class="form-input" rows="3" required></textarea>
             </div>
-            <dib class="mb-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                <label class="block">Kategori</label>
-    <?php foreach ($kategori as $k): ?>
-        <label class="inline-flex items-center mr-4">
-            <input type="checkbox" name="id_kategori[]" value="<?= $k->id_kategori; ?>" class="form-checkbox">
-            <span class="ml-2"><?= $k->nama_kategori; ?></span>
-        </label>
-    <?php endforeach; ?>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="form-group">
+                    <label class="form-label">Kategori</label>
+                    <div class="space-y-2">
+                        <?php foreach ($kategori as $k): ?>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="id_kategori[]" value="<?= $k->id_kategori; ?>" class="rounded border-gray-300">
+                            <span class="ml-2 text-sm text-gray-700"><?= $k->nama_kategori; ?></span>
+                        </label>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
-                <div>
-                    <label class="block">Stok</label>
-                    <input type="number" name="stok" id="stok" class="w-full border p-2 rounded-lg" required>
+                <div class="form-group">
+                    <label class="form-label">Stok</label>
+                    <input type="number" name="stok" id="stok" class="form-input" required>
                 </div>
-            </dib>
-            <div class="mb-4">
-                <label class="block">Gambar (minimal 1, maksimal 5)</label>
-                <input type="file" name="gambar[]" class="w-full border p-2 rounded-lg" multiple required>
             </div>
-            <div class="text-right">
-                <button type="button" onclick="closeModal()" class="bg-gray-500 text-white px-4 py-2 rounded-md">Batal</button>
-                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md">Simpan</button>
+
+            <div class="form-group">
+                <label class="form-label">Gambar (minimal 1, maksimal 5)</label>
+                <input type="file" name="gambar[]" class="form-input" multiple required>
+            </div>
+
+            <div class="flex justify-end gap-3 mt-6">
+                <button type="button" onclick="closeModal()" class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">
+                    Batal
+                </button>
+                <button type="submit" class="btn-primary">
+                    Simpan
+                </button>
             </div>
         </form>
     </div>
@@ -332,52 +532,33 @@ document.getElementById('searchInput').addEventListener('input', function() {
     }
 });
 
-// Remove the makeFeatured and removeFeatured functions here
-// Keep the remaining styles below
+// Restore the toggleFeatured function
+function toggleFeatured(productId, button) {
+    const isFeatured = button.getAttribute('data-featured') === '1';
+    const action = isFeatured ? 'remove_featured' : 'make_featured';
+    
+    fetch(`<?= base_url('produk/') ?>${action}/${productId}`, {
+        method: 'POST',
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Update button without page reload
+            button.setAttribute('data-featured', isFeatured ? '0' : '1');
+            button.className = `w-full px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ease-in-out ${isFeatured ? 'bg-gray-200 text-gray-700 hover:bg-gray-300' : 'bg-green-500 text-white hover:bg-green-600'}`;
+            button.textContent = isFeatured ? 'Not Featured' : 'Featured';
+            window.location.reload(); // Reload to update positions
+        } else {
+            alert(data.message || 'Gagal mengubah status featured');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Terjadi kesalahan saat mengubah status featured');
+    });
+}
 </script>
-
-<style>
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 20px;
-}
-
-.switch input {
-    display: none;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 20px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    left: 2px;
-    bottom: 2px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-}
-
-input:checked + .slider {
-    background-color: #08644C;
-}
-
-input:checked + .slider:before {
-    transform: translateX(20px);
-}
-</style>
 
