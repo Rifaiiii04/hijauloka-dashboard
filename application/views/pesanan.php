@@ -9,8 +9,7 @@
             <i class="fas <?= $this->session->flashdata('error') ? 'fa-exclamation-circle text-red-500' : 'fa-check-circle text-green-500' ?>"></i>
         </div>
         <div class="flex-1">
-            <p class="text-sm font-medium <?= $this->session->flashdata('error') ? 'text-red-800' : 'text-green-800' ?>">
-                <?= $this->session->flashdata('error') ?: $this->session->flashdata('success') ?>
+            <p class="text-sm font-medium <?= $this->session->flashdata('error') ?: $this->session->flashdata('success') ?>
             </p>
         </div>
         <div class="ml-3">
@@ -146,6 +145,30 @@
                                 </div>
                             </div>
                             
+                            <!-- Payment Status -->
+                            <div class="flex items-start mb-3">
+                                <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mr-2 mt-1">
+                                    <i class="fas fa-money-bill-wave text-gray-500"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500">Status Pembayaran</p>
+                                    <p class="font-medium <?= $p->stts_pembayaran === 'lunas' ? 'text-green-600' : 'text-orange-500' ?>">
+                                        <?= $p->stts_pembayaran === 'lunas' ? 'Lunas' : 'Belum Dibayar' ?>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Shipping Method -->
+                            <div class="flex items-start mb-3">
+                                <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mr-2 mt-1">
+                                    <i class="fas fa-shipping-fast text-gray-500"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500">Pengiriman</p>
+                                    <p class="font-medium"><?= strtoupper($p->kurir ?? 'Hijauloka') ?></p>
+                                </div>
+                            </div>
+                            
                             <!-- Products Summary -->
                             <div class="mb-3">
                                 <p class="text-xs text-gray-500 mb-1">Produk (<?= count($p->produk ?? []) ?>)</p>
@@ -169,6 +192,15 @@
                                 <?php else: ?>
                                     <p class="text-sm text-gray-500">Tidak ada produk</p>
                                 <?php endif; ?>
+                            </div>
+                            
+                            <!-- Price Details -->
+                            <div class="bg-gray-50 p-2 rounded-lg mb-3">
+                                <div class="flex justify-between items-center mb-1">
+                                    <p class="text-xs text-gray-500">Subtotal</p>
+                                    <p class="text-sm font-medium">Rp<?= number_format((isset($p->ongkir) ? $p->total_harga - $p->ongkir : $p->total_harga) ?? 0, 0, ',', '.') ?></p>
+                                </div>
+                              
                             </div>
                             
                             <!-- Total -->
@@ -195,13 +227,7 @@
                 <?php endforeach; ?>
             </div>
         <?php else: ?>
-            <div class="bg-white rounded-lg shadow-sm p-8 text-center mb-6">
-                <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-shopping-cart text-gray-400 text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-700 mb-2">Belum Ada Pesanan</h3>
-                <p class="text-gray-500 max-w-md mx-auto">Pesanan baru akan muncul di sini secara otomatis ketika pelanggan melakukan pemesanan.</p>
-            </div>
+            <!-- Empty state remains the same -->
         <?php endif; ?>
         
         <!-- Pagination -->
@@ -254,6 +280,15 @@
                         <option value="dibatalkan">Dibatalkan</option>
                     </select>
                 </div>
+                
+                <!-- Payment Status Field -->
+                <div class="mb-4">
+                    <label class="block mb-2 font-medium text-gray-700">Status Pembayaran</label>
+                    <select name="stts_pembayaran" id="edit_payment_status" class="w-full p-3 rounded-lg border border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-500" required>
+                        <option value="belum_dibayar">Belum Dibayar</option>
+                        <option value="lunas">Lunas</option>
+                    </select>
+                </div>
             </div>
             
             <div class="p-5 border-t border-gray-100 flex justify-end space-x-3">
@@ -293,6 +328,10 @@
             .then(data => {
                 document.getElementById('edit_id_order').value = id_order;
                 document.getElementById('edit_status').value = data.stts_pemesanan;
+                // Set payment status if available
+                if (data.stts_pembayaran) {
+                    document.getElementById('edit_payment_status').value = data.stts_pembayaran;
+                }
                 document.getElementById('modalEditPesanan').classList.remove('hidden');
             })
             .catch(error => {

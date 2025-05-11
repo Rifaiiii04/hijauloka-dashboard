@@ -119,6 +119,7 @@ class Pesanan extends CI_Controller {
         $id_order = $this->input->post('id_order');
         $stts_pemesanan = $this->input->post('stts_pemesanan');
         $stts_pembayaran = $this->input->post('stts_pembayaran');
+        $metode_pembayaran = $this->input->post('metode_pembayaran');
     
         error_log("Update order: " . print_r($this->input->post(), true));
     
@@ -131,6 +132,11 @@ class Pesanan extends CI_Controller {
             'stts_pemesanan'  => $stts_pemesanan,
             'stts_pembayaran' => $stts_pembayaran
         ];
+        
+        // Add payment method to update data if provided
+        if (!empty($metode_pembayaran)) {
+            $data['metode_pembayaran'] = $metode_pembayaran;
+        }
     
         if ($this->Pesanan_model->update_status($id_order, $data)) {
             $this->session->set_flashdata('success', 'Status pesanan berhasil diperbarui.');
