@@ -83,7 +83,7 @@ class Pesanan_model extends CI_Model {
         return (int) $result->total;
     }
 
-    public function get_orders($limit, $start, $keyword = null) {
+    public function get_orders($limit, $start, $keyword = null, $today_only = false) {
         $this->db->select('
             orders.*, 
             user.nama AS nama_pelanggan, 
@@ -97,6 +97,10 @@ class Pesanan_model extends CI_Model {
         $this->db->join('order_items', 'order_items.id_order = orders.id_order', 'left');
         $this->db->join('product', 'product.id_product = order_items.id_product', 'left');
         
+        if ($today_only) {
+            $this->db->where('DATE(orders.tgl_pemesanan)', date('Y-m-d'));
+        }
+        
         if (!empty($keyword)) {
             $this->db->group_start();
             $this->db->like('orders.id_order', $keyword);
@@ -107,6 +111,7 @@ class Pesanan_model extends CI_Model {
         }
         
         $this->db->limit($limit, $start);
+        $this->db->order_by('orders.tgl_pemesanan', 'DESC');
         $query = $this->db->get();
 
         $result = [];

@@ -35,10 +35,10 @@ class Produk_model extends CI_Model {
     }
 
     public function get_stok_tanaman() {
-        return $this->db->select('nama_product, stok')
+        return $this->db->select('id_product, nama_product, stok')
                         ->from('product')
-                        ->where('stok >', 0)
-                        ->order_by('stok', 'DESC')
+                        ->order_by('stok', 'ASC')
+                        ->limit(5)
                         ->get()
                         ->result();
     }
