@@ -36,15 +36,42 @@
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
             <div>
                 <h1 class="text-xl font-bold text-gray-800">Manajemen Transaksi</h1>
-                <p class="text-gray-500 text-sm mt-1">Kelola pembayaran pelanggan</p>
+                <p class="text-gray-500 text-sm mt-1">Kelola dan monitor status pembayaran</p>
             </div>
             <div class="mt-3 md:mt-0 flex items-center space-x-2">
-                <!-- <button onclick="exportToExcel()" class="px-4 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-colors text-sm flex items-center shadow-sm">
-                    <i class="fas fa-file-excel mr-2"></i> Export
-                </button> -->
-                <button onclick="openTransaksiModal()" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 text-sm rounded-lg transition-colors flex items-center shadow-sm">
-                    <i class="fas fa-plus mr-2"></i> Tambah Transaksi
+                <button onclick="exportToExcel()" class="px-4 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-colors text-sm flex items-center shadow-sm">
+                    <i class="fas fa-file-excel mr-2"></i> Export Data
                 </button>
+            </div>
+        </div>
+        
+        <!-- Transaction Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div class="bg-white rounded-xl shadow-sm p-4">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="text-sm font-medium text-gray-500">Total Transaksi</h3>
+                    <span class="bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded-full">Semua</span>
+                </div>
+                <p class="text-2xl font-bold text-gray-800"><?= $total_rows ?? 0 ?></p>
+                <div class="mt-2 text-xs text-gray-500">Transaksi tercatat dalam sistem</div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-sm p-4">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="text-sm font-medium text-gray-500">Total Pendapatan</h3>
+                    <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">Rp</span>
+                </div>
+                <p class="text-2xl font-bold text-gray-800">Rp<?= number_format($total_income ?? 0, 0, ',', '.') ?></p>
+                <div class="mt-2 text-xs text-gray-500">Dari seluruh transaksi</div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-sm p-4">
+                <div class="flex items-center justify-between mb-3">
+                    <h3 class="text-sm font-medium text-gray-500">Transaksi Hari Ini</h3>
+                    <span class="bg-purple-100 text-purple-600 text-xs px-2 py-1 rounded-full"><?= date('d M') ?></span>
+                </div>
+                <p class="text-2xl font-bold text-gray-800"><?= $today_count ?? 0 ?></p>
+                <div class="mt-2 text-xs text-gray-500">Transaksi baru hari ini</div>
             </div>
         </div>
         
@@ -68,6 +95,24 @@
         
         <!-- Transactions List -->
         <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+            <div class="flex items-center justify-between p-4 border-b border-gray-100">
+                <h3 class="font-medium text-gray-700">Daftar Transaksi</h3>
+                <div class="flex space-x-2">
+                    <select id="filterStatus" class="text-sm border border-gray-200 rounded-lg px-3 py-1.5 bg-gray-50 focus:outline-none focus:ring-1 focus:ring-green-500">
+                        <option value="">Semua Status</option>
+                        <option value="lunas">Lunas</option>
+                        <option value="pending">Pending</option>
+                        <option value="gagal">Gagal</option>
+                    </select>
+                    <select id="sortOrder" class="text-sm border border-gray-200 rounded-lg px-3 py-1.5 bg-gray-50 focus:outline-none focus:ring-1 focus:ring-green-500">
+                        <option value="newest">Terbaru</option>
+                        <option value="oldest">Terlama</option>
+                        <option value="highest">Nominal Tertinggi</option>
+                        <option value="lowest">Nominal Terendah</option>
+                    </select>
+                </div>
+            </div>
+            
             <?php if (!empty($transaksi)): ?>
                 <div class="overflow-x-auto">
                     <table class="w-full">
@@ -377,4 +422,58 @@ function showToast(message, type = 'success') {
 function exportToExcel() {
     window.location.href = "<?= site_url('transaksi/export') ?>";
 }
+
+
+// Add this to your existing script section
+document.addEventListener('DOMContentLoaded', function() {
+    // Filter and sort functionality
+    const filterStatus = document.getElementById('filterStatus');
+    const sortOrder = document.getElementById('sortOrder');
+    
+    if (filterStatus && sortOrder) {
+        // Apply filters when changed
+        filterStatus.addEventListener('change', applyFilters);
+        sortOrder.addEventListener('change', applyFilters);
+        
+        // Set initial values from URL if present
+        const urlParams = new URLSearchParams(window.location.search);
+        const statusParam = urlParams.get('status');
+        const sortParam = urlParams.get('sort');
+        
+        if (statusParam) {
+            filterStatus.value = statusParam;
+        }
+        
+        if (sortParam) {
+            sortOrder.value = sortParam;
+        }
+    }
+    
+    function applyFilters() {
+        const status = filterStatus.value;
+        const sort = sortOrder.value;
+        const searchTerm = document.getElementById('searchInput').value;
+        
+        let url = '<?= site_url('transaksi') ?>';
+        const params = [];
+        
+        if (status) {
+            params.push('status=' + encodeURIComponent(status));
+        }
+        
+        if (sort) {
+            params.push('sort=' + encodeURIComponent(sort));
+        }
+        
+        if (searchTerm) {
+            params.push('search=' + encodeURIComponent(searchTerm));
+        }
+        
+        if (params.length > 0) {
+            url += '?' + params.join('&');
+        }
+        
+        window.location.href = url;
+    }
+});
 </script>
