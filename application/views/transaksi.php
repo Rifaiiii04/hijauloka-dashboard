@@ -1,241 +1,380 @@
 
 <?php $this->load->view('includes/sidebar'); ?>
 
-<!-- Alert Flashdata -->
-<?php if($this->session->flashdata('error')): ?>
-    <script>
-        alert("<?= $this->session->flashdata('error'); ?>");
-    </script>
-<?php endif; ?>
-<?php if($this->session->flashdata('success')): ?>
-    <script>
-        alert("<?= $this->session->flashdata('success'); ?>");
-    </script>
-<?php endif; ?>
-
-<!-- Konten Utama -->
-<main class="flex-1 ml-64 p-6 overflow-auto">
-    <div class="flex justify-between items-center mb-6">
-        <h1 class="text-3xl font-extrabold text-gray-800">Dashboard Transaksi</h1>
-        <!-- Tombol Tambah Transaksi -->
-        <button onclick="openTransaksiModal()" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">
-            Tambah Transaksi
-        </button>
-    </div>
-    <div class="bg-white shadow-lg rounded-xl p-6">
-        <!-- Search Bar -->
-        <div class="flex justify-end mb-4">
-            <input type="text" id="searchInput" placeholder="Cari transaksi..." 
-                   class="w-64 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200 ease-in-out">
-            <!-- <i class="fas fa-search absolute right-3 top-3 text-gray-400"></i> -->
+<!-- Toast Notification -->
+<?php if($this->session->flashdata('error') || $this->session->flashdata('success')): ?>
+<div id="toast" class="fixed top-4 right-4 z-50 bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-300 opacity-100 translate-y-0">
+    <div class="flex items-center p-4 <?= $this->session->flashdata('error') ? 'bg-red-50 border-l-4 border-red-500' : 'bg-green-50 border-l-4 border-green-500' ?>">
+        <div class="flex-shrink-0 mr-3">
+            <i class="fas <?= $this->session->flashdata('error') ? 'fa-exclamation-circle text-red-500' : 'fa-check-circle text-green-500' ?>"></i>
         </div>
-        <div class="overflow-x-auto">
-            <table class="w-full border-collapse border border-gray-300 text-center">
-                <thead style="background-color: #08644C;">
-                    <tr>
-                        <!-- <th class="border border-gray-300 p-2 text-white">ID Transaksi</th> -->
-                        <th class="border border-gray-300 p-2 text-white">Tanggal</th>
-                        <th class="border border-gray-300 p-2 text-white">Nama Pelanggan</th>
-                        <th class="border border-gray-300 p-2 text-white">Total Bayar</th>
-                        <th class="border border-gray-300 p-2 text-white">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody id="transactionTableBody">
-                    <?php if (!empty($transaksi)) : ?>
-                        <?php foreach ($transaksi as $t): ?>
-                            <tr class="hover:bg-gray-100">
-                                <!-- <td class="border border-gray-300 p-2"><?= isset($t->id_transaksi) ? $t->id_transaksi : $t->id_order; ?></td> -->
-                                <td class="border border-gray-300 p-2">
-                                    <?= !empty($t->tanggal_transaksi) ? date('d M Y', strtotime($t->tanggal_transaksi)) : 'Tanggal tidak tersedia'; ?>
-                                </td>
-                                <td class="border border-gray-300 p-2"><?= isset($t->nama_pelanggan) ? $t->nama_pelanggan : 'Tidak diketahui'; ?></td>
-                                <td class="border border-gray-300 p-2">
-                                    <?= !empty($t->total_bayar) ? 'Rp ' . number_format($t->total_bayar, 0, ',', '.') : 'Total tidak tersedia'; ?>
-                                </td>
-                                <td class="border border-gray-300 p-2">
-                                    <button onclick="openDetailModal(<?= isset($t->id_transaksi) ? $t->id_transaksi : $t->id_order; ?>)" class="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600"><i class="fa-solid fa-circle-info"></i></button>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    <?php else: ?>
-                        <tr>
-                            <td colspan="6" class="border border-gray-300 p-2 text-center">Tidak ada transaksi</td>
-                        </tr>
-                    <?php endif; ?>
-                </tbody>
-            </table>
-        <!-- Add pagination -->
-        <div class="mt-4 flex justify-center">
-            <nav class="pagination">
-                <?php 
-                    $current_page = ($this->input->get('page')) ? $this->input->get('page') : 1;
-                    $total_pages = ceil($total_rows / $per_page);
-                    
-                    if ($total_pages > 1):
-                ?>
-                    <div class="flex gap-2">
-                        <?php if ($current_page > 1): ?>
-                            <a href="<?= site_url('transaksi?page=' . ($current_page - 1)) ?>" 
-                               class="px-3 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">&laquo; Previous</a>
-                        <?php endif; ?>
+        <div class="flex-1">
+            <p class="text-sm font-medium"><?= $this->session->flashdata('error') ?: $this->session->flashdata('success') ?></p>
+        </div>
+        <div class="ml-3">
+            <button onclick="document.getElementById('toast').classList.add('opacity-0', 'translate-y-[-20px]')" class="text-gray-400 hover:text-gray-500">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<script>
+    setTimeout(() => {
+        const toast = document.getElementById('toast');
+        if (toast) {
+            toast.classList.add('opacity-0', 'translate-y-[-20px]');
+            setTimeout(() => toast.remove(), 300);
+        }
+    }, 5000);
+</script>
+<?php endif; ?>
 
-                        <?php for ($i = 1; $i <= $total_pages; $i++): ?>
-                            <a href="<?= site_url('transaksi?page=' . $i) ?>" 
-                               class="px-3 py-2 <?= ($i == $current_page) ? 'bg-green-500 text-white' : 'bg-gray-200 hover:bg-gray-300' ?> rounded-lg">
-                                <?= $i ?>
-                            </a>
-                        <?php endfor; ?>
-
-                        <?php if ($current_page < $total_pages): ?>
-                            <a href="<?= site_url('transaksi?page=' . ($current_page + 1)) ?>" 
-                               class="px-3 py-2 bg-gray-200 rounded-lg hover:bg-gray-300">Next &raquo;</a>
-                        <?php endif; ?>
+<!-- Main Content -->
+<main class="flex-1 ml-64 p-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header with Actions -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+            <div>
+                <h1 class="text-xl font-bold text-gray-800">Manajemen Transaksi</h1>
+                <p class="text-gray-500 text-sm mt-1">Kelola pembayaran pelanggan</p>
+            </div>
+            <div class="mt-3 md:mt-0 flex items-center space-x-2">
+                <!-- <button onclick="exportToExcel()" class="px-4 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-colors text-sm flex items-center shadow-sm">
+                    <i class="fas fa-file-excel mr-2"></i> Export
+                </button> -->
+                <button onclick="openTransaksiModal()" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 text-sm rounded-lg transition-colors flex items-center shadow-sm">
+                    <i class="fas fa-plus mr-2"></i> Tambah Transaksi
+                </button>
+            </div>
+        </div>
+        
+        <!-- Search Bar -->
+        <div class="bg-white rounded-xl shadow-sm mb-6 overflow-hidden">
+            <div class="p-4">
+                <div class="flex items-center">
+                    <div class="relative flex-1">
+                        <input type="text" 
+                            id="searchInput"
+                            class="w-full h-10 pl-10 pr-4 rounded-lg bg-gray-50 border border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-500 text-sm" 
+                            placeholder="Cari nama pelanggan atau ID transaksi...">
+                        <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
                     </div>
-                <?php endif; ?>
-            </nav>
+                    <button id="searchBtn" class="ml-3 px-5 h-10 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-sm shadow-sm">
+                        Cari
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Transactions List -->
+        <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+            <?php if (!empty($transaksi)): ?>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="text-xs text-gray-500 uppercase border-b border-gray-100">
+                                <th class="px-4 py-3 text-left font-medium">ID</th>
+                                <th class="px-4 py-3 text-left font-medium">Tanggal</th>
+                                <th class="px-4 py-3 text-left font-medium">Pelanggan</th>
+                                <th class="px-4 py-3 text-left font-medium">Metode</th>
+                                <th class="px-4 py-3 text-left font-medium">Total</th>
+                                <th class="px-4 py-3 text-right font-medium">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <?php foreach ($transaksi as $t): ?>
+                                <tr class="hover:bg-gray-50 text-sm transition-colors">
+                                    <td class="px-4 py-3 font-medium text-gray-900">
+                                        #<?= isset($t->id_transaksi) ? $t->id_transaksi : $t->id_order; ?>
+                                    </td>
+                                    <td class="px-4 py-3 text-gray-500">
+                                        <?= date('d M Y', strtotime($t->tanggal_transaksi)) ?>
+                                    </td>
+                                    <td class="px-4 py-3 text-gray-900">
+                                        <?= isset($t->nama_pelanggan) ? $t->nama_pelanggan : 'N/A' ?>
+                                    </td>
+                                    <td class="px-4 py-3 text-gray-500">
+                                        <div class="flex items-center">
+                                            <span class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mr-2">
+                                                <i class="fas <?= (isset($t->metode_pembayaran) && strtolower($t->metode_pembayaran) == 'midtrans') ? 'fa-credit-card' : 'fa-money-bill-wave' ?> text-gray-500"></i>
+                                            </span>
+                                            <?= isset($t->metode_pembayaran) ? ucfirst($t->metode_pembayaran) : 'N/A' ?>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-3 font-semibold text-gray-900">
+                                        Rp<?= number_format($t->total_bayar ?? 0, 0, ',', '.') ?>
+                                    </td>
+                                    <td class="px-4 py-3 text-right">
+                                        <div class="flex justify-end space-x-2">
+                                            <button onclick="openDetailModal(<?= isset($t->id_transaksi) ? $t->id_transaksi : $t->id_order; ?>)" 
+                                                    class="p-1.5 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors" title="Lihat Detail">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            
+                                            <button onclick="printInvoice(<?= isset($t->id_transaksi) ? $t->id_transaksi : $t->id_order; ?>)" 
+                                                    class="p-1.5 bg-gray-50 text-gray-600 rounded-lg hover:bg-gray-100 transition-colors" title="Cetak Invoice">
+                                                <i class="fas fa-print"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="p-4 border-t border-gray-100 flex justify-between items-center text-sm text-gray-500">
+                    <div>
+                        Menampilkan <?= count($transaksi) ?> dari <?= $total_rows ?> transaksi
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <nav class="pagination">
+                        <?php 
+                            $current_page = ($this->input->get('page')) ? $this->input->get('page') : 1;
+                            $total_pages = ceil($total_rows / $per_page);
+                            
+                            if ($total_pages > 1):
+                        ?>
+                            <div class="inline-flex rounded-lg overflow-hidden shadow-sm">
+                                <?php if ($current_page > 1): ?>
+                                    <a href="<?= site_url('transaksi?page=' . ($current_page - 1)) ?>" 
+                                    class="px-3 py-1.5 bg-white border border-gray-200 hover:bg-gray-50 text-sm flex items-center justify-center">&laquo;</a>
+                                <?php endif; ?>
+
+                                <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                                    <a href="<?= site_url('transaksi?page=' . $i) ?>" 
+                                    class="px-3 py-1.5 <?= ($i == $current_page) ? 'bg-green-500 text-white border-green-500' : 'bg-white hover:bg-gray-50 border-gray-200' ?> border <?= ($i != 1) ? 'border-l-0' : '' ?> text-sm flex items-center justify-center">
+                                        <?= $i ?>
+                                    </a>
+                                <?php endfor; ?>
+
+                                <?php if ($current_page < $total_pages): ?>
+                                    <a href="<?= site_url('transaksi?page=' . ($current_page + 1)) ?>" 
+                                    class="px-3 py-1.5 bg-white border border-l-0 border-gray-200 hover:bg-gray-50 text-sm flex items-center justify-center">&raquo;</a>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+                    </nav>
+                </div>
+            <?php else: ?>
+                <div class="p-8 text-center">
+                    <div class="py-6 flex flex-col items-center">
+                        <div class="bg-gray-100 p-4 rounded-full mb-4">
+                            <i class="fas fa-receipt text-gray-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-base font-medium text-gray-800 mb-2">Tidak ada transaksi</h3>
+                        <p class="text-gray-500">Belum ada transaksi yang tercatat dalam sistem</p>
+                    </div>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </main>
 
-<script>
-// Search function for transactions
-document.getElementById('searchInput').addEventListener('input', function() {
-    const searchValue = this.value.toLowerCase();
-    const tableBody = document.getElementById('transactionTableBody');
-    const rows = tableBody.getElementsByTagName('tr');
-
-    for (let row of rows) {
-        const idTransaksi = row.getElementsByTagName('td')[0].textContent.toLowerCase();
-        const namaPelanggan = row.getElementsByTagName('td')[2].textContent.toLowerCase();
-        
-        if (idTransaksi.includes(searchValue) || namaPelanggan.includes(searchValue)) {
-            row.style.display = '';
-        } else {
-            row.style.display = 'none';
-        }
-    }
-});
-</script>
-
-<!-- Modal Detail Transaksi -->
-<div id="detailModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
-    <div class="bg-white rounded-lg p-6 w-1/2 shadow-lg">
-        <h2 class="text-2xl font-bold mb-4">Detail Transaksi</h2>
-        <div id="modalContent">Loading...</div>
-        <button onclick="window.print()" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md">Cetak Detail</button>
-        <button onclick="closeDetailModal()" class="mt-4 px-4 py-2 bg-red-500 text-white rounded-md">Tutup</button>
+<!-- Detail Modal -->
+<div id="detailModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div class="bg-white rounded-xl shadow-lg w-11/12 max-w-4xl max-h-[90vh] overflow-y-auto">
+        <div class="p-6 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white z-10">
+            <h2 class="text-xl font-bold text-gray-800">Detail Transaksi</h2>
+            <button onclick="closeDetailModal()" class="text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="modalContent" class="p-6">
+            <div class="flex justify-center items-center p-8">
+                <i class="fas fa-spinner fa-spin text-green-500 text-3xl"></i>
+            </div>
+        </div>
+        <div class="p-6 border-t border-gray-200 flex justify-end space-x-3 sticky bottom-0 bg-white">
+            <button onclick="closeDetailModal()" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+                Tutup
+            </button>
+            <button onclick="window.print()" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
+                <i class="fas fa-print mr-2"></i>Cetak Invoice
+            </button>
+        </div>
     </div>
 </div>
 
 <!-- Modal Tambah Transaksi -->
-<div id="modalTransaksi" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
-    <div class="bg-white p-6 rounded-lg shadow-lg w-96">
-        <h2 class="text-xl font-bold mb-4">Tambah Transaksi</h2>
+<div id="modalTransaksi" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div class="bg-white rounded-xl shadow-lg w-96 max-w-full mx-4">
+        <div class="p-5 border-b border-gray-100">
+            <h2 class="text-xl font-bold text-gray-800">Tambah Transaksi</h2>
+        </div>
         <form id="formTambahTransaksi" action="<?= site_url('transaksi/create') ?>" method="POST">
-            <!-- Dropdown Pilih Pesanan -->
-            <label class="block mb-2 text-gray-700 font-semibold">Pilih Pesanan</label>
-            <select name="order_id" class="w-full border p-2 rounded mb-3 bg-gray-50 border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200 ease-in-out" required>
-                <option value="">-- Pilih Pesanan --</option>
-                <?php if (!empty($pesanan)) : ?>
-                    <?php foreach ($pesanan as $p): ?>
-                        <option value="<?= $p->id_order; ?>">
-                            <?= isset($p->nama_pelanggan) ? $p->nama_pelanggan : 'Unknown'; ?> - <?= date('d-m-Y', strtotime($p->tgl_pemesanan)) ?> - Rp<?= number_format($p->total_harga, 0, ',', '.'); ?>
-                        </option>
-                    <?php endforeach; ?>
-                <?php else: ?>
-                    <option value="">Data pesanan tidak tersedia</option>
-                <?php endif; ?>
-            </select>
-            <!-- Pilih Metode Pembayaran -->
-            <label class="block mb-2">Metode Pembayaran</label>
-            <select name="metode_pembayaran" class="w-full border p-2 rounded mb-3" required>
-                <option value="transfer">Transfer</option>
-                <option value="e-wallet">E-Wallet</option>
-                <option value="cod">COD</option>
-            </select>
-            <div class="flex justify-end space-x-2">
-                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">Simpan</button>
-                <button type="button" onclick="closeTransaksiModal()" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">Batal</button>
+            <div class="p-5">
+                <!-- Dropdown Pilih Pesanan -->
+                <div class="mb-4">
+                    <label class="block mb-2 font-medium text-gray-700">Pilih Pesanan</label>
+                    <select name="order_id" class="w-full p-3 rounded-lg border border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-500" required>
+                        <option value="">-- Pilih Pesanan --</option>
+                        <?php if (!empty($pesanan)) : ?>
+                            <?php foreach ($pesanan as $p): ?>
+                                <option value="<?= $p->id_order; ?>">
+                                    <?= isset($p->nama_pelanggan) ? $p->nama_pelanggan : 'Unknown'; ?> - <?= date('d-m-Y', strtotime($p->tgl_pemesanan)) ?> - Rp<?= number_format($p->total_harga, 0, ',', '.'); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <option value="">Data pesanan tidak tersedia</option>
+                        <?php endif; ?>
+                    </select>
+                </div>
+                <!-- Pilih Metode Pembayaran -->
+                <div class="mb-4">
+                    <label class="block mb-2 font-medium text-gray-700">Metode Pembayaran</label>
+                    <select name="metode_pembayaran" class="w-full p-3 rounded-lg border border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-500" required>
+                        <option value="transfer">Transfer</option>
+                        <option value="e-wallet">E-Wallet</option>
+                        <option value="cod">COD</option>
+                        <option value="midtrans">Midtrans</option>
+                    </select>
+                </div>
             </div>
-        </form>
-    </div>
-</div>
-
-<!-- Modal Edit Status Pesanan -->
-<div id="modalEditPesanan" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-    <div class="bg-white p-6 rounded-lg shadow-lg w-96">
-        <h2 class="text-xl font-bold mb-4">Edit Status Pesanan</h2>
-        <form id="editForm" method="POST" action="<?= site_url('pesanan/update_status'); ?>">
-            <input type="hidden" name="id_order" id="edit_id_order">
-            <label class="block mb-2">Status Pesanan</label>
-            <select name="stts_pemesanan" id="edit_status" class="w-full border p-2 rounded mb-3" required>
-                <option value="pending">Pending</option>
-                <option value="diproses">Diproses</option>
-                <option value="dikirim">Dikirim</option>
-                <option value="selesai">Selesai</option>
-                <option value="dibatalkan">Dibatalkan</option>
-            </select>
-            <label class="block mb-2">Status Pembayaran</label>
-            <select name="stts_pembayaran" id="edit_status_pembayaran" class="w-full border p-2 rounded mb-3" required>
-                <option value="belum_dibayar">Belum Dibayar</option>
-                <option value="lunas">Lunas</option>
-            </select>
-            <div class="flex justify-end space-x-2">
-                <button type="button" onclick="closeEditModal()" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">Batal</button>
-                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">Simpan</button>
+            <div class="p-5 border-t border-gray-100 flex justify-end space-x-3">
+                <button type="button" onclick="closeTransaksiModal()" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+                    Batal
+                </button>
+                <button type="submit" class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors">
+                    Simpan
+                </button>
             </div>
         </form>
     </div>
 </div>
 
 <script>
-
-    function openDetailModal(id) {
-        fetch("<?= site_url('transaksi/detail/'); ?>" + id)
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("modalContent").innerHTML = data;
-                document.getElementById("detailModal").classList.remove("hidden");
-            })
-            .catch(error => {
-                console.error("Error fetching detail:", error);
-                alert("Gagal memuat detail transaksi.");
-            });
+// Search functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    
+    // Search button click handler
+    searchBtn.addEventListener('click', function() {
+        const searchTerm = searchInput.value;
+        let url = '<?= site_url('transaksi') ?>';
+        
+        if (searchTerm) {
+            url += '?search=' + encodeURIComponent(searchTerm);
+        }
+        
+        window.location.href = url;
+    });
+    
+    // Allow search on Enter key
+    searchInput.addEventListener('keyup', function(event) {
+        if (event.key === 'Enter') {
+            searchBtn.click();
+        }
+    });
+    
+    // Set search input from URL if exists
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchParam = urlParams.get('search');
+    
+    if (searchParam) {
+        searchInput.value = searchParam;
     }
+});
 
-    function closeDetailModal() {
-        document.getElementById("detailModal").classList.add("hidden");
+// Detail modal functions
+function openDetailModal(id) {
+    document.getElementById('modalContent').innerHTML = '<div class="flex justify-center items-center p-6"><i class="fas fa-spinner fa-spin text-green-500 text-2xl"></i></div>';
+    document.getElementById('detailModal').classList.remove('hidden');
+    
+    fetch("<?= site_url('transaksi/detail/') ?>" + id)
+        .then(response => response.ok ? response.text() : Promise.reject('Network response was not ok'))
+        .then(html => {
+            document.getElementById('modalContent').innerHTML = html;
+        })
+        .catch(error => {
+            document.getElementById('modalContent').innerHTML = `
+                <div class="p-6 text-center">
+                    <div class="bg-red-100 p-4 rounded-full mb-3 mx-auto w-14 h-14 flex items-center justify-center">
+                        <i class="fas fa-exclamation-triangle text-red-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-base font-medium text-gray-800 mb-1">Terjadi Kesalahan</h3>
+                    <p class="text-gray-500 text-sm">Gagal memuat detail transaksi. Silakan coba lagi nanti.</p>
+                </div>
+            `;
+        });
+}
+
+function closeDetailModal() {
+    document.getElementById('detailModal').classList.add('hidden');
+}
+
+function openTransaksiModal() {
+    document.getElementById('modalTransaksi').classList.remove('hidden');
+}
+
+function closeTransaksiModal() {
+    document.getElementById('modalTransaksi').classList.add('hidden');
+}
+
+// Print invoice
+function printInvoice(id) {
+    window.open("<?= site_url('transaksi/cetak/') ?>" + id, '_blank');
+}
+
+// Update status function
+function updateStatus(id, status) {
+    if (confirm('Apakah Anda yakin ingin mengubah status transaksi ini menjadi ' + status + '?')) {
+        fetch("<?= site_url('transaksi/update_status/') ?>" + id, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ status: status })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                showToast('Status transaksi berhasil diperbarui', 'success');
+                setTimeout(() => location.reload(), 1000);
+            } else {
+                showToast(data.message || 'Gagal mengubah status transaksi', 'error');
+            }
+        })
+        .catch(error => {
+            showToast('Terjadi kesalahan saat mengubah status', 'error');
+        });
     }
+}
 
+// Show toast notification
+function showToast(message, type = 'success') {
+    const toast = document.createElement('div');
+    toast.className = 'fixed top-4 right-4 z-50 bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-300 opacity-0 translate-y-[-20px]';
+    
+    const bgColor = type === 'success' ? 'bg-green-50 border-l-4 border-green-500' : 'bg-red-50 border-l-4 border-red-500';
+    const iconColor = type === 'success' ? 'text-green-500' : 'text-red-500';
+    const icon = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+    
+    toast.innerHTML = `
+        <div class="flex items-center p-3 ${bgColor}">
+            <div class="flex-shrink-0 mr-2"><i class="fas ${icon} ${iconColor}"></i></div>
+            <div class="flex-1"><p class="text-sm">${message}</p></div>
+            <div class="ml-2">
+                <button onclick="this.parentElement.parentElement.parentElement.classList.add('opacity-0', 'translate-y-[-20px]')" class="text-gray-400 hover:text-gray-500">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(toast);
+    setTimeout(() => {
+        toast.classList.remove('opacity-0', 'translate-y-[-20px]');
+        toast.classList.add('opacity-100', 'translate-y-0');
+    }, 10);
+    
+    setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-[-20px]');
+        setTimeout(() => toast.remove(), 300);
+    }, 5000);
+}
 
-    function openTransaksiModal() {
-        document.getElementById('modalTransaksi').classList.remove('hidden');
-    }
-
-    function closeTransaksiModal() {
-        document.getElementById('modalTransaksi').classList.add('hidden');
-    }
-
-  
-    function openEditModal(id_order) {
-        fetch("<?= site_url('pesanan/get_status/') ?>" + id_order)
-            .then(response => {
-                if (!response.ok) throw new Error("Gagal mengambil data");
-                return response.json();
-            })
-            .then(data => {
-                document.getElementById('edit_id_order').value = id_order;
-                document.getElementById('edit_status').value = data.stts_pemesanan;
-                document.getElementById('edit_status_pembayaran').value = data.stts_pembayaran;
-                document.getElementById('modalEditPesanan').classList.remove('hidden');
-            })
-            .catch(error => {
-                console.error("Error fetching order data:", error);
-                alert("Gagal memuat data pesanan!");
-            });
-    }
-
-    function closeEditModal() {
-        document.getElementById('modalEditPesanan').classList.add('hidden');
-    }
+// Export data to Excel
+function exportToExcel() {
+    window.location.href = "<?= site_url('transaksi/export') ?>";
+}
 </script>
