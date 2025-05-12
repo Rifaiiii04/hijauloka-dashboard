@@ -17,9 +17,15 @@ class Dashboard extends CI_Controller {
 
     public function index() {
         // Get today's transaction stats
-        $today_stats = $this->Transaksi_model->get_today_stats();
-        $data['today_count'] = $today_stats['count'];
-        $data['today_income'] = $today_stats['total_income'];
+        try {
+            $today_stats = $this->Transaksi_model->get_today_stats();
+            $data['today_count'] = $today_stats['count'];
+            $data['today_income'] = $today_stats['total_income'];
+        } catch (Exception $e) {
+            // Default values if method doesn't exist
+            $data['today_count'] = 0;
+            $data['today_income'] = 0;
+        }
 
         // Get current month revenue
         $data['current_month_revenue'] = $this->Laporan_model->get_current_month_revenue() ?? 0;

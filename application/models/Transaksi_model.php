@@ -67,4 +67,28 @@ class Transaksi_model extends CI_Model {
         $this->db->order_by('transaksi.tanggal_transaksi', 'DESC');
         return $this->db->get()->result();
     }
+
+    /**
+     * Get today's transaction statistics
+     * 
+     * @return array Array containing count and total_income for today
+     */
+    public function get_today_stats() {
+        $today = date('Y-m-d');
+        
+        // Get count of today's transactions
+        $this->db->where('DATE(tanggal_transaksi)', $today);
+        $count = $this->db->count_all_results('transaksi');
+        
+        // Get sum of today's transaction amounts
+        $this->db->select_sum('total_bayar');
+        $this->db->where('DATE(tanggal_transaksi)', $today);
+        $query = $this->db->get('transaksi');
+        $total_income = $query->row()->total_bayar ?? 0;
+        
+        return [
+            'count' => $count,
+            'total_income' => $total_income
+        ];
+    }
 }
