@@ -149,10 +149,10 @@
                                             <i class="fas fa-edit"></i>
                                         </a>
                                         
-                                        <a href="<?= base_url('blog/preview/' . $post->slug) ?>" target="_blank"
+                                        <!-- <a href="<?= base_url('blog/preview/' . $post->slug) ?>" target="_blank"
                                                 class="p-1.5 bg-purple-50 text-purple-600 rounded-lg hover:bg-purple-100 transition-colors" title="Preview Artikel">
                                             <i class="fas fa-eye"></i>
-                                        </a>
+                                        </a> -->
                                         
                                         <button onclick="confirmDelete(<?= $post->id ?>)" 
                                                 class="p-1.5 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors" title="Hapus Artikel">

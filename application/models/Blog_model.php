@@ -60,7 +60,7 @@ class Blog_model extends CI_Model {
         $this->db->select('blog_posts.*, blog_categories.name as category_name, user.nama as author_name');
         $this->db->from('blog_posts');
         $this->db->join('blog_categories', 'blog_categories.id = blog_posts.category_id', 'left');
-        $this->db->join('user', 'user.id = blog_posts.author_id', 'left');
+        $this->db->join('user', 'user.id_user = blog_posts.author_id', 'left');
         $this->db->where('blog_posts.id', $id);
         
         return $this->db->get()->row();
@@ -71,7 +71,7 @@ class Blog_model extends CI_Model {
         $this->db->select('blog_posts.*, blog_categories.name as category_name, user.nama as author_name');
         $this->db->from('blog_posts');
         $this->db->join('blog_categories', 'blog_categories.id = blog_posts.category_id', 'left');
-        $this->db->join('user', 'user.id = blog_posts.author_id', 'left');
+        $this->db->join('user', 'user.id_user = blog_posts.author_id', 'left');
         $this->db->where('blog_posts.slug', $slug);
         
         return $this->db->get()->row();
@@ -136,27 +136,41 @@ class Blog_model extends CI_Model {
     
     // Get tags for a post
     public function get_post_tags($post_id) {
-        $this->db->select('blog_tags.*');
-        $this->db->from('blog_tags');
-        $this->db->join('blog_post_tags', 'blog_post_tags.tag_id = blog_tags.id');
-        $this->db->where('blog_post_tags.post_id', $post_id);
-        $this->db->order_by('blog_tags.name', 'ASC');
+        // Check if the blog_post_tags table exists
+        if ($this->db->table_exists('blog_post_tags')) {
+            $this->db->select('blog_tags.*');
+            $this->db->from('blog_tags');
+            $this->db->join('blog_post_tags', 'blog_post_tags.tag_id = blog_tags.id');
+            $this->db->where('blog_post_tags.post_id', $post_id);
+            $this->db->order_by('blog_tags.name', 'ASC');
+            
+            return $this->db->get()->result();
+        }
         
-        return $this->db->get()->result();
+        // Return empty array if table doesn't exist
+        return array();
     }
     
     // Add tags to a post
     public function add_post_tags($post_id, $tag_ids) {
+        // Check if the blog_post_tags table exists
+        if (!$this->db->table_exists('blog_post_tags')) {
+            // Table doesn't exist, so we can't add tags
+            return false;
+        }
+        
         // First remove all existing tags
         $this->db->where('post_id', $post_id);
         $this->db->delete('blog_post_tags');
         
         // Then add the new tags
-        foreach ($tag_ids as $tag_id) {
-            $this->db->insert('blog_post_tags', [
-                'post_id' => $post_id,
-                'tag_id' => $tag_id
-            ]);
+        if (!empty($tag_ids)) {
+            foreach ($tag_ids as $tag_id) {
+                $this->db->insert('blog_post_tags', [
+                    'post_id' => $post_id,
+                    'tag_id' => $tag_id
+                ]);
+            }
         }
         
         return true;
