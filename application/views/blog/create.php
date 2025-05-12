@@ -33,7 +33,8 @@
         <!-- Blog Post Form -->
         <div class="bg-white rounded-xl shadow-sm overflow-hidden">
             <div class="p-6">
-                <form action="<?= base_url('blog/store'); ?>" method="post" enctype="multipart/form-data">
+                <!-- Remove the comment line below -->
+                <form action="<?= base_url('blog/store'); ?>" method="post" enctype="multipart/form-data" id="blogForm">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <!-- Main Content Column -->
                         <div class="md:col-span-2">
@@ -46,7 +47,8 @@
                             
                             <div class="mb-6">
                                 <label for="content" class="block text-sm font-medium text-gray-700 mb-1">Konten</label>
-                                <textarea name="content" id="content" rows="15" required
+                                <!-- Remove required attribute from textarea -->
+                                <textarea name="content" id="content" rows="15"
                                     class="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                                     placeholder="Tulis konten artikel di sini..."></textarea>
                             </div>
@@ -123,7 +125,7 @@
 </main>
 
 <script>
-    // Image preview functionality
+    // Image preview functionality remains unchanged
     document.getElementById('featured_image').addEventListener('change', function(e) {
         const file = e.target.files[0];
         if (file) {
@@ -139,15 +141,77 @@
     });
     
     // Initialize CKEditor for rich text editing
+    let editor;
+    
     document.addEventListener('DOMContentLoaded', function() {
+        // Get the form element
+        const form = document.getElementById('blogForm');
+        
         if (typeof ClassicEditor !== 'undefined') {
             ClassicEditor
                 .create(document.querySelector('#content'), {
                     toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', '|', 'outdent', 'indent', '|', 'imageUpload', 'blockQuote', 'insertTable', 'mediaEmbed', 'undo', 'redo']
                 })
+                .then(newEditor => {
+                    editor = newEditor;
+                    
+                    // Add submit event listener to the form
+                    form.addEventListener('submit', function(e) {
+                        e.preventDefault(); // Prevent default form submission
+                        
+                        // Get the title value
+                        const title = document.getElementById('title').value;
+                        
+                        // Get content from CKEditor
+                        const content = editor.getData();
+                        
+                        // Basic validation
+                        if (!title.trim()) {
+                            alert('Judul artikel tidak boleh kosong');
+                            return;
+                        }
+                        
+                        if (!content.trim()) {
+                            alert('Konten artikel tidak boleh kosong');
+                            return;
+                        }
+                        
+                        // Update the textarea with CKEditor content
+                        document.querySelector('#content').value = content;
+                        
+                        // Submit the form
+                        form.submit();
+                    });
+                })
                 .catch(error => {
                     console.error(error);
+                    
+                    // If CKEditor fails to load, add a simple submit handler
+                    form.addEventListener('submit', function() {
+                        const title = document.getElementById('title').value;
+                        const content = document.getElementById('content').value;
+                        
+                        if (!title.trim() || !content.trim()) {
+                            alert('Judul dan konten artikel tidak boleh kosong');
+                            return false;
+                        }
+                        
+                        return true;
+                    });
                 });
+        } else {
+            // If CKEditor is not available, add a simple submit handler
+            form.addEventListener('submit', function() {
+                const title = document.getElementById('title').value;
+                const content = document.getElementById('content').value;
+                
+                if (!title.trim() || !content.trim()) {
+                    alert('Judul dan konten artikel tidak boleh kosong');
+                    return false;
+                }
+                
+                return true;
+            });
         }
     });
 </script>

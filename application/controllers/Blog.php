@@ -57,67 +57,89 @@ class Blog extends CI_Controller {
         $this->load->view('blog/create', $data);
     }
     
-    public function store() {
-        // Set validation rules
+    // Add or update the store method in your Blog controller
+    public function store()
+    {
+        // Check if user is logged in
+        if (!$this->session->userdata('logged_in')) {
+            redirect('auth/login');
+        }
+        
+        // Get admin ID from session
+        $admin_id = $this->session->userdata('id_admin');
+        
+        // If admin ID is not found in session, redirect to login
+        if (!$admin_id) {
+            $this->session->set_flashdata('error', 'Sesi login telah berakhir. Silakan login kembali.');
+            redirect('auth/login');
+        }
+        
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('title', 'Title', 'required');
-        $this->form_validation->set_rules('content', 'Content', 'required');
+        
+        // Set validation rules
+        $this->form_validation->set_rules('title', 'Judul', 'required');
+        $this->form_validation->set_rules('content', 'Konten', 'required');
         
         if ($this->form_validation->run() === FALSE) {
-            // Validation failed, return to form with errors
-            $this->session->set_flashdata('error', validation_errors());
-            redirect('blog/create');
+            // If validation fails, return to the create form with errors
+            $data['categories'] = $this->Blog_model->get_categories();
+            $this->load->view('blog/create', $data);
         } else {
-            // Handle image upload
-            $featured_image = '';
-            if (!empty($_FILES['featured_image']['name'])) {
-                // Set upload configuration
-                $config['upload_path'] = './uploads/blog/';
-                $config['allowed_types'] = 'gif|jpg|jpeg|png';
-                $config['max_size'] = 2048; // 2MB
-                $config['encrypt_name'] = TRUE;
-                
-                // Create upload directory if it doesn't exist
-                if (!is_dir($config['upload_path'])) {
-                    mkdir($config['upload_path'], 0777, TRUE);
-                }
-                
-                $this->upload->initialize($config);
-                
-                if ($this->upload->do_upload('featured_image')) {
-                    $upload_data = $this->upload->data();
-                    $featured_image = 'uploads/blog/' . $upload_data['file_name'];
-                } else {
-                    $this->session->set_flashdata('error', $this->upload->display_errors());
-                    redirect('blog/create');
-                }
+            // Prepare post data
+            $slug = url_title($this->input->post('title'), 'dash', TRUE);
+            
+            // Check if slug already exists
+            if ($this->Blog_model->check_slug_exists($slug)) {
+                $slug = $slug . '-' . uniqid();
             }
             
-            // Create slug from title
-            $slug = $this->Blog_model->create_slug($this->input->post('title'));
-            
-            // Prepare post data
             $post_data = [
                 'title' => $this->input->post('title'),
                 'slug' => $slug,
                 'content' => $this->input->post('content'),
                 'excerpt' => $this->input->post('excerpt'),
-                'category_id' => $this->input->post('category_id'),
+                'category_id' => $this->input->post('category_id') ?: NULL,
                 'status' => $this->input->post('status'),
-                'author_id' => $this->session->userdata('user_id'),
-                'featured_image' => $featured_image
+                'author_id' => $admin_id // Use admin ID from session
             ];
             
-            // Insert post
-            $post_id = $this->Blog_model->create_post($post_data);
-            
-            // Handle tags
-            if ($this->input->post('tags')) {
-                $this->Blog_model->add_post_tags($post_id, $this->input->post('tags'));
+            // Handle image upload if present
+            if (!empty($_FILES['featured_image']['name'])) {
+                $upload_path = FCPATH . 'uploads/blog/';
+                
+                // Create directory if it doesn't exist
+                if (!is_dir($upload_path)) {
+                    mkdir($upload_path, 0777, TRUE);
+                }
+                
+                $config['upload_path'] = $upload_path;
+                $config['allowed_types'] = 'gif|jpg|jpeg|png';
+                $config['max_size'] = 2048; // 2MB
+                $config['file_name'] = 'blog_' . time();
+                
+                // Re-initialize the upload library with the new configuration
+                $this->upload->initialize($config);
+                
+                if ($this->upload->do_upload('featured_image')) {
+                    $upload_data = $this->upload->data();
+                    $post_data['featured_image'] = 'uploads/blog/' . $upload_data['file_name'];
+                } else {
+                    // Set error message if upload fails
+                    $this->session->set_flashdata('error', $this->upload->display_errors());
+                    redirect('blog/create');
+                }
             }
             
-            $this->session->set_flashdata('success', 'Artikel berhasil dibuat!');
-            redirect('blog');
+            // Save post to database
+            $post_id = $this->Blog_model->create_post($post_data);
+            
+            if ($post_id) {
+                $this->session->set_flashdata('success', 'Artikel berhasil disimpan.');
+                redirect('blog');
+            } else {
+                $this->session->set_flashdata('error', 'Terjadi kesalahan saat menyimpan artikel.');
+                redirect('blog/create');
+            }
         }
     }
     
@@ -159,16 +181,19 @@ class Blog extends CI_Controller {
             $featured_image = $post->featured_image;
             if (!empty($_FILES['featured_image']['name'])) {
                 // Set upload configuration
-                $config['upload_path'] = './uploads/blog/';
+                $upload_path = FCPATH . 'uploads/blog/';
+                
+                // Create directory if it doesn't exist
+                if (!is_dir($upload_path)) {
+                    mkdir($upload_path, 0777, TRUE);
+                }
+                
+                $config['upload_path'] = $upload_path;
                 $config['allowed_types'] = 'gif|jpg|jpeg|png';
                 $config['max_size'] = 2048; // 2MB
                 $config['encrypt_name'] = TRUE;
                 
-                // Create upload directory if it doesn't exist
-                if (!is_dir($config['upload_path'])) {
-                    mkdir($config['upload_path'], 0777, TRUE);
-                }
-                
+                // Re-initialize the upload library with the new configuration
                 $this->upload->initialize($config);
                 
                 if ($this->upload->do_upload('featured_image')) {
@@ -176,8 +201,8 @@ class Blog extends CI_Controller {
                     $featured_image = 'uploads/blog/' . $upload_data['file_name'];
                     
                     // Delete old image if exists
-                    if ($post->featured_image && file_exists('./' . $post->featured_image)) {
-                        unlink('./' . $post->featured_image);
+                    if ($post->featured_image && file_exists(FCPATH . $post->featured_image)) {
+                        unlink(FCPATH . $post->featured_image);
                     }
                 } else {
                     $this->session->set_flashdata('error', $this->upload->display_errors());

@@ -57,10 +57,10 @@ class Blog_model extends CI_Model {
     
     // Get a single blog post by ID
     public function get_post($id) {
-        $this->db->select('blog_posts.*, blog_categories.name as category_name, users.nama as author_name');
+        $this->db->select('blog_posts.*, blog_categories.name as category_name, user.nama as author_name');
         $this->db->from('blog_posts');
         $this->db->join('blog_categories', 'blog_categories.id = blog_posts.category_id', 'left');
-        $this->db->join('users', 'users.id = blog_posts.author_id', 'left');
+        $this->db->join('user', 'user.id = blog_posts.author_id', 'left');
         $this->db->where('blog_posts.id', $id);
         
         return $this->db->get()->row();
@@ -68,19 +68,28 @@ class Blog_model extends CI_Model {
     
     // Get a single blog post by slug
     public function get_post_by_slug($slug) {
-        $this->db->select('blog_posts.*, blog_categories.name as category_name, users.nama as author_name');
+        $this->db->select('blog_posts.*, blog_categories.name as category_name, user.nama as author_name');
         $this->db->from('blog_posts');
         $this->db->join('blog_categories', 'blog_categories.id = blog_posts.category_id', 'left');
-        $this->db->join('users', 'users.id = blog_posts.author_id', 'left');
+        $this->db->join('user', 'user.id = blog_posts.author_id', 'left');
         $this->db->where('blog_posts.slug', $slug);
         
         return $this->db->get()->row();
     }
     
     // Create a new blog post
-    public function create_post($data) {
+    // Add these methods to your Blog_model if they don't exist
+    
+    public function create_post($data)
+    {
         $this->db->insert('blog_posts', $data);
         return $this->db->insert_id();
+    }
+    
+    public function check_slug_exists($slug)
+    {
+        $query = $this->db->get_where('blog_posts', ['slug' => $slug]);
+        return $query->num_rows() > 0;
     }
     
     // Update a blog post
