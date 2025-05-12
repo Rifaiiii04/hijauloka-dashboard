@@ -135,6 +135,16 @@
                     <span class="text-sm font-medium">Transaksi</span>
                 </a>
             </li>
+
+            <li>
+                <a href="<?= base_url('blog'); ?>" 
+                   class="sidebar-item flex items-center gap-3 p-3 rounded-lg text-white/90 hover:text-white <?= ($this->uri->segment(1) == 'blog') ? 'active' : '' ?>">
+                    <div class="sidebar-icon w-6 h-6 flex items-center justify-center">
+                        <i class="fa-solid fa-newspaper"></i>
+                    </div>
+                    <span class="text-sm font-medium">Blog</span>
+                </a>
+            </li>
         </ul>
     </nav>
 
