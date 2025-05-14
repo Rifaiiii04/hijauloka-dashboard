@@ -10,7 +10,7 @@
                 <p class="text-gray-500 text-sm mt-1">Kelola artikel dan konten blog</p>
             </div>
             <div class="mt-3 md:mt-0 flex items-center space-x-2">
-                <a href="<?= base_url('blog/categories'); ?>" class="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors text-sm flex items-center shadow-sm">
+                <a href="<?= base_url('blog/categories'); ?>" class="px-4 py-2 bg-blue-500 text-white rounded-lg  text-sm flex items-center shadow-sm">
                     <i class="fas fa-layer-group mr-2"></i> Kategori
                 </a>
                 <a href="<?= base_url('blog/create'); ?>" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 text-sm rounded-lg transition-colors flex items-center shadow-sm">
