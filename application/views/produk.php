@@ -253,6 +253,11 @@
     background-color: #08644C;
     color: white;
 }
+
+.form-group:hover label[style*="display: none"] {
+    display: flex !important;
+    opacity: 1 !important;
+}
 </style>
 
 <main class="flex-1 ml-64 p-6 overflow-auto main-content">
@@ -346,7 +351,7 @@
 </main>
 
 <!-- Keep existing modal HTML structure but add new classes -->
-<div id="modalProduk" class="fixed inset-0 modal-overlay flex items-center justify-center hidden">
+<div id="modalProduk" class="fixed inset-0 modal-overlay flex items-center justify-center hidden " style="overflow: scroll;">
     <div class="modal-content">
         <div class="modal-header">
             <h2 class="text-xl font-bold text-gray-800" id="modalTitle">Tambah Produk</h2>
@@ -371,23 +376,69 @@
                 <textarea name="desk_product" id="desk_product" class="form-input" rows="3" required></textarea>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="form-group">
-                    <label class="form-label">Kategori</label>
-                    <div class="space-y-2">
-                        <?php foreach ($kategori as $k): ?>
-                        <label class="flex items-center">
-                            <input type="checkbox" name="id_kategori[]" value="<?= $k->id_kategori; ?>" class="rounded border-gray-300">
-                            <span class="ml-2 text-sm text-gray-700"><?= $k->nama_kategori; ?></span>
-                        </label>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Stok</label>
-                    <input type="number" name="stok" id="stok" class="form-input" required>
-                </div>
-            </div>
+           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="form-group" style="position: relative;">
+      <label 
+    style="
+        background-color: var(--color-primary, #48BB78);
+        color: white;
+        width: 150px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-family: system-ui, sans-serif;
+    "
+    onmouseover="this.style.setProperty('--color-primary', '#38A169')"
+    onmouseout="this.style.setProperty('--color-primary', '#48BB78')"
+>
+    Kategori
+</label>
+        <div class="space-y-2">
+            <?php foreach ($kategori as $k): ?>
+            <label style="
+                display: none;
+                align-items: center;
+                opacity: 0;
+                transition: opacity 0.2s;
+            " 
+            onmouseover="this.style.opacity='1';this.style.display='flex'"
+            onmouseout="this.style.opacity='0';this.style.display='none'">
+                <input 
+                    type="checkbox" 
+                    name="id_kategori[]" 
+                    value="<?= $k->id_kategori; ?>" 
+                    style="
+                        border-radius: 0.375rem;
+                        border: 1px solid #d1d5db;
+                        margin-right: 0.5rem;
+                    ">
+                <span style="margin-left: 0.5rem; font-size: 0.875rem; color: #374151;">
+                    <?= $k->nama_kategori; ?>
+                </span>
+            </label>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Stok</label>
+        <input 
+            type="number" 
+            name="stok" 
+            id="stok" 
+            style="
+                display: block;
+                width: 100%;
+                padding: 0.375rem 0.75rem;
+                border-radius: 0.375rem;
+                border: 1px solid #d1d5db;
+            " 
+            required>
+    </div>
+</div>
 
             <div class="form-group">
                 <label class="form-label">Gambar (minimal 1, maksimal 5)</label>

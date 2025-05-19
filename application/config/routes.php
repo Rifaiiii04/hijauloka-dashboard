@@ -53,5 +53,13 @@ $route['default_controller'] = 'Auth';
 $route['dashboard'] = 'dashboard/index';
 $route['produk'] = 'produk/index';
 $route['pesanan'] = 'pesanan/index';
+
+// Add explicit routes for authentication
+$route['login'] = 'auth/login';
+$route['logout'] = 'auth/logout';
+
+// Add route for review management
+$route['review'] = 'review/index';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

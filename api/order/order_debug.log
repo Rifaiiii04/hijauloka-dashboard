@@ -1,0 +1,173 @@
+2025-05-18 20:10:50 - Received: {"user_id":4,"shipping_address_id":1,"payment_method":"midtrans","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":320000,"total":335000,"items":[{"product_id":19,"quantity":1,"price":45000},{"product_id":36,"quantity":1,"price":25000},{"product_id":18,"quantity":1,"price":250000}]}
+2025-05-18 20:10:54 - Received: {"user_id":4,"shipping_address_id":1,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":320000,"total":335000,"items":[{"product_id":19,"quantity":1,"price":45000},{"product_id":36,"quantity":1,"price":25000},{"product_id":18,"quantity":1,"price":250000}]}
+2025-05-18 20:10:56 - Received: {"user_id":4,"shipping_address_id":1,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":320000,"total":335000,"items":[{"product_id":19,"quantity":1,"price":45000},{"product_id":36,"quantity":1,"price":25000},{"product_id":18,"quantity":1,"price":250000}]}
+2025-05-18 20:10:57 - Received: {"user_id":4,"shipping_address_id":1,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":320000,"total":335000,"items":[{"product_id":19,"quantity":1,"price":45000},{"product_id":36,"quantity":1,"price":25000},{"product_id":18,"quantity":1,"price":250000}]}
+2025-05-18 20:15:23 - Received: {"user_id":4,"shipping_address_id":1,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":320000,"total":335000,"items":[{"product_id":19,"quantity":1,"price":45000},{"product_id":36,"quantity":1,"price":25000},{"product_id":18,"quantity":1,"price":250000}]}
+2025-05-18 20:15:23 - Database connection failed
+2025-05-18 20:22:39 - Received: {"user_id":4,"shipping_address_id":1,"payment_method":"midtrans","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":320000,"total":335000,"items":[{"product_id":19,"quantity":1,"price":45000},{"product_id":36,"quantity":1,"price":25000},{"product_id":18,"quantity":1,"price":250000}]}
+2025-05-18 20:22:39 - Database connection failed
+2025-05-18 20:22:42 - Received: {"user_id":4,"shipping_address_id":1,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":320000,"total":335000,"items":[{"product_id":19,"quantity":1,"price":45000},{"product_id":36,"quantity":1,"price":25000},{"product_id":18,"quantity":1,"price":250000}]}
+2025-05-18 20:22:42 - Database connection failed
+2025-05-18 20:22:46 - Database connection failed
+2025-05-18 20:22:48 - Database connection failed
+2025-05-18 20:28:58 - Received: {"user_id":4,"shipping_address_id":1,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":45000,"total":60000,"items":[{"product_id":19,"quantity":1,"price":45000}]}
+2025-05-18 20:28:58 - Database connection failed
+2025-05-18 20:29:02 - Database connection failed
+2025-05-18 20:35:49 - Received: {"user_id":4,"user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":1,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":45000,"total":60000,"items":[{"product_id":19,"quantity":1,"price":45000,"product_name":"Peace Lily"}]}
+2025-05-18 20:35:49 - Database connection failed
+2025-05-18 20:35:51 - Database connection failed
+2025-05-18 20:50:20 - Received: {"user_id":4,"user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":1,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":320000,"total":335000,"items":[{"product_id":19,"quantity":1,"price":45000,"product_name":"Peace Lily"},{"product_id":36,"quantity":1,"price":25000,"product_name":"String of Pearls"},{"product_id":18,"quantity":1,"price":250000,"product_name":"Monstera Deliciosa"}]}
+2025-05-18 20:50:20 - Database connection failed
+2025-05-18 20:50:21 - Received: {"user_id":4,"user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":1,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":320000,"total":335000,"items":[{"product_id":19,"quantity":1,"price":45000,"product_name":"Peace Lily"},{"product_id":36,"quantity":1,"price":25000,"product_name":"String of Pearls"},{"product_id":18,"quantity":1,"price":250000,"product_name":"Monstera Deliciosa"}]}
+2025-05-18 20:50:21 - Database connection failed
+2025-05-18 20:50:37 - Received: {"user_id":4,"user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":1,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":320000,"total":335000,"items":[{"product_id":19,"quantity":1,"price":45000,"product_name":"Peace Lily"},{"product_id":36,"quantity":1,"price":25000,"product_name":"String of Pearls"},{"product_id":18,"quantity":1,"price":250000,"product_name":"Monstera Deliciosa"}]}
+2025-05-18 20:50:37 - Database connection failed
+2025-05-18 21:04:08 - Received: {"user_id":4,"user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":1,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":320000,"total":335000,"items":[{"product_id":19,"quantity":1,"price":45000,"product_name":"Peace Lily"},{"product_id":36,"quantity":1,"price":25000,"product_name":"String of Pearls"},{"product_id":18,"quantity":1,"price":250000,"product_name":"Monstera Deliciosa"}]}
+2025-05-18 21:04:11 - Received: {"user_id":4,"user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":1,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":320000,"total":335000,"items":[{"product_id":19,"quantity":1,"price":45000,"product_name":"Peace Lily"},{"product_id":36,"quantity":1,"price":25000,"product_name":"String of Pearls"},{"product_id":18,"quantity":1,"price":250000,"product_name":"Monstera Deliciosa"}]}
+2025-05-18 21:08:39 - Received: {"user_id":4,"user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":1,"payment_method":"midtrans","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":70000,"total":85000,"items":[{"product_id":19,"quantity":1,"price":45000,"product_name":"Peace Lily"},{"product_id":36,"quantity":1,"price":25000,"product_name":"String of Pearls"}]}
+2025-05-18 21:08:39 - Database connection successful to 103.247.11.220
+2025-05-18 21:08:41 - Received: {"user_id":4,"user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":1,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":70000,"total":85000,"items":[{"product_id":19,"quantity":1,"price":45000,"product_name":"Peace Lily"},{"product_id":36,"quantity":1,"price":25000,"product_name":"String of Pearls"}]}
+2025-05-18 21:08:41 - Database connection successful to 103.247.11.220
+2025-05-18 21:08:42 - Received: {"user_id":4,"user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":1,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":70000,"total":85000,"items":[{"product_id":19,"quantity":1,"price":45000,"product_name":"Peace Lily"},{"product_id":36,"quantity":1,"price":25000,"product_name":"String of Pearls"}]}
+2025-05-18 21:08:42 - Database connection successful to 103.247.11.220
+2025-05-18 21:08:42 - Received: {"user_id":4,"user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":1,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":70000,"total":85000,"items":[{"product_id":19,"quantity":1,"price":45000,"product_name":"Peace Lily"},{"product_id":36,"quantity":1,"price":25000,"product_name":"String of Pearls"}]}
+2025-05-18 21:08:42 - Database connection successful to 103.247.11.220
+2025-05-18 21:08:43 - Received: {"user_id":4,"user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":1,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":70000,"total":85000,"items":[{"product_id":19,"quantity":1,"price":45000,"product_name":"Peace Lily"},{"product_id":36,"quantity":1,"price":25000,"product_name":"String of Pearls"}]}
+2025-05-18 21:08:43 - Database connection successful to 103.247.11.220
+2025-05-18 21:08:43 - Received: {"user_id":4,"user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":1,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":70000,"total":85000,"items":[{"product_id":19,"quantity":1,"price":45000,"product_name":"Peace Lily"},{"product_id":36,"quantity":1,"price":25000,"product_name":"String of Pearls"}]}
+2025-05-18 21:08:43 - Database connection successful to 103.247.11.220
+2025-05-18 21:08:43 - Received: {"user_id":4,"user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":1,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":70000,"total":85000,"items":[{"product_id":19,"quantity":1,"price":45000,"product_name":"Peace Lily"},{"product_id":36,"quantity":1,"price":25000,"product_name":"String of Pearls"}]}
+2025-05-18 21:08:43 - Database connection successful to 103.247.11.220
+2025-05-18 21:14:57 - Received: {"user_id":4,"user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":1,"payment_method":"midtrans","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":70000,"total":85000,"items":[{"product_id":19,"quantity":1,"price":45000,"product_name":"Peace Lily"},{"product_id":36,"quantity":1,"price":25000,"product_name":"String of Pearls"}]}
+2025-05-18 21:14:57 - Database connection successful to 103.247.11.220
+2025-05-18 21:14:57 - Error creating order: Unknown column 'order_id' in 'SELECT'
+Stack trace: #0 /home/hijc7862/public_html/admin/api/order/create_order.php(87): mysqli->prepare('SELECT MAX(CAST...')
+#1 {main}
+2025-05-18 21:14:59 - Received: {"user_id":4,"user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":1,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":70000,"total":85000,"items":[{"product_id":19,"quantity":1,"price":45000,"product_name":"Peace Lily"},{"product_id":36,"quantity":1,"price":25000,"product_name":"String of Pearls"}]}
+2025-05-18 21:14:59 - Database connection successful to 103.247.11.220
+2025-05-18 21:14:59 - Error creating order: Unknown column 'order_id' in 'SELECT'
+Stack trace: #0 /home/hijc7862/public_html/admin/api/order/create_order.php(87): mysqli->prepare('SELECT MAX(CAST...')
+#1 {main}
+2025-05-18 21:27:09 - Received: {"user_id":4,"user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":1,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":70000,"total":85000,"items":[{"product_id":19,"quantity":1,"price":45000,"product_name":"Peace Lily"},{"product_id":36,"quantity":1,"price":25000,"product_name":"String of Pearls"}]}
+2025-05-18 21:27:09 - Database connection successful to 103.247.11.220
+2025-05-18 21:27:09 - Generated order ID: HL-20250518-9211
+2025-05-18 21:27:09 - Error creating order: Unknown column 'shipping_address_id' in 'INSERT INTO'
+Stack trace: #0 /home/hijc7862/public_html/admin/api/order/create_order.php(140): mysqli->prepare('INSERT INTO ord...')
+#1 {main}
+2025-05-18 21:27:30 - Received: {"user_id":4,"user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":1,"payment_method":"midtrans","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":70000,"total":85000,"items":[{"product_id":19,"quantity":1,"price":45000,"product_name":"Peace Lily"},{"product_id":36,"quantity":1,"price":25000,"product_name":"String of Pearls"}]}
+2025-05-18 21:27:30 - Database connection successful to 103.247.11.220
+2025-05-18 21:27:30 - Generated order ID: HL-20250518-2963
+2025-05-18 21:27:30 - Error creating order: Unknown column 'shipping_address_id' in 'INSERT INTO'
+Stack trace: #0 /home/hijc7862/public_html/admin/api/order/create_order.php(140): mysqli->prepare('INSERT INTO ord...')
+#1 {main}
+2025-05-18 21:27:35 - Received: {"user_id":4,"user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":1,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":70000,"total":85000,"items":[{"product_id":19,"quantity":1,"price":45000,"product_name":"Peace Lily"},{"product_id":36,"quantity":1,"price":25000,"product_name":"String of Pearls"}]}
+2025-05-18 21:27:35 - Database connection successful to 103.247.11.220
+2025-05-18 21:27:35 - Generated order ID: HL-20250518-3314
+2025-05-18 21:27:35 - Error creating order: Unknown column 'shipping_address_id' in 'INSERT INTO'
+Stack trace: #0 /home/hijc7862/public_html/admin/api/order/create_order.php(140): mysqli->prepare('INSERT INTO ord...')
+#1 {main}
+2025-05-18 21:42:04 - Received: {"user_id":4,"user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":1,"payment_method":"midtrans","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":70000,"total":85000,"items":[{"product_id":19,"quantity":1,"price":45000,"product_name":"Peace Lily"},{"product_id":36,"quantity":1,"price":25000,"product_name":"String of Pearls"}]}
+2025-05-18 21:42:04 - Database connection successful to 103.247.11.220
+2025-05-18 21:42:04 - Generated order ID: HL-20250518-6686
+2025-05-18 21:42:04 - Shipping address found: {"id":1,"user_id":4,"recipient_name":"Dea Amelia","phone":"0812131311323","address_label":"Rumah","address":"Jl Raya Subang","rt":"020","rw":"050","house_number":"19","postal_code":"04423","jarak":"0.00","detail_address":"Depan Warung","is_primary":1,"created_at":"2025-04-29 09:39:11"}
+2025-05-18 21:42:04 - Order data: {"id_user":4,"payment_method":"midtrans","shipping_method":"hijauloka","shipping_cost":15000,"total":85000,"admin_id":"1"} - Types: issddi
+2025-05-18 21:42:04 - Note: Could not link order with shipping address: Table 'hijc7862_hijauloka.order_shipping_address' doesn't exist
+2025-05-18 21:42:04 - Order created successfully. id_order: 166
+2025-05-18 21:42:08 - Received: {"user_id":4,"user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":1,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":70000,"total":85000,"items":[{"product_id":19,"quantity":1,"price":45000,"product_name":"Peace Lily"},{"product_id":36,"quantity":1,"price":25000,"product_name":"String of Pearls"}]}
+2025-05-18 21:42:08 - Database connection successful to 103.247.11.220
+2025-05-18 21:42:08 - Generated order ID: HL-20250518-7276
+2025-05-18 21:42:08 - Shipping address found: {"id":1,"user_id":4,"recipient_name":"Dea Amelia","phone":"0812131311323","address_label":"Rumah","address":"Jl Raya Subang","rt":"020","rw":"050","house_number":"19","postal_code":"04423","jarak":"0.00","detail_address":"Depan Warung","is_primary":1,"created_at":"2025-04-29 09:39:11"}
+2025-05-18 21:42:08 - Order data: {"id_user":4,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"total":85000,"admin_id":"1"} - Types: issddi
+2025-05-18 21:42:08 - Note: Could not link order with shipping address: Table 'hijc7862_hijauloka.order_shipping_address' doesn't exist
+2025-05-18 21:42:08 - Order created successfully. id_order: 167
+2025-05-18 21:42:24 - Received: {"user_id":4,"user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":1,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":70000,"total":85000,"items":[{"product_id":19,"quantity":1,"price":45000,"product_name":"Peace Lily"},{"product_id":36,"quantity":1,"price":25000,"product_name":"String of Pearls"}]}
+2025-05-18 21:42:24 - Database connection successful to 103.247.11.220
+2025-05-18 21:42:24 - Generated order ID: HL-20250518-0224
+2025-05-18 21:42:24 - Shipping address found: {"id":1,"user_id":4,"recipient_name":"Dea Amelia","phone":"0812131311323","address_label":"Rumah","address":"Jl Raya Subang","rt":"020","rw":"050","house_number":"19","postal_code":"04423","jarak":"0.00","detail_address":"Depan Warung","is_primary":1,"created_at":"2025-04-29 09:39:11"}
+2025-05-18 21:42:24 - Order data: {"id_user":4,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"total":85000,"admin_id":"1"} - Types: issddi
+2025-05-18 21:42:24 - Note: Could not link order with shipping address: Table 'hijc7862_hijauloka.order_shipping_address' doesn't exist
+2025-05-18 21:42:24 - Order created successfully. id_order: 168
+2025-05-18 21:46:44 - Received: {"user_id":4,"user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":"1","payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":45000,"total":60000,"items":[{"product_id":19,"quantity":1,"price":45000,"product_name":"Peace Lily"}]}
+2025-05-18 21:46:44 - Database connection successful to 103.247.11.220
+2025-05-18 21:46:44 - Generated order ID: HL-20250518-5340
+2025-05-18 21:46:44 - Shipping address found: {"id":1,"user_id":4,"recipient_name":"Dea Amelia","phone":"0812131311323","address_label":"Rumah","address":"Jl Raya Subang","rt":"020","rw":"050","house_number":"19","postal_code":"04423","jarak":"0.00","detail_address":"Depan Warung","is_primary":1,"created_at":"2025-04-29 09:39:11"}
+2025-05-18 21:46:44 - Order data: {"id_user":4,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"total":60000,"admin_id":"1"} - Types: issddi
+2025-05-18 21:46:44 - Note: Could not link order with shipping address: Table 'hijc7862_hijauloka.order_shipping_address' doesn't exist
+2025-05-18 21:46:44 - Order created successfully. id_order: 169
+2025-05-18 21:46:51 - Received: {"user_id":4,"user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":"1","payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":45000,"total":60000,"items":[{"product_id":19,"quantity":1,"price":45000,"product_name":"Peace Lily"}]}
+2025-05-18 21:46:51 - Database connection successful to 103.247.11.220
+2025-05-18 21:46:51 - Generated order ID: HL-20250518-7655
+2025-05-18 21:46:51 - Shipping address found: {"id":1,"user_id":4,"recipient_name":"Dea Amelia","phone":"0812131311323","address_label":"Rumah","address":"Jl Raya Subang","rt":"020","rw":"050","house_number":"19","postal_code":"04423","jarak":"0.00","detail_address":"Depan Warung","is_primary":1,"created_at":"2025-04-29 09:39:11"}
+2025-05-18 21:46:51 - Order data: {"id_user":4,"payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"total":60000,"admin_id":"1"} - Types: issddi
+2025-05-18 21:46:51 - Note: Could not link order with shipping address: Table 'hijc7862_hijauloka.order_shipping_address' doesn't exist
+2025-05-18 21:46:51 - Order created successfully. id_order: 170
+2025-05-18 21:54:11 - Received: {"user_id":"4","user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":"1","payment_method":"midtrans","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":45000,"total":60000,"items":[{"product_id":"19","quantity":"1","price":45000,"product_name":"Peace Lily"}]}
+2025-05-18 21:54:11 - Database connection successful to 103.247.11.220
+2025-05-18 21:54:11 - Generated order ID: HL-20250518-0906
+2025-05-18 21:54:11 - Shipping address found: {"id":1,"user_id":4,"recipient_name":"Dea Amelia","phone":"0812131311323","address_label":"Rumah","address":"Jl Raya Subang","rt":"020","rw":"050","house_number":"19","postal_code":"04423","jarak":"0.00","detail_address":"Depan Warung","is_primary":1,"created_at":"2025-04-29 09:39:11"}
+2025-05-18 21:54:11 - Order data: {"id_user":"4","payment_method":"midtrans","shipping_method":"hijauloka","shipping_cost":15000,"total":60000,"admin_id":"1"} - Types: issddi
+2025-05-18 21:54:11 - Note: Could not link order with shipping address: Table 'hijc7862_hijauloka.order_shipping_address' doesn't exist
+2025-05-18 21:54:11 - Order created successfully. id_order: 171
+2025-05-18 21:58:01 - Received: {"user_id":"4","user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":"1","payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":45000,"total":60000,"items":[{"product_id":"19","quantity":"1","price":45000,"product_name":"Peace Lily"}]}
+2025-05-18 21:58:01 - Database connection successful to 103.247.11.220
+2025-05-18 21:58:01 - Generated order ID: HL-20250518-5833
+2025-05-18 21:58:01 - Shipping address found: {"id":1,"user_id":4,"recipient_name":"Dea Amelia","phone":"0812131311323","address_label":"Rumah","address":"Jl Raya Subang","rt":"020","rw":"050","house_number":"19","postal_code":"04423","jarak":"0.00","detail_address":"Depan Warung","is_primary":1,"created_at":"2025-04-29 09:39:11"}
+2025-05-18 21:58:01 - Order data: {"id_user":"4","payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"total":60000,"admin_id":"1"} - Types: issddi
+2025-05-18 21:58:01 - Note: Could not link order with shipping address: Table 'hijc7862_hijauloka.order_shipping_address' doesn't exist
+2025-05-18 21:58:01 - Order created successfully. id_order: 172
+2025-05-18 22:10:20 - Received: {"user_id":"4","user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":"1","payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":45000,"total":60000,"items":[{"product_id":"19","quantity":"1","price":45000,"product_name":"Peace Lily"}]}
+2025-05-18 22:10:20 - Database connection successful to 103.247.11.220
+2025-05-18 22:10:20 - Generated order ID: HL-20250518-4742
+2025-05-18 22:10:20 - Shipping address found: {"id":1,"user_id":4,"recipient_name":"Dea Amelia","phone":"0812131311323","address_label":"Rumah","address":"Jl Raya Subang","rt":"020","rw":"050","house_number":"19","postal_code":"04423","jarak":"0.00","detail_address":"Depan Warung","is_primary":1,"created_at":"2025-04-29 09:39:11"}
+2025-05-18 22:10:20 - Order data: {"id_user":"4","payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"total":60000,"admin_id":"1"} - Types: issddi
+2025-05-18 22:10:20 - Note: Could not link order with shipping address: Table 'hijc7862_hijauloka.order_shipping_address' doesn't exist
+2025-05-18 22:10:20 - Order created successfully. id_order: 173
+2025-05-18 22:19:05 - Received: {"user_id":"4","user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":"1","payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":45000,"total":60000,"items":[{"product_id":"19","quantity":"1","price":45000,"product_name":"Peace Lily"}]}
+2025-05-18 22:19:05 - Database connection successful to 103.247.11.220
+2025-05-18 22:19:05 - Generated order ID: HL-20250518-2118
+2025-05-18 22:19:05 - Shipping address found: {"id":1,"user_id":4,"recipient_name":"Dea Amelia","phone":"0812131311323","address_label":"Rumah","address":"Jl Raya Subang","rt":"020","rw":"050","house_number":"19","postal_code":"04423","jarak":"0.00","detail_address":"Depan Warung","is_primary":1,"created_at":"2025-04-29 09:39:11"}
+2025-05-18 22:19:05 - Order data: {"id_user":"4","payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"total":60000,"admin_id":"1"} - Types: issddi
+2025-05-18 22:19:05 - Note: Could not link order with shipping address: Table 'hijc7862_hijauloka.order_shipping_address' doesn't exist
+2025-05-18 22:19:05 - Order created successfully. id_order: 174
+2025-05-18 22:24:03 - Received: {"user_id":"4","user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":"1","payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":45000,"total":60000,"items":[{"product_id":"19","quantity":"1","price":45000,"product_name":"Peace Lily"}]}
+2025-05-18 22:24:03 - Database connection successful to 103.247.11.220
+2025-05-18 22:24:03 - Generated order ID: HL-20250518-5667
+2025-05-18 22:24:03 - Shipping address found: {"id":1,"user_id":4,"recipient_name":"Dea Amelia","phone":"0812131311323","address_label":"Rumah","address":"Jl Raya Subang","rt":"020","rw":"050","house_number":"19","postal_code":"04423","jarak":"0.00","detail_address":"Depan Warung","is_primary":1,"created_at":"2025-04-29 09:39:11"}
+2025-05-18 22:24:03 - Order data: {"id_user":"4","payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"total":60000,"admin_id":"1"} - Types: issddi
+2025-05-18 22:24:03 - Note: Could not link order with shipping address: Table 'hijc7862_hijauloka.order_shipping_address' doesn't exist
+2025-05-18 22:24:03 - Order created successfully. id_order: 175
+2025-05-18 22:32:22 - Received: {"user_id":"4","user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":"1","payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":45000,"total":60000,"items":[{"product_id":"19","quantity":"1","price":45000,"product_name":"Peace Lily"}]}
+2025-05-18 22:32:22 - Database connection successful to 103.247.11.220
+2025-05-18 22:32:22 - Generated order ID: HL-20250518-7165
+2025-05-18 22:32:22 - Shipping address found: {"id":1,"user_id":4,"recipient_name":"Dea Amelia","phone":"0812131311323","address_label":"Rumah","address":"Jl Raya Subang","rt":"020","rw":"050","house_number":"19","postal_code":"04423","jarak":"0.00","detail_address":"Depan Warung","is_primary":1,"created_at":"2025-04-29 09:39:11"}
+2025-05-18 22:32:22 - Order data: {"id_user":"4","payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"total":60000,"admin_id":"1"} - Types: issddi
+2025-05-18 22:32:22 - Note: Could not link order with shipping address: Table 'hijc7862_hijauloka.order_shipping_address' doesn't exist
+2025-05-18 22:32:22 - Order created successfully. id_order: 176
+2025-05-18 22:56:17 - Received: {"user_id":"4","user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":"1","payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":45000,"total":60000,"items":[{"product_id":"19","quantity":"1","price":45000,"product_name":"Peace Lily"}]}
+2025-05-18 22:56:17 - Database connection successful to 103.247.11.220
+2025-05-18 22:56:17 - Generated order ID: HL-20250518-5821
+2025-05-18 22:56:17 - Shipping address found: {"id":1,"user_id":4,"recipient_name":"Dea Amelia","phone":"0812131311323","address_label":"Rumah","address":"Jl Raya Subang","rt":"020","rw":"050","house_number":"19","postal_code":"04423","jarak":"0.00","detail_address":"Depan Warung","is_primary":1,"created_at":"2025-04-29 09:39:11"}
+2025-05-18 22:56:17 - Order data: {"id_user":"4","payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"total":60000,"admin_id":"1"} - Types: issddi
+2025-05-18 22:56:17 - Note: Could not link order with shipping address: Table 'hijc7862_hijauloka.order_shipping_address' doesn't exist
+2025-05-18 22:56:17 - Order created successfully. id_order: 177
+2025-05-18 23:16:14 - Received: {"user_id":"4","user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":"1","payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"subtotal":45000,"total":60000,"items":[{"product_id":"19","quantity":"1","price":45000,"product_name":"Peace Lily"}]}
+2025-05-18 23:16:14 - Database connection successful to 103.247.11.220
+2025-05-18 23:16:14 - Generated order ID: HL-20250518-8130
+2025-05-18 23:16:14 - Shipping address found: {"id":1,"user_id":4,"recipient_name":"Dea Amelia","phone":"0812131311323","address_label":"Rumah","address":"Jl Raya Subang","rt":"020","rw":"050","house_number":"19","postal_code":"04423","jarak":"0.00","detail_address":"Depan Warung","is_primary":1,"created_at":"2025-04-29 09:39:11"}
+2025-05-18 23:16:14 - Order data: {"id_user":"4","payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"total":60000,"admin_id":"1"} - Types: issddi
+2025-05-18 23:16:14 - Note: Could not link order with shipping address: Table 'hijc7862_hijauloka.order_shipping_address' doesn't exist
+2025-05-18 23:16:14 - Order created successfully. id_order: 178
+2025-05-19 09:29:38 - Received: {"user_id":"4","user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":"1","payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000.0,"subtotal":45000.0,"total":60000.0,"items":[{"product_id":"19","quantity":"1","price":45000.0,"product_name":"Peace Lily"}]}
+2025-05-19 09:29:38 - Database connection successful to 103.247.11.220
+2025-05-19 09:29:38 - Generated order ID: HL-20250519-2192
+2025-05-19 09:29:38 - Shipping address found: {"id":1,"user_id":4,"recipient_name":"Dea Amelia","phone":"0812131311323","address_label":"Rumah","address":"Jl Raya Subang","rt":"020","rw":"050","house_number":"19","postal_code":"04423","jarak":"0.00","detail_address":"Depan Warung","is_primary":1,"created_at":"2025-04-29 09:39:11"}
+2025-05-19 09:29:38 - Order data: {"id_user":"4","payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"total":60000,"admin_id":"1"} - Types: issddi
+2025-05-19 09:29:38 - Note: Could not link order with shipping address: Table 'hijc7862_hijauloka.order_shipping_address' doesn't exist
+2025-05-19 09:29:38 - Order created successfully. id_order: 179
+2025-05-19 09:30:01 - Received: {"user_id":"4","user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":"1","payment_method":"midtrans","shipping_method":"hijauloka","shipping_cost":15000.0,"subtotal":45000.0,"total":60000.0,"items":[{"product_id":"19","quantity":"1","price":45000.0,"product_name":"Peace Lily"}]}
+2025-05-19 09:30:01 - Database connection successful to 103.247.11.220
+2025-05-19 09:30:01 - Generated order ID: HL-20250519-1194
+2025-05-19 09:30:01 - Shipping address found: {"id":1,"user_id":4,"recipient_name":"Dea Amelia","phone":"0812131311323","address_label":"Rumah","address":"Jl Raya Subang","rt":"020","rw":"050","house_number":"19","postal_code":"04423","jarak":"0.00","detail_address":"Depan Warung","is_primary":1,"created_at":"2025-04-29 09:39:11"}
+2025-05-19 09:30:01 - Order data: {"id_user":"4","payment_method":"midtrans","shipping_method":"hijauloka","shipping_cost":15000,"total":60000,"admin_id":"1"} - Types: issddi
+2025-05-19 09:30:01 - Note: Could not link order with shipping address: Table 'hijc7862_hijauloka.order_shipping_address' doesn't exist
+2025-05-19 09:30:01 - Order created successfully. id_order: 180

@@ -1,10 +1,10 @@
 <?php
 // Headers
-header("Access-Control-Allow-Origin: *");
+// header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Methods: POST, OPTIONS");
-header("Access-Control-Max-Age: 3600");
-header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+// header("Access-Control-Allow-Methods: POST, OPTIONS");
+// header("Access-Control-Max-Age: 3600");
+// header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 // Handle preflight OPTIONS request
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
@@ -23,55 +23,74 @@ $db = $database->getConnection();
 $data = json_decode(file_get_contents("php://input"));
 
 // Check if required fields are provided
-if (!isset($data->user_id) || !isset($data->recipient_name) || !isset($data->phone) || !isset($data->address)) {
+if (!isset($data->id) || !isset($data->user_id)) {
     http_response_code(400);
-    echo json_encode(array("success" => false, "message" => "Required fields are missing"));
+    echo json_encode(array("success" => false, "message" => "Address ID and User ID are required"));
     exit();
 }
 
-// Check if this is the first address for the user (should be primary)
-$query = "SELECT COUNT(*) as count FROM shipping_addresses WHERE user_id = ?";
+// Check if address exists and belongs to the user
+$query = "SELECT * FROM shipping_addresses WHERE id = ? AND user_id = ?";
 $stmt = $db->prepare($query);
-$stmt->bindParam(1, $data->user_id);
+$stmt->bindParam(1, $data->id);
+$stmt->bindParam(2, $data->user_id);
 $stmt->execute();
-$row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$is_primary = $row['count'] == 0 ? 1 : ($data->is_primary ?? 0);
-
-// If setting as primary, update all other addresses to non-primary
-if ($is_primary == 1) {
-    $update_query = "UPDATE shipping_addresses SET is_primary = 0 WHERE user_id = ?";
-    $update_stmt = $db->prepare($update_query);
-    $update_stmt->bindParam(1, $data->user_id);
-    $update_stmt->execute();
+if ($stmt->rowCount() == 0) {
+    http_response_code(404);
+    echo json_encode(array("success" => false, "message" => "Address not found or does not belong to the user"));
+    exit();
 }
 
-// Insert the new address
-$query = "INSERT INTO shipping_addresses 
-          (user_id, recipient_name, phone, address_label, address, rt, rw, house_number, postal_code, detail_address, is_primary) 
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+// Get the address to check if it's primary
+$address = $stmt->fetch(PDO::FETCH_ASSOC);
+$is_primary = $address['is_primary'];
 
-$stmt = $db->prepare($query);
+// Begin transaction
+$db->beginTransaction();
 
-// Bind parameters
-$stmt->bindParam(1, $data->user_id);
-$stmt->bindParam(2, $data->recipient_name);
-$stmt->bindParam(3, $data->phone);
-$stmt->bindParam(4, $data->address_label);
-$stmt->bindParam(5, $data->address);
-$stmt->bindParam(6, $data->rt);
-$stmt->bindParam(7, $data->rw);
-$stmt->bindParam(8, $data->house_number);
-$stmt->bindParam(9, $data->postal_code);
-$stmt->bindParam(10, $data->detail_address);
-$stmt->bindParam(11, $is_primary);
-
-// Execute query
-if ($stmt->execute()) {
-    http_response_code(201);
-    echo json_encode(array("success" => true, "message" => "Address added successfully"));
-} else {
+try {
+    // Delete the address
+    $query = "DELETE FROM shipping_addresses WHERE id = ?";
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(1, $data->id);
+    
+    if (!$stmt->execute()) {
+        throw new Exception("Failed to delete address");
+    }
+    
+    // If the deleted address was primary, set another address as primary
+    if ($is_primary == 1) {
+        // Find another address for this user
+        $query = "SELECT id FROM shipping_addresses WHERE user_id = ? LIMIT 1";
+        $stmt = $db->prepare($query);
+        $stmt->bindParam(1, $data->user_id);
+        $stmt->execute();
+        
+        if ($stmt->rowCount() > 0) {
+            $new_primary = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+            // Set as primary
+            $query = "UPDATE shipping_addresses SET is_primary = 1 WHERE id = ?";
+            $stmt = $db->prepare($query);
+            $stmt->bindParam(1, $new_primary['id']);
+            
+            if (!$stmt->execute()) {
+                throw new Exception("Failed to set new primary address");
+            }
+        }
+    }
+    
+    // Commit transaction
+    $db->commit();
+    
+    http_response_code(200);
+    echo json_encode(array("success" => true, "message" => "Address deleted successfully"));
+} catch (Exception $e) {
+    // Rollback transaction
+    $db->rollBack();
+    
     http_response_code(503);
-    echo json_encode(array("success" => false, "message" => "Unable to add address"));
+    echo json_encode(array("success" => false, "message" => $e->getMessage()));
 }
 ?>

@@ -1,0 +1,311 @@
+[18-May-2025 19:43:08 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function begin_transaction() on null in /home/hijc7862/public_html/admin/api/order/create_order.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/create_order.php on line 34
+[18-May-2025 19:46:12 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function begin_transaction() on null in /home/hijc7862/public_html/admin/api/order/create_order.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/create_order.php on line 34
+[18-May-2025 19:49:39 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function begin_transaction() on null in /home/hijc7862/public_html/admin/api/order/create_order.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/create_order.php on line 34
+[18-May-2025 19:49:39 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function begin_transaction() on null in /home/hijc7862/public_html/admin/api/order/create_order.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/create_order.php on line 34
+[18-May-2025 19:58:02 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function begin_transaction() on null in /home/hijc7862/public_html/admin/api/order/create_order.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/create_order.php on line 34
+[18-May-2025 19:58:02 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function begin_transaction() on null in /home/hijc7862/public_html/admin/api/order/create_order.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/create_order.php on line 34
+[18-May-2025 19:58:02 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function begin_transaction() on null in /home/hijc7862/public_html/admin/api/order/create_order.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/create_order.php on line 34
+[18-May-2025 20:10:50 Asia/Jakarta] PHP Notice:  Undefined variable: conn in /home/hijc7862/public_html/admin/api/order/create_order.php on line 52
+[18-May-2025 20:10:50 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function begin_transaction() on null in /home/hijc7862/public_html/admin/api/order/create_order.php:52
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/create_order.php on line 52
+[18-May-2025 20:10:54 Asia/Jakarta] PHP Notice:  Undefined variable: conn in /home/hijc7862/public_html/admin/api/order/create_order.php on line 52
+[18-May-2025 20:10:54 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function begin_transaction() on null in /home/hijc7862/public_html/admin/api/order/create_order.php:52
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/create_order.php on line 52
+[18-May-2025 20:10:56 Asia/Jakarta] PHP Notice:  Undefined variable: conn in /home/hijc7862/public_html/admin/api/order/create_order.php on line 52
+[18-May-2025 20:10:56 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function begin_transaction() on null in /home/hijc7862/public_html/admin/api/order/create_order.php:52
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/create_order.php on line 52
+[18-May-2025 20:10:57 Asia/Jakarta] PHP Notice:  Undefined variable: conn in /home/hijc7862/public_html/admin/api/order/create_order.php on line 52
+[18-May-2025 20:10:57 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function begin_transaction() on null in /home/hijc7862/public_html/admin/api/order/create_order.php:52
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/create_order.php on line 52
+[18-May-2025 20:15:25 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 45
+[18-May-2025 20:15:27 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 45
+[18-May-2025 21:04:08 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/hijc7862/public_html/admin/api/order/create_order.php:79
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/create_order.php on line 79
+[18-May-2025 21:04:11 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/hijc7862/public_html/admin/api/order/create_order.php:79
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/create_order.php on line 79
+[18-May-2025 21:08:39 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/create_order.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/create_order.php on line 83
+[18-May-2025 21:08:41 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/create_order.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/create_order.php on line 83
+[18-May-2025 21:08:42 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/create_order.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/create_order.php on line 83
+[18-May-2025 21:08:42 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/create_order.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/create_order.php on line 83
+[18-May-2025 21:08:43 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/create_order.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/create_order.php on line 83
+[18-May-2025 21:08:43 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/create_order.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/create_order.php on line 83
+[18-May-2025 21:08:43 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/create_order.php:83
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/create_order.php on line 83
+[18-May-2025 21:42:04 Asia/Jakarta] Midtrans library not found. Using mock payment URL.
+[18-May-2025 21:54:11 Asia/Jakarta] Midtrans library not found. Using mock payment URL.
+[18-May-2025 21:54:22 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:112
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 112
+[18-May-2025 21:54:23 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:112
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 112
+[18-May-2025 21:58:03 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:112
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 112
+[18-May-2025 22:09:41 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:102
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 102
+[18-May-2025 22:10:21 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:102
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 102
+[18-May-2025 22:19:07 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:102
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 102
+[18-May-2025 22:19:09 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:102
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 102
+[18-May-2025 22:19:10 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:102
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 102
+[18-May-2025 22:19:11 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:102
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 102
+[18-May-2025 22:19:11 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:102
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 102
+[18-May-2025 22:24:04 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:102
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 102
+[18-May-2025 22:24:06 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:102
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 102
+[18-May-2025 22:32:24 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:102
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 102
+[18-May-2025 22:56:21 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:102
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 102
+[18-May-2025 22:56:22 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:102
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 102
+[18-May-2025 23:03:18 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:113
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 113
+[18-May-2025 23:03:20 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:111
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 111
+[18-May-2025 23:03:21 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:111
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 111
+[18-May-2025 23:03:22 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:111
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 111
+[18-May-2025 23:03:22 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:111
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 111
+[18-May-2025 23:03:23 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:111
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 111
+[18-May-2025 23:03:23 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:111
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 111
+[18-May-2025 23:03:24 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:113
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 113
+[18-May-2025 23:07:13 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:113
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 113
+[18-May-2025 23:07:14 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:111
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 111
+[18-May-2025 23:07:16 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:111
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 111
+[18-May-2025 23:07:16 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:111
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 111
+[18-May-2025 23:10:47 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:113
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 113
+[18-May-2025 23:10:49 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:111
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 111
+[18-May-2025 23:10:50 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:111
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 111
+[18-May-2025 23:10:51 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:111
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 111
+[18-May-2025 23:16:16 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:102
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 102
+[18-May-2025 23:20:48 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:102
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 102
+[18-May-2025 23:20:49 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:102
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 102
+[18-May-2025 23:21:23 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:113
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 113
+[18-May-2025 23:22:57 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:113
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 113
+[18-May-2025 23:24:48 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:113
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 113
+[18-May-2025 23:24:49 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:111
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 111
+[18-May-2025 23:24:50 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:111
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 111
+[18-May-2025 23:35:58 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:113
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 113
+[18-May-2025 23:37:49 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:113
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 113
+[18-May-2025 23:42:03 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:113
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 113
+[18-May-2025 23:55:03 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:113
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 113
+[18-May-2025 23:55:16 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:113
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 113
+[18-May-2025 23:56:18 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:113
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 113
+[19-May-2025 00:12:36 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:110
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 110
+[19-May-2025 00:12:45 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:110
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 110
+[19-May-2025 00:13:05 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:108
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 108
+[19-May-2025 00:13:18 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:108
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 108
+[19-May-2025 00:18:48 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_user_orders.php:110
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_user_orders.php on line 110
+[19-May-2025 05:54:40 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:134
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 134
+[19-May-2025 05:55:35 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:131
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 131
+[19-May-2025 05:55:38 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:131
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 131
+[19-May-2025 06:30:17 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hijc7862/public_html/admin/api/order/get_order_detail.php:132
+Stack trace:
+#0 {main}
+  thrown in /home/hijc7862/public_html/admin/api/order/get_order_detail.php on line 132
+[19-May-2025 09:30:01 Asia/Jakarta] Midtrans library not found. Using mock payment URL.

@@ -1,0 +1,2499 @@
+[17-May-2025 13:09:32 Asia/Jakarta] Total products in database: 20
+[17-May-2025 13:09:32 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 13:09:32 Asia/Jakarta] Raw product data: Array
+(
+    [0] => Array
+        (
+            [id_product] => 36
+            [nama_product] => String of Pearls
+            [desk_product] => Sukulen unik dengan daun bulat seperti mutiara yang menjuntai indah. Cocok untuk pot gantung.
+            [harga] => 25000.00
+            [stok] => 15
+            [gambar] => String_of_Pearls.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [1] => Array
+        (
+            [id_product] => 35
+            [nama_product] => Fiddle Leaf Fig 
+            [desk_product] => Tanaman hias dengan daun lebar bertekstur seperti biola dan batang ramping. Cocok untuk nuansa tropis-modern. 
+            [harga] => 300000.00
+            [stok] => 20
+            [gambar] => Fiddle_Leaf_Fig_kecil.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [2] => Array
+        (
+            [id_product] => 34
+            [nama_product] => Crassula Ovata - Jade Plant
+            [desk_product] => Sukulen dengan daun tebal berbentuk oval dan batang kayu. Dipercaya membawa energi positif dalam Feng Shui.
+            [harga] => 94000.00
+            [stok] => 23
+            [gambar] => Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [3] => Array
+        (
+            [id_product] => 33
+            [nama_product] => Opuntia Microdasys
+            [desk_product] =>  Kaktus pipih dengan duri halus berwarna emas atau putih. Tumbuh tegak dan cocok untuk dekorasi desktop.
+            [harga] => 55000.00
+            [stok] => 12
+            [gambar] => Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg,Opuntia_Microdasys_Rufida_-_Orange_-_2_5.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [4] => Array
+        (
+            [id_product] => 32
+            [nama_product] => Lavender
+            [desk_product] => Tanaman berbunga ungu dengan aroma khas yang sering digunakan untuk minyak esensial dan pengusir nyamuk.
+            [harga] => 30000.00
+            [stok] => 20
+            [gambar] => Lavendula!.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [5] => Array
+        (
+            [id_product] => 31
+            [nama_product] => Epipremnum Aureum - Pothos
+            [desk_product] => Tanaman merambat dengan daun berbentuk hati dan warna hijau-kuning yang cerah. Bisa ditanam di pot gantung atau media air.
+            [harga] => 93000.00
+            [stok] => 20
+            [gambar] => Epipremnum_aureum_-_Golden_Pothos.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [6] => Array
+        (
+            [id_product] => 30
+            [nama_product] => Zamioculcas Zamiifolia - ZZ
+            [desk_product] => Tanaman dengan daun hijau mengilap dan batang tebal yang tumbuh tegak. Tahan di segala kondisi, bahkan di ruangan minim cahaya.
+            [harga] => 458000.00
+            [stok] => 25
+            [gambar] => Greenery_Unlimited__The_Future_of_Plants.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [7] => Array
+        (
+            [id_product] => 29
+            [nama_product] => Lidah Buaya
+            [desk_product] => Tanaman sukulen dengan daun tebal bergerigi berisi gel bening yang terkenal untuk perawatan kulit, luka bakar, dan rambut.
+            [harga] => 53000.00
+            [stok] => 50
+            [gambar] => 5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [8] => Array
+        (
+            [id_product] => 28
+            [nama_product] => Spider Plant
+            [desk_product] => Tanaman dengan daun panjang bergaris putih-hijau yang menghasilkan anakan menggantung seperti laba-laba. 
+            [harga] => 80000.00
+            [stok] => 20
+            [gambar] => spider_plant.png
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [9] => Array
+        (
+            [id_product] => 27
+            [nama_product] => Echeveria Noble
+            [desk_product] => Sukulen mungil dengan bentuk rosette simetris dan daun tebal berwarna hijau kebiruan. Tanaman ini tahan kekeringan dan cocok untuk dekorasi minimalis.
+            [harga] => 95000.00
+            [stok] => 10
+            [gambar] => Echeveria_Noble_-_4_Inch.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [10] => Array
+        (
+            [id_product] => 26
+            [nama_product] => Orchids
+            [desk_product] => Tanaman eksotis dengan bunga mempesona dan warna-warni mencolok! Anggrek cocok jadi pusat perhatian di ruangan atau taman. Beberapa jenis mekar tahan lama dan memiliki aroma harum.
+            [harga] => 207000.00
+            [stok] => 14
+            [gambar] => Orchids.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [11] => Array
+        (
+            [id_product] => 25
+            [nama_product] => Calathea
+            [desk_product] => Tanaman hias eksklusif dengan daun bercorak indah dan warna memukau! Calathea dikenal sebagai "Prayer Plant" karena daunnya bergerak naik-turun seperti sedang berdoa saat malam hari. Cocok untuk penghias ruangan dengan nuansa tropis yang menenangkan.
+            [harga] => 60000.00
+            [stok] => 35
+            [gambar] => Artificial_2_x_Calathea_Plant.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [12] => Array
+        (
+            [id_product] => 24
+            [nama_product] => Cactus - Opuntia Consolea
+            [desk_product] => Tanaman hias unik dengan bentuk pipih dan tegak, cocok untuk mempercantik ruangan atau taman kering. Opuntia Consolea memiliki duri halus dan tumbuh dengan minimal perawatan, tahan panas & jarang disiram. Ideal untuk pemula atau kolektor tanaman sukulen!
+            [harga] => 59000.00
+            [stok] => 25
+            [gambar] => Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [13] => Array
+        (
+            [id_product] => 23
+            [nama_product] => Dracaena
+            [desk_product] => Dracaena adalah tumbuhan yang tumbuh tegak dengan batang bulat dan beruas-ruas. Daunnya berbentuk tunggal, tidak bertangkai, dan pelepahnya memeluk batang. Daun dracaena bertepi rata, dengan pertulangan daun sejajar dan permukaan licin. Beberapa spesies dracaena memiliki daun sempit berbentuk pedang, sementara yang lain dapat menyerupai pohon dengan mahkota daun. 
+            [harga] => 125000.00
+            [stok] => 47
+            [gambar] => dracaena.jpg,dracaena2.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [14] => Array
+        (
+            [id_product] => 22
+            [nama_product] => Aglaonema
+            [desk_product] => Tanaman aglonema (Aglaonema sp.) adalah tanaman hias daun yang termasuk dalam suku talas-talasan (Araceae). Tanaman ini dikenal juga dengan nama Sri Rejeki atau Chinese Evergreen. 
+            [harga] => 85000.00
+            [stok] => 40
+            [gambar] => aglaonema.jpg
+            [rating] => 5.0
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [15] => Array
+        (
+            [id_product] => 21
+            [nama_product] => Bonsai
+            [desk_product] => Bonsai adalah seni menanam pohon dalam pot dangkal sehingga tampak seperti miniatur pohon besar dan tua. Bonsai merupakan perpaduan antara seni dan hortikultura
+            [harga] => 300000.00
+            [stok] => 2
+            [gambar] => bonsai.jpg,bonsai2.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [16] => Array
+        (
+            [id_product] => 20
+            [nama_product] => Ketapang brazil
+            [desk_product] => Ketapang Brazil, atau Ficus lyrata, adalah tumbuhan hias populer dengan ciri khas daun besar yang menyerupai bentuk biola. Daunnya hijau gelap, mengkilap, dan memiliki urat yang jelas. Tumbuhan ini dikenal sebagai "Biola Cantik" karena bentuk daunnya yang unik. 
+            [harga] => 450000.00
+            [stok] => 28
+            [gambar] => Ketapang_brazil1.png
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [17] => Array
+        (
+            [id_product] => 19
+            [nama_product] => Peace Lily
+            [desk_product] => Peace lily (Spathiphyllum) adalah tanaman hias yang populer dengan daun hijau tua mengilap dan bunga putih yang unik. Tanaman ini memiliki daun oval yang menyempit ke ujung dan tumbuh langsung dari tanah. Bunganya terdiri dari seludang putih yang mengelilingi bunga kecil di bagian tengah. 
+            [harga] => 45000.00
+            [stok] => 48
+            [gambar] => peacelily3.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [18] => Array
+        (
+            [id_product] => 18
+            [nama_product] => Monstera Deliciosa
+            [desk_product] => Monstera adalah tanaman hias daun tropis yang memiliki daun berlubang dan bentuk yang khas. Monstera berasal dari hutan tropis Amerika dan termasuk dalam famili Araceae. 
+            [harga] => 250000.00
+            [stok] => 26
+            [gambar] => Monstera_Deliciosa_Care.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [19] => Array
+        (
+            [id_product] => 16
+            [nama_product] => Lidah Mertua
+            [desk_product] => Lidah mertua (Sansevieria) adalah tanaman hias yang memiliki daun keras, tebal, dan tegak. Tanaman ini memiliki ujung daun yang meruncing. 
+            [harga] => 60000.00
+            [stok] => 10
+            [gambar] => lidahmertua10.jpg,lidahmertua25.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+)
+
+[17-May-2025 13:09:32 Asia/Jakarta] Product: String of Pearls
+[17-May-2025 13:09:32 Asia/Jakarta] Original image path: String_of_Pearls.jpg
+[17-May-2025 13:09:32 Asia/Jakarta] Cleaned image path: String_of_Pearls.jpg
+[17-May-2025 13:09:32 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/String_of_Pearls.jpg
+[17-May-2025 13:09:32 Asia/Jakarta] Product: Fiddle Leaf Fig 
+[17-May-2025 13:09:32 Asia/Jakarta] Original image path: Fiddle_Leaf_Fig_kecil.jpg
+[17-May-2025 13:09:32 Asia/Jakarta] Cleaned image path: Fiddle_Leaf_Fig_kecil.jpg
+[17-May-2025 13:09:32 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Fiddle_Leaf_Fig_kecil.jpg
+[17-May-2025 13:09:32 Asia/Jakarta] Product: Crassula Ovata - Jade Plant
+[17-May-2025 13:09:32 Asia/Jakarta] Original image path: Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Cleaned image path: Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Product: Opuntia Microdasys
+[17-May-2025 13:09:32 Asia/Jakarta] Original image path: Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg,Opuntia_Microdasys_Rufida_-_Orange_-_2_5.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Cleaned image path: Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Product: Lavender
+[17-May-2025 13:09:32 Asia/Jakarta] Original image path: Lavendula!.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Cleaned image path: Lavendula!.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Lavendula!.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Product: Epipremnum Aureum - Pothos
+[17-May-2025 13:09:32 Asia/Jakarta] Original image path: Epipremnum_aureum_-_Golden_Pothos.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Cleaned image path: Epipremnum_aureum_-_Golden_Pothos.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Epipremnum_aureum_-_Golden_Pothos.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Product: Zamioculcas Zamiifolia - ZZ
+[17-May-2025 13:09:32 Asia/Jakarta] Original image path: Greenery_Unlimited__The_Future_of_Plants.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Cleaned image path: Greenery_Unlimited__The_Future_of_Plants.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Greenery_Unlimited__The_Future_of_Plants.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Product: Lidah Buaya
+[17-May-2025 13:09:32 Asia/Jakarta] Original image path: 5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Cleaned image path: 5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Product: Spider Plant
+[17-May-2025 13:09:32 Asia/Jakarta] Original image path: spider_plant.png
+[17-May-2025 13:09:32 Asia/Jakarta] Cleaned image path: spider_plant.png
+[17-May-2025 13:09:32 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/spider_plant.png
+[17-May-2025 13:09:32 Asia/Jakarta] Product: Echeveria Noble
+[17-May-2025 13:09:32 Asia/Jakarta] Original image path: Echeveria_Noble_-_4_Inch.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Cleaned image path: Echeveria_Noble_-_4_Inch.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Echeveria_Noble_-_4_Inch.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Product: Orchids
+[17-May-2025 13:09:32 Asia/Jakarta] Original image path: Orchids.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Cleaned image path: Orchids.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Orchids.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Product: Calathea
+[17-May-2025 13:09:32 Asia/Jakarta] Original image path: Artificial_2_x_Calathea_Plant.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Cleaned image path: Artificial_2_x_Calathea_Plant.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Artificial_2_x_Calathea_Plant.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Product: Cactus - Opuntia Consolea
+[17-May-2025 13:09:32 Asia/Jakarta] Original image path: Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Cleaned image path: Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Product: Dracaena
+[17-May-2025 13:09:32 Asia/Jakarta] Original image path: dracaena.jpg,dracaena2.jpg
+[17-May-2025 13:09:32 Asia/Jakarta] Cleaned image path: dracaena.jpg
+[17-May-2025 13:09:32 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/dracaena.jpg
+[17-May-2025 13:09:32 Asia/Jakarta] Product: Aglaonema
+[17-May-2025 13:09:32 Asia/Jakarta] Original image path: aglaonema.jpg
+[17-May-2025 13:09:32 Asia/Jakarta] Cleaned image path: aglaonema.jpg
+[17-May-2025 13:09:32 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/aglaonema.jpg
+[17-May-2025 13:09:32 Asia/Jakarta] Product: Bonsai
+[17-May-2025 13:09:32 Asia/Jakarta] Original image path: bonsai.jpg,bonsai2.jpg
+[17-May-2025 13:09:32 Asia/Jakarta] Cleaned image path: bonsai.jpg
+[17-May-2025 13:09:32 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/bonsai.jpg
+[17-May-2025 13:09:32 Asia/Jakarta] Product: Ketapang brazil
+[17-May-2025 13:09:32 Asia/Jakarta] Original image path: Ketapang_brazil1.png
+[17-May-2025 13:09:32 Asia/Jakarta] Cleaned image path: Ketapang_brazil1.png
+[17-May-2025 13:09:32 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Ketapang_brazil1.png
+[17-May-2025 13:09:32 Asia/Jakarta] Product: Peace Lily
+[17-May-2025 13:09:32 Asia/Jakarta] Original image path: peacelily3.jpg
+[17-May-2025 13:09:32 Asia/Jakarta] Cleaned image path: peacelily3.jpg
+[17-May-2025 13:09:32 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/peacelily3.jpg
+[17-May-2025 13:09:32 Asia/Jakarta] Product: Monstera Deliciosa
+[17-May-2025 13:09:32 Asia/Jakarta] Original image path: Monstera_Deliciosa_Care.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Cleaned image path: Monstera_Deliciosa_Care.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Monstera_Deliciosa_Care.jpeg
+[17-May-2025 13:09:32 Asia/Jakarta] Product: Lidah Mertua
+[17-May-2025 13:09:32 Asia/Jakarta] Original image path: lidahmertua10.jpg,lidahmertua25.jpg
+[17-May-2025 13:09:32 Asia/Jakarta] Cleaned image path: lidahmertua10.jpg
+[17-May-2025 13:09:32 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/lidahmertua10.jpg
+[17-May-2025 13:11:29 Asia/Jakarta] Total products in database: 20
+[17-May-2025 13:11:29 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 13:11:29 Asia/Jakarta] Raw product data: Array
+(
+    [0] => Array
+        (
+            [id_product] => 36
+            [nama_product] => String of Pearls
+            [desk_product] => Sukulen unik dengan daun bulat seperti mutiara yang menjuntai indah. Cocok untuk pot gantung.
+            [harga] => 25000.00
+            [stok] => 15
+            [gambar] => String_of_Pearls.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [1] => Array
+        (
+            [id_product] => 35
+            [nama_product] => Fiddle Leaf Fig 
+            [desk_product] => Tanaman hias dengan daun lebar bertekstur seperti biola dan batang ramping. Cocok untuk nuansa tropis-modern. 
+            [harga] => 300000.00
+            [stok] => 20
+            [gambar] => Fiddle_Leaf_Fig_kecil.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [2] => Array
+        (
+            [id_product] => 34
+            [nama_product] => Crassula Ovata - Jade Plant
+            [desk_product] => Sukulen dengan daun tebal berbentuk oval dan batang kayu. Dipercaya membawa energi positif dalam Feng Shui.
+            [harga] => 94000.00
+            [stok] => 23
+            [gambar] => Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [3] => Array
+        (
+            [id_product] => 33
+            [nama_product] => Opuntia Microdasys
+            [desk_product] =>  Kaktus pipih dengan duri halus berwarna emas atau putih. Tumbuh tegak dan cocok untuk dekorasi desktop.
+            [harga] => 55000.00
+            [stok] => 12
+            [gambar] => Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg,Opuntia_Microdasys_Rufida_-_Orange_-_2_5.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [4] => Array
+        (
+            [id_product] => 32
+            [nama_product] => Lavender
+            [desk_product] => Tanaman berbunga ungu dengan aroma khas yang sering digunakan untuk minyak esensial dan pengusir nyamuk.
+            [harga] => 30000.00
+            [stok] => 20
+            [gambar] => Lavendula!.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [5] => Array
+        (
+            [id_product] => 31
+            [nama_product] => Epipremnum Aureum - Pothos
+            [desk_product] => Tanaman merambat dengan daun berbentuk hati dan warna hijau-kuning yang cerah. Bisa ditanam di pot gantung atau media air.
+            [harga] => 93000.00
+            [stok] => 20
+            [gambar] => Epipremnum_aureum_-_Golden_Pothos.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [6] => Array
+        (
+            [id_product] => 30
+            [nama_product] => Zamioculcas Zamiifolia - ZZ
+            [desk_product] => Tanaman dengan daun hijau mengilap dan batang tebal yang tumbuh tegak. Tahan di segala kondisi, bahkan di ruangan minim cahaya.
+            [harga] => 458000.00
+            [stok] => 25
+            [gambar] => Greenery_Unlimited__The_Future_of_Plants.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [7] => Array
+        (
+            [id_product] => 29
+            [nama_product] => Lidah Buaya
+            [desk_product] => Tanaman sukulen dengan daun tebal bergerigi berisi gel bening yang terkenal untuk perawatan kulit, luka bakar, dan rambut.
+            [harga] => 53000.00
+            [stok] => 50
+            [gambar] => 5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [8] => Array
+        (
+            [id_product] => 28
+            [nama_product] => Spider Plant
+            [desk_product] => Tanaman dengan daun panjang bergaris putih-hijau yang menghasilkan anakan menggantung seperti laba-laba. 
+            [harga] => 80000.00
+            [stok] => 20
+            [gambar] => spider_plant.png
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [9] => Array
+        (
+            [id_product] => 27
+            [nama_product] => Echeveria Noble
+            [desk_product] => Sukulen mungil dengan bentuk rosette simetris dan daun tebal berwarna hijau kebiruan. Tanaman ini tahan kekeringan dan cocok untuk dekorasi minimalis.
+            [harga] => 95000.00
+            [stok] => 10
+            [gambar] => Echeveria_Noble_-_4_Inch.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [10] => Array
+        (
+            [id_product] => 26
+            [nama_product] => Orchids
+            [desk_product] => Tanaman eksotis dengan bunga mempesona dan warna-warni mencolok! Anggrek cocok jadi pusat perhatian di ruangan atau taman. Beberapa jenis mekar tahan lama dan memiliki aroma harum.
+            [harga] => 207000.00
+            [stok] => 14
+            [gambar] => Orchids.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [11] => Array
+        (
+            [id_product] => 25
+            [nama_product] => Calathea
+            [desk_product] => Tanaman hias eksklusif dengan daun bercorak indah dan warna memukau! Calathea dikenal sebagai "Prayer Plant" karena daunnya bergerak naik-turun seperti sedang berdoa saat malam hari. Cocok untuk penghias ruangan dengan nuansa tropis yang menenangkan.
+            [harga] => 60000.00
+            [stok] => 35
+            [gambar] => Artificial_2_x_Calathea_Plant.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [12] => Array
+        (
+            [id_product] => 24
+            [nama_product] => Cactus - Opuntia Consolea
+            [desk_product] => Tanaman hias unik dengan bentuk pipih dan tegak, cocok untuk mempercantik ruangan atau taman kering. Opuntia Consolea memiliki duri halus dan tumbuh dengan minimal perawatan, tahan panas & jarang disiram. Ideal untuk pemula atau kolektor tanaman sukulen!
+            [harga] => 59000.00
+            [stok] => 25
+            [gambar] => Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [13] => Array
+        (
+            [id_product] => 23
+            [nama_product] => Dracaena
+            [desk_product] => Dracaena adalah tumbuhan yang tumbuh tegak dengan batang bulat dan beruas-ruas. Daunnya berbentuk tunggal, tidak bertangkai, dan pelepahnya memeluk batang. Daun dracaena bertepi rata, dengan pertulangan daun sejajar dan permukaan licin. Beberapa spesies dracaena memiliki daun sempit berbentuk pedang, sementara yang lain dapat menyerupai pohon dengan mahkota daun. 
+            [harga] => 125000.00
+            [stok] => 47
+            [gambar] => dracaena.jpg,dracaena2.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [14] => Array
+        (
+            [id_product] => 22
+            [nama_product] => Aglaonema
+            [desk_product] => Tanaman aglonema (Aglaonema sp.) adalah tanaman hias daun yang termasuk dalam suku talas-talasan (Araceae). Tanaman ini dikenal juga dengan nama Sri Rejeki atau Chinese Evergreen. 
+            [harga] => 85000.00
+            [stok] => 40
+            [gambar] => aglaonema.jpg
+            [rating] => 5.0
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [15] => Array
+        (
+            [id_product] => 21
+            [nama_product] => Bonsai
+            [desk_product] => Bonsai adalah seni menanam pohon dalam pot dangkal sehingga tampak seperti miniatur pohon besar dan tua. Bonsai merupakan perpaduan antara seni dan hortikultura
+            [harga] => 300000.00
+            [stok] => 2
+            [gambar] => bonsai.jpg,bonsai2.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [16] => Array
+        (
+            [id_product] => 20
+            [nama_product] => Ketapang brazil
+            [desk_product] => Ketapang Brazil, atau Ficus lyrata, adalah tumbuhan hias populer dengan ciri khas daun besar yang menyerupai bentuk biola. Daunnya hijau gelap, mengkilap, dan memiliki urat yang jelas. Tumbuhan ini dikenal sebagai "Biola Cantik" karena bentuk daunnya yang unik. 
+            [harga] => 450000.00
+            [stok] => 28
+            [gambar] => Ketapang_brazil1.png
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [17] => Array
+        (
+            [id_product] => 19
+            [nama_product] => Peace Lily
+            [desk_product] => Peace lily (Spathiphyllum) adalah tanaman hias yang populer dengan daun hijau tua mengilap dan bunga putih yang unik. Tanaman ini memiliki daun oval yang menyempit ke ujung dan tumbuh langsung dari tanah. Bunganya terdiri dari seludang putih yang mengelilingi bunga kecil di bagian tengah. 
+            [harga] => 45000.00
+            [stok] => 48
+            [gambar] => peacelily3.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [18] => Array
+        (
+            [id_product] => 18
+            [nama_product] => Monstera Deliciosa
+            [desk_product] => Monstera adalah tanaman hias daun tropis yang memiliki daun berlubang dan bentuk yang khas. Monstera berasal dari hutan tropis Amerika dan termasuk dalam famili Araceae. 
+            [harga] => 250000.00
+            [stok] => 26
+            [gambar] => Monstera_Deliciosa_Care.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [19] => Array
+        (
+            [id_product] => 16
+            [nama_product] => Lidah Mertua
+            [desk_product] => Lidah mertua (Sansevieria) adalah tanaman hias yang memiliki daun keras, tebal, dan tegak. Tanaman ini memiliki ujung daun yang meruncing. 
+            [harga] => 60000.00
+            [stok] => 10
+            [gambar] => lidahmertua10.jpg,lidahmertua25.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+)
+
+[17-May-2025 13:11:29 Asia/Jakarta] Product: String of Pearls
+[17-May-2025 13:11:29 Asia/Jakarta] Original image path: String_of_Pearls.jpg
+[17-May-2025 13:11:29 Asia/Jakarta] Cleaned image path: String_of_Pearls.jpg
+[17-May-2025 13:11:29 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/String_of_Pearls.jpg
+[17-May-2025 13:11:29 Asia/Jakarta] Product: Fiddle Leaf Fig 
+[17-May-2025 13:11:29 Asia/Jakarta] Original image path: Fiddle_Leaf_Fig_kecil.jpg
+[17-May-2025 13:11:29 Asia/Jakarta] Cleaned image path: Fiddle_Leaf_Fig_kecil.jpg
+[17-May-2025 13:11:29 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Fiddle_Leaf_Fig_kecil.jpg
+[17-May-2025 13:11:29 Asia/Jakarta] Product: Crassula Ovata - Jade Plant
+[17-May-2025 13:11:29 Asia/Jakarta] Original image path: Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Cleaned image path: Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Product: Opuntia Microdasys
+[17-May-2025 13:11:29 Asia/Jakarta] Original image path: Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg,Opuntia_Microdasys_Rufida_-_Orange_-_2_5.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Cleaned image path: Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Product: Lavender
+[17-May-2025 13:11:29 Asia/Jakarta] Original image path: Lavendula!.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Cleaned image path: Lavendula!.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Lavendula!.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Product: Epipremnum Aureum - Pothos
+[17-May-2025 13:11:29 Asia/Jakarta] Original image path: Epipremnum_aureum_-_Golden_Pothos.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Cleaned image path: Epipremnum_aureum_-_Golden_Pothos.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Epipremnum_aureum_-_Golden_Pothos.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Product: Zamioculcas Zamiifolia - ZZ
+[17-May-2025 13:11:29 Asia/Jakarta] Original image path: Greenery_Unlimited__The_Future_of_Plants.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Cleaned image path: Greenery_Unlimited__The_Future_of_Plants.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Greenery_Unlimited__The_Future_of_Plants.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Product: Lidah Buaya
+[17-May-2025 13:11:29 Asia/Jakarta] Original image path: 5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Cleaned image path: 5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Product: Spider Plant
+[17-May-2025 13:11:29 Asia/Jakarta] Original image path: spider_plant.png
+[17-May-2025 13:11:29 Asia/Jakarta] Cleaned image path: spider_plant.png
+[17-May-2025 13:11:29 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/spider_plant.png
+[17-May-2025 13:11:29 Asia/Jakarta] Product: Echeveria Noble
+[17-May-2025 13:11:29 Asia/Jakarta] Original image path: Echeveria_Noble_-_4_Inch.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Cleaned image path: Echeveria_Noble_-_4_Inch.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Echeveria_Noble_-_4_Inch.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Product: Orchids
+[17-May-2025 13:11:29 Asia/Jakarta] Original image path: Orchids.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Cleaned image path: Orchids.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Orchids.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Product: Calathea
+[17-May-2025 13:11:29 Asia/Jakarta] Original image path: Artificial_2_x_Calathea_Plant.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Cleaned image path: Artificial_2_x_Calathea_Plant.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Artificial_2_x_Calathea_Plant.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Product: Cactus - Opuntia Consolea
+[17-May-2025 13:11:29 Asia/Jakarta] Original image path: Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Cleaned image path: Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Product: Dracaena
+[17-May-2025 13:11:29 Asia/Jakarta] Original image path: dracaena.jpg,dracaena2.jpg
+[17-May-2025 13:11:29 Asia/Jakarta] Cleaned image path: dracaena.jpg
+[17-May-2025 13:11:29 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/dracaena.jpg
+[17-May-2025 13:11:29 Asia/Jakarta] Product: Aglaonema
+[17-May-2025 13:11:29 Asia/Jakarta] Original image path: aglaonema.jpg
+[17-May-2025 13:11:29 Asia/Jakarta] Cleaned image path: aglaonema.jpg
+[17-May-2025 13:11:29 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/aglaonema.jpg
+[17-May-2025 13:11:29 Asia/Jakarta] Product: Bonsai
+[17-May-2025 13:11:29 Asia/Jakarta] Original image path: bonsai.jpg,bonsai2.jpg
+[17-May-2025 13:11:29 Asia/Jakarta] Cleaned image path: bonsai.jpg
+[17-May-2025 13:11:29 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/bonsai.jpg
+[17-May-2025 13:11:29 Asia/Jakarta] Product: Ketapang brazil
+[17-May-2025 13:11:29 Asia/Jakarta] Original image path: Ketapang_brazil1.png
+[17-May-2025 13:11:29 Asia/Jakarta] Cleaned image path: Ketapang_brazil1.png
+[17-May-2025 13:11:29 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Ketapang_brazil1.png
+[17-May-2025 13:11:29 Asia/Jakarta] Product: Peace Lily
+[17-May-2025 13:11:29 Asia/Jakarta] Original image path: peacelily3.jpg
+[17-May-2025 13:11:29 Asia/Jakarta] Cleaned image path: peacelily3.jpg
+[17-May-2025 13:11:29 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/peacelily3.jpg
+[17-May-2025 13:11:29 Asia/Jakarta] Product: Monstera Deliciosa
+[17-May-2025 13:11:29 Asia/Jakarta] Original image path: Monstera_Deliciosa_Care.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Cleaned image path: Monstera_Deliciosa_Care.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Monstera_Deliciosa_Care.jpeg
+[17-May-2025 13:11:29 Asia/Jakarta] Product: Lidah Mertua
+[17-May-2025 13:11:29 Asia/Jakarta] Original image path: lidahmertua10.jpg,lidahmertua25.jpg
+[17-May-2025 13:11:29 Asia/Jakarta] Cleaned image path: lidahmertua10.jpg
+[17-May-2025 13:11:29 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/lidahmertua10.jpg
+[17-May-2025 13:31:17 Asia/Jakarta] Total products in database: 20
+[17-May-2025 13:31:17 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 13:31:17 Asia/Jakarta] Raw product data: Array
+(
+    [0] => Array
+        (
+            [id_product] => 36
+            [nama_product] => String of Pearls
+            [desk_product] => Sukulen unik dengan daun bulat seperti mutiara yang menjuntai indah. Cocok untuk pot gantung.
+            [harga] => 25000.00
+            [stok] => 15
+            [gambar] => String_of_Pearls.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [1] => Array
+        (
+            [id_product] => 35
+            [nama_product] => Fiddle Leaf Fig 
+            [desk_product] => Tanaman hias dengan daun lebar bertekstur seperti biola dan batang ramping. Cocok untuk nuansa tropis-modern. 
+            [harga] => 300000.00
+            [stok] => 20
+            [gambar] => Fiddle_Leaf_Fig_kecil.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [2] => Array
+        (
+            [id_product] => 34
+            [nama_product] => Crassula Ovata - Jade Plant
+            [desk_product] => Sukulen dengan daun tebal berbentuk oval dan batang kayu. Dipercaya membawa energi positif dalam Feng Shui.
+            [harga] => 94000.00
+            [stok] => 23
+            [gambar] => Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [3] => Array
+        (
+            [id_product] => 33
+            [nama_product] => Opuntia Microdasys
+            [desk_product] =>  Kaktus pipih dengan duri halus berwarna emas atau putih. Tumbuh tegak dan cocok untuk dekorasi desktop.
+            [harga] => 55000.00
+            [stok] => 12
+            [gambar] => Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg,Opuntia_Microdasys_Rufida_-_Orange_-_2_5.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [4] => Array
+        (
+            [id_product] => 32
+            [nama_product] => Lavender
+            [desk_product] => Tanaman berbunga ungu dengan aroma khas yang sering digunakan untuk minyak esensial dan pengusir nyamuk.
+            [harga] => 30000.00
+            [stok] => 20
+            [gambar] => Lavendula!.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [5] => Array
+        (
+            [id_product] => 31
+            [nama_product] => Epipremnum Aureum - Pothos
+            [desk_product] => Tanaman merambat dengan daun berbentuk hati dan warna hijau-kuning yang cerah. Bisa ditanam di pot gantung atau media air.
+            [harga] => 93000.00
+            [stok] => 20
+            [gambar] => Epipremnum_aureum_-_Golden_Pothos.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [6] => Array
+        (
+            [id_product] => 30
+            [nama_product] => Zamioculcas Zamiifolia - ZZ
+            [desk_product] => Tanaman dengan daun hijau mengilap dan batang tebal yang tumbuh tegak. Tahan di segala kondisi, bahkan di ruangan minim cahaya.
+            [harga] => 458000.00
+            [stok] => 25
+            [gambar] => Greenery_Unlimited__The_Future_of_Plants.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [7] => Array
+        (
+            [id_product] => 29
+            [nama_product] => Lidah Buaya
+            [desk_product] => Tanaman sukulen dengan daun tebal bergerigi berisi gel bening yang terkenal untuk perawatan kulit, luka bakar, dan rambut.
+            [harga] => 53000.00
+            [stok] => 50
+            [gambar] => 5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [8] => Array
+        (
+            [id_product] => 28
+            [nama_product] => Spider Plant
+            [desk_product] => Tanaman dengan daun panjang bergaris putih-hijau yang menghasilkan anakan menggantung seperti laba-laba. 
+            [harga] => 80000.00
+            [stok] => 20
+            [gambar] => spider_plant.png
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [9] => Array
+        (
+            [id_product] => 27
+            [nama_product] => Echeveria Noble
+            [desk_product] => Sukulen mungil dengan bentuk rosette simetris dan daun tebal berwarna hijau kebiruan. Tanaman ini tahan kekeringan dan cocok untuk dekorasi minimalis.
+            [harga] => 95000.00
+            [stok] => 10
+            [gambar] => Echeveria_Noble_-_4_Inch.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [10] => Array
+        (
+            [id_product] => 26
+            [nama_product] => Orchids
+            [desk_product] => Tanaman eksotis dengan bunga mempesona dan warna-warni mencolok! Anggrek cocok jadi pusat perhatian di ruangan atau taman. Beberapa jenis mekar tahan lama dan memiliki aroma harum.
+            [harga] => 207000.00
+            [stok] => 14
+            [gambar] => Orchids.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [11] => Array
+        (
+            [id_product] => 25
+            [nama_product] => Calathea
+            [desk_product] => Tanaman hias eksklusif dengan daun bercorak indah dan warna memukau! Calathea dikenal sebagai "Prayer Plant" karena daunnya bergerak naik-turun seperti sedang berdoa saat malam hari. Cocok untuk penghias ruangan dengan nuansa tropis yang menenangkan.
+            [harga] => 60000.00
+            [stok] => 35
+            [gambar] => Artificial_2_x_Calathea_Plant.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [12] => Array
+        (
+            [id_product] => 24
+            [nama_product] => Cactus - Opuntia Consolea
+            [desk_product] => Tanaman hias unik dengan bentuk pipih dan tegak, cocok untuk mempercantik ruangan atau taman kering. Opuntia Consolea memiliki duri halus dan tumbuh dengan minimal perawatan, tahan panas & jarang disiram. Ideal untuk pemula atau kolektor tanaman sukulen!
+            [harga] => 59000.00
+            [stok] => 25
+            [gambar] => Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [13] => Array
+        (
+            [id_product] => 23
+            [nama_product] => Dracaena
+            [desk_product] => Dracaena adalah tumbuhan yang tumbuh tegak dengan batang bulat dan beruas-ruas. Daunnya berbentuk tunggal, tidak bertangkai, dan pelepahnya memeluk batang. Daun dracaena bertepi rata, dengan pertulangan daun sejajar dan permukaan licin. Beberapa spesies dracaena memiliki daun sempit berbentuk pedang, sementara yang lain dapat menyerupai pohon dengan mahkota daun. 
+            [harga] => 125000.00
+            [stok] => 47
+            [gambar] => dracaena.jpg,dracaena2.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [14] => Array
+        (
+            [id_product] => 22
+            [nama_product] => Aglaonema
+            [desk_product] => Tanaman aglonema (Aglaonema sp.) adalah tanaman hias daun yang termasuk dalam suku talas-talasan (Araceae). Tanaman ini dikenal juga dengan nama Sri Rejeki atau Chinese Evergreen. 
+            [harga] => 85000.00
+            [stok] => 40
+            [gambar] => aglaonema.jpg
+            [rating] => 5.0
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [15] => Array
+        (
+            [id_product] => 21
+            [nama_product] => Bonsai
+            [desk_product] => Bonsai adalah seni menanam pohon dalam pot dangkal sehingga tampak seperti miniatur pohon besar dan tua. Bonsai merupakan perpaduan antara seni dan hortikultura
+            [harga] => 300000.00
+            [stok] => 2
+            [gambar] => bonsai.jpg,bonsai2.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [16] => Array
+        (
+            [id_product] => 20
+            [nama_product] => Ketapang brazil
+            [desk_product] => Ketapang Brazil, atau Ficus lyrata, adalah tumbuhan hias populer dengan ciri khas daun besar yang menyerupai bentuk biola. Daunnya hijau gelap, mengkilap, dan memiliki urat yang jelas. Tumbuhan ini dikenal sebagai "Biola Cantik" karena bentuk daunnya yang unik. 
+            [harga] => 450000.00
+            [stok] => 28
+            [gambar] => Ketapang_brazil1.png
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [17] => Array
+        (
+            [id_product] => 19
+            [nama_product] => Peace Lily
+            [desk_product] => Peace lily (Spathiphyllum) adalah tanaman hias yang populer dengan daun hijau tua mengilap dan bunga putih yang unik. Tanaman ini memiliki daun oval yang menyempit ke ujung dan tumbuh langsung dari tanah. Bunganya terdiri dari seludang putih yang mengelilingi bunga kecil di bagian tengah. 
+            [harga] => 45000.00
+            [stok] => 48
+            [gambar] => peacelily3.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [18] => Array
+        (
+            [id_product] => 18
+            [nama_product] => Monstera Deliciosa
+            [desk_product] => Monstera adalah tanaman hias daun tropis yang memiliki daun berlubang dan bentuk yang khas. Monstera berasal dari hutan tropis Amerika dan termasuk dalam famili Araceae. 
+            [harga] => 250000.00
+            [stok] => 26
+            [gambar] => Monstera_Deliciosa_Care.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [19] => Array
+        (
+            [id_product] => 16
+            [nama_product] => Lidah Mertua
+            [desk_product] => Lidah mertua (Sansevieria) adalah tanaman hias yang memiliki daun keras, tebal, dan tegak. Tanaman ini memiliki ujung daun yang meruncing. 
+            [harga] => 60000.00
+            [stok] => 10
+            [gambar] => lidahmertua10.jpg,lidahmertua25.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+)
+
+[17-May-2025 13:31:17 Asia/Jakarta] Product: String of Pearls
+[17-May-2025 13:31:17 Asia/Jakarta] Original image path: String_of_Pearls.jpg
+[17-May-2025 13:31:17 Asia/Jakarta] Cleaned image path: String_of_Pearls.jpg
+[17-May-2025 13:31:17 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/String_of_Pearls.jpg
+[17-May-2025 13:31:17 Asia/Jakarta] Product: Fiddle Leaf Fig 
+[17-May-2025 13:31:17 Asia/Jakarta] Original image path: Fiddle_Leaf_Fig_kecil.jpg
+[17-May-2025 13:31:17 Asia/Jakarta] Cleaned image path: Fiddle_Leaf_Fig_kecil.jpg
+[17-May-2025 13:31:17 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Fiddle_Leaf_Fig_kecil.jpg
+[17-May-2025 13:31:17 Asia/Jakarta] Product: Crassula Ovata - Jade Plant
+[17-May-2025 13:31:17 Asia/Jakarta] Original image path: Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Cleaned image path: Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Product: Opuntia Microdasys
+[17-May-2025 13:31:17 Asia/Jakarta] Original image path: Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg,Opuntia_Microdasys_Rufida_-_Orange_-_2_5.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Cleaned image path: Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Product: Lavender
+[17-May-2025 13:31:17 Asia/Jakarta] Original image path: Lavendula!.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Cleaned image path: Lavendula!.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Lavendula!.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Product: Epipremnum Aureum - Pothos
+[17-May-2025 13:31:17 Asia/Jakarta] Original image path: Epipremnum_aureum_-_Golden_Pothos.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Cleaned image path: Epipremnum_aureum_-_Golden_Pothos.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Epipremnum_aureum_-_Golden_Pothos.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Product: Zamioculcas Zamiifolia - ZZ
+[17-May-2025 13:31:17 Asia/Jakarta] Original image path: Greenery_Unlimited__The_Future_of_Plants.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Cleaned image path: Greenery_Unlimited__The_Future_of_Plants.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Greenery_Unlimited__The_Future_of_Plants.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Product: Lidah Buaya
+[17-May-2025 13:31:17 Asia/Jakarta] Original image path: 5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Cleaned image path: 5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Product: Spider Plant
+[17-May-2025 13:31:17 Asia/Jakarta] Original image path: spider_plant.png
+[17-May-2025 13:31:17 Asia/Jakarta] Cleaned image path: spider_plant.png
+[17-May-2025 13:31:17 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/spider_plant.png
+[17-May-2025 13:31:17 Asia/Jakarta] Product: Echeveria Noble
+[17-May-2025 13:31:17 Asia/Jakarta] Original image path: Echeveria_Noble_-_4_Inch.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Cleaned image path: Echeveria_Noble_-_4_Inch.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Echeveria_Noble_-_4_Inch.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Product: Orchids
+[17-May-2025 13:31:17 Asia/Jakarta] Original image path: Orchids.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Cleaned image path: Orchids.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Orchids.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Product: Calathea
+[17-May-2025 13:31:17 Asia/Jakarta] Original image path: Artificial_2_x_Calathea_Plant.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Cleaned image path: Artificial_2_x_Calathea_Plant.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Artificial_2_x_Calathea_Plant.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Product: Cactus - Opuntia Consolea
+[17-May-2025 13:31:17 Asia/Jakarta] Original image path: Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Cleaned image path: Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Product: Dracaena
+[17-May-2025 13:31:17 Asia/Jakarta] Original image path: dracaena.jpg,dracaena2.jpg
+[17-May-2025 13:31:17 Asia/Jakarta] Cleaned image path: dracaena.jpg
+[17-May-2025 13:31:17 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/dracaena.jpg
+[17-May-2025 13:31:17 Asia/Jakarta] Product: Aglaonema
+[17-May-2025 13:31:17 Asia/Jakarta] Original image path: aglaonema.jpg
+[17-May-2025 13:31:17 Asia/Jakarta] Cleaned image path: aglaonema.jpg
+[17-May-2025 13:31:17 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/aglaonema.jpg
+[17-May-2025 13:31:17 Asia/Jakarta] Product: Bonsai
+[17-May-2025 13:31:17 Asia/Jakarta] Original image path: bonsai.jpg,bonsai2.jpg
+[17-May-2025 13:31:17 Asia/Jakarta] Cleaned image path: bonsai.jpg
+[17-May-2025 13:31:17 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/bonsai.jpg
+[17-May-2025 13:31:17 Asia/Jakarta] Product: Ketapang brazil
+[17-May-2025 13:31:17 Asia/Jakarta] Original image path: Ketapang_brazil1.png
+[17-May-2025 13:31:17 Asia/Jakarta] Cleaned image path: Ketapang_brazil1.png
+[17-May-2025 13:31:17 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Ketapang_brazil1.png
+[17-May-2025 13:31:17 Asia/Jakarta] Product: Peace Lily
+[17-May-2025 13:31:17 Asia/Jakarta] Original image path: peacelily3.jpg
+[17-May-2025 13:31:17 Asia/Jakarta] Cleaned image path: peacelily3.jpg
+[17-May-2025 13:31:17 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/peacelily3.jpg
+[17-May-2025 13:31:17 Asia/Jakarta] Product: Monstera Deliciosa
+[17-May-2025 13:31:17 Asia/Jakarta] Original image path: Monstera_Deliciosa_Care.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Cleaned image path: Monstera_Deliciosa_Care.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Monstera_Deliciosa_Care.jpeg
+[17-May-2025 13:31:17 Asia/Jakarta] Product: Lidah Mertua
+[17-May-2025 13:31:17 Asia/Jakarta] Original image path: lidahmertua10.jpg,lidahmertua25.jpg
+[17-May-2025 13:31:17 Asia/Jakarta] Cleaned image path: lidahmertua10.jpg
+[17-May-2025 13:31:17 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/lidahmertua10.jpg
+[17-May-2025 13:37:28 Asia/Jakarta] Total products in database: 20
+[17-May-2025 13:37:28 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 13:37:28 Asia/Jakarta] Raw product data: Array
+(
+    [0] => Array
+        (
+            [id_product] => 36
+            [nama_product] => String of Pearls
+            [desk_product] => Sukulen unik dengan daun bulat seperti mutiara yang menjuntai indah. Cocok untuk pot gantung.
+            [harga] => 25000.00
+            [stok] => 15
+            [gambar] => String_of_Pearls.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [1] => Array
+        (
+            [id_product] => 35
+            [nama_product] => Fiddle Leaf Fig 
+            [desk_product] => Tanaman hias dengan daun lebar bertekstur seperti biola dan batang ramping. Cocok untuk nuansa tropis-modern. 
+            [harga] => 300000.00
+            [stok] => 20
+            [gambar] => Fiddle_Leaf_Fig_kecil.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [2] => Array
+        (
+            [id_product] => 34
+            [nama_product] => Crassula Ovata - Jade Plant
+            [desk_product] => Sukulen dengan daun tebal berbentuk oval dan batang kayu. Dipercaya membawa energi positif dalam Feng Shui.
+            [harga] => 94000.00
+            [stok] => 23
+            [gambar] => Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [3] => Array
+        (
+            [id_product] => 33
+            [nama_product] => Opuntia Microdasys
+            [desk_product] =>  Kaktus pipih dengan duri halus berwarna emas atau putih. Tumbuh tegak dan cocok untuk dekorasi desktop.
+            [harga] => 55000.00
+            [stok] => 12
+            [gambar] => Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg,Opuntia_Microdasys_Rufida_-_Orange_-_2_5.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [4] => Array
+        (
+            [id_product] => 32
+            [nama_product] => Lavender
+            [desk_product] => Tanaman berbunga ungu dengan aroma khas yang sering digunakan untuk minyak esensial dan pengusir nyamuk.
+            [harga] => 30000.00
+            [stok] => 20
+            [gambar] => Lavendula!.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [5] => Array
+        (
+            [id_product] => 31
+            [nama_product] => Epipremnum Aureum - Pothos
+            [desk_product] => Tanaman merambat dengan daun berbentuk hati dan warna hijau-kuning yang cerah. Bisa ditanam di pot gantung atau media air.
+            [harga] => 93000.00
+            [stok] => 20
+            [gambar] => Epipremnum_aureum_-_Golden_Pothos.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [6] => Array
+        (
+            [id_product] => 30
+            [nama_product] => Zamioculcas Zamiifolia - ZZ
+            [desk_product] => Tanaman dengan daun hijau mengilap dan batang tebal yang tumbuh tegak. Tahan di segala kondisi, bahkan di ruangan minim cahaya.
+            [harga] => 458000.00
+            [stok] => 25
+            [gambar] => Greenery_Unlimited__The_Future_of_Plants.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [7] => Array
+        (
+            [id_product] => 29
+            [nama_product] => Lidah Buaya
+            [desk_product] => Tanaman sukulen dengan daun tebal bergerigi berisi gel bening yang terkenal untuk perawatan kulit, luka bakar, dan rambut.
+            [harga] => 53000.00
+            [stok] => 50
+            [gambar] => 5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [8] => Array
+        (
+            [id_product] => 28
+            [nama_product] => Spider Plant
+            [desk_product] => Tanaman dengan daun panjang bergaris putih-hijau yang menghasilkan anakan menggantung seperti laba-laba. 
+            [harga] => 80000.00
+            [stok] => 20
+            [gambar] => spider_plant.png
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [9] => Array
+        (
+            [id_product] => 27
+            [nama_product] => Echeveria Noble
+            [desk_product] => Sukulen mungil dengan bentuk rosette simetris dan daun tebal berwarna hijau kebiruan. Tanaman ini tahan kekeringan dan cocok untuk dekorasi minimalis.
+            [harga] => 95000.00
+            [stok] => 10
+            [gambar] => Echeveria_Noble_-_4_Inch.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [10] => Array
+        (
+            [id_product] => 26
+            [nama_product] => Orchids
+            [desk_product] => Tanaman eksotis dengan bunga mempesona dan warna-warni mencolok! Anggrek cocok jadi pusat perhatian di ruangan atau taman. Beberapa jenis mekar tahan lama dan memiliki aroma harum.
+            [harga] => 207000.00
+            [stok] => 14
+            [gambar] => Orchids.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [11] => Array
+        (
+            [id_product] => 25
+            [nama_product] => Calathea
+            [desk_product] => Tanaman hias eksklusif dengan daun bercorak indah dan warna memukau! Calathea dikenal sebagai "Prayer Plant" karena daunnya bergerak naik-turun seperti sedang berdoa saat malam hari. Cocok untuk penghias ruangan dengan nuansa tropis yang menenangkan.
+            [harga] => 60000.00
+            [stok] => 35
+            [gambar] => Artificial_2_x_Calathea_Plant.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [12] => Array
+        (
+            [id_product] => 24
+            [nama_product] => Cactus - Opuntia Consolea
+            [desk_product] => Tanaman hias unik dengan bentuk pipih dan tegak, cocok untuk mempercantik ruangan atau taman kering. Opuntia Consolea memiliki duri halus dan tumbuh dengan minimal perawatan, tahan panas & jarang disiram. Ideal untuk pemula atau kolektor tanaman sukulen!
+            [harga] => 59000.00
+            [stok] => 25
+            [gambar] => Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [13] => Array
+        (
+            [id_product] => 23
+            [nama_product] => Dracaena
+            [desk_product] => Dracaena adalah tumbuhan yang tumbuh tegak dengan batang bulat dan beruas-ruas. Daunnya berbentuk tunggal, tidak bertangkai, dan pelepahnya memeluk batang. Daun dracaena bertepi rata, dengan pertulangan daun sejajar dan permukaan licin. Beberapa spesies dracaena memiliki daun sempit berbentuk pedang, sementara yang lain dapat menyerupai pohon dengan mahkota daun. 
+            [harga] => 125000.00
+            [stok] => 47
+            [gambar] => dracaena.jpg,dracaena2.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [14] => Array
+        (
+            [id_product] => 22
+            [nama_product] => Aglaonema
+            [desk_product] => Tanaman aglonema (Aglaonema sp.) adalah tanaman hias daun yang termasuk dalam suku talas-talasan (Araceae). Tanaman ini dikenal juga dengan nama Sri Rejeki atau Chinese Evergreen. 
+            [harga] => 85000.00
+            [stok] => 40
+            [gambar] => aglaonema.jpg
+            [rating] => 5.0
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [15] => Array
+        (
+            [id_product] => 21
+            [nama_product] => Bonsai
+            [desk_product] => Bonsai adalah seni menanam pohon dalam pot dangkal sehingga tampak seperti miniatur pohon besar dan tua. Bonsai merupakan perpaduan antara seni dan hortikultura
+            [harga] => 300000.00
+            [stok] => 2
+            [gambar] => bonsai.jpg,bonsai2.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [16] => Array
+        (
+            [id_product] => 20
+            [nama_product] => Ketapang brazil
+            [desk_product] => Ketapang Brazil, atau Ficus lyrata, adalah tumbuhan hias populer dengan ciri khas daun besar yang menyerupai bentuk biola. Daunnya hijau gelap, mengkilap, dan memiliki urat yang jelas. Tumbuhan ini dikenal sebagai "Biola Cantik" karena bentuk daunnya yang unik. 
+            [harga] => 450000.00
+            [stok] => 28
+            [gambar] => Ketapang_brazil1.png
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [17] => Array
+        (
+            [id_product] => 19
+            [nama_product] => Peace Lily
+            [desk_product] => Peace lily (Spathiphyllum) adalah tanaman hias yang populer dengan daun hijau tua mengilap dan bunga putih yang unik. Tanaman ini memiliki daun oval yang menyempit ke ujung dan tumbuh langsung dari tanah. Bunganya terdiri dari seludang putih yang mengelilingi bunga kecil di bagian tengah. 
+            [harga] => 45000.00
+            [stok] => 48
+            [gambar] => peacelily3.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [18] => Array
+        (
+            [id_product] => 18
+            [nama_product] => Monstera Deliciosa
+            [desk_product] => Monstera adalah tanaman hias daun tropis yang memiliki daun berlubang dan bentuk yang khas. Monstera berasal dari hutan tropis Amerika dan termasuk dalam famili Araceae. 
+            [harga] => 250000.00
+            [stok] => 26
+            [gambar] => Monstera_Deliciosa_Care.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [19] => Array
+        (
+            [id_product] => 16
+            [nama_product] => Lidah Mertua
+            [desk_product] => Lidah mertua (Sansevieria) adalah tanaman hias yang memiliki daun keras, tebal, dan tegak. Tanaman ini memiliki ujung daun yang meruncing. 
+            [harga] => 60000.00
+            [stok] => 10
+            [gambar] => lidahmertua10.jpg,lidahmertua25.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+)
+
+[17-May-2025 13:37:28 Asia/Jakarta] Product: String of Pearls
+[17-May-2025 13:37:28 Asia/Jakarta] Original image path: String_of_Pearls.jpg
+[17-May-2025 13:37:28 Asia/Jakarta] Cleaned image path: String_of_Pearls.jpg
+[17-May-2025 13:37:28 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/String_of_Pearls.jpg
+[17-May-2025 13:37:28 Asia/Jakarta] Product: Fiddle Leaf Fig 
+[17-May-2025 13:37:28 Asia/Jakarta] Original image path: Fiddle_Leaf_Fig_kecil.jpg
+[17-May-2025 13:37:28 Asia/Jakarta] Cleaned image path: Fiddle_Leaf_Fig_kecil.jpg
+[17-May-2025 13:37:28 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Fiddle_Leaf_Fig_kecil.jpg
+[17-May-2025 13:37:28 Asia/Jakarta] Product: Crassula Ovata - Jade Plant
+[17-May-2025 13:37:28 Asia/Jakarta] Original image path: Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Cleaned image path: Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Product: Opuntia Microdasys
+[17-May-2025 13:37:28 Asia/Jakarta] Original image path: Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg,Opuntia_Microdasys_Rufida_-_Orange_-_2_5.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Cleaned image path: Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Product: Lavender
+[17-May-2025 13:37:28 Asia/Jakarta] Original image path: Lavendula!.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Cleaned image path: Lavendula!.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Lavendula!.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Product: Epipremnum Aureum - Pothos
+[17-May-2025 13:37:28 Asia/Jakarta] Original image path: Epipremnum_aureum_-_Golden_Pothos.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Cleaned image path: Epipremnum_aureum_-_Golden_Pothos.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Epipremnum_aureum_-_Golden_Pothos.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Product: Zamioculcas Zamiifolia - ZZ
+[17-May-2025 13:37:28 Asia/Jakarta] Original image path: Greenery_Unlimited__The_Future_of_Plants.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Cleaned image path: Greenery_Unlimited__The_Future_of_Plants.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Greenery_Unlimited__The_Future_of_Plants.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Product: Lidah Buaya
+[17-May-2025 13:37:28 Asia/Jakarta] Original image path: 5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Cleaned image path: 5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Product: Spider Plant
+[17-May-2025 13:37:28 Asia/Jakarta] Original image path: spider_plant.png
+[17-May-2025 13:37:28 Asia/Jakarta] Cleaned image path: spider_plant.png
+[17-May-2025 13:37:28 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/spider_plant.png
+[17-May-2025 13:37:28 Asia/Jakarta] Product: Echeveria Noble
+[17-May-2025 13:37:28 Asia/Jakarta] Original image path: Echeveria_Noble_-_4_Inch.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Cleaned image path: Echeveria_Noble_-_4_Inch.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Echeveria_Noble_-_4_Inch.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Product: Orchids
+[17-May-2025 13:37:28 Asia/Jakarta] Original image path: Orchids.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Cleaned image path: Orchids.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Orchids.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Product: Calathea
+[17-May-2025 13:37:28 Asia/Jakarta] Original image path: Artificial_2_x_Calathea_Plant.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Cleaned image path: Artificial_2_x_Calathea_Plant.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Artificial_2_x_Calathea_Plant.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Product: Cactus - Opuntia Consolea
+[17-May-2025 13:37:28 Asia/Jakarta] Original image path: Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Cleaned image path: Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Product: Dracaena
+[17-May-2025 13:37:28 Asia/Jakarta] Original image path: dracaena.jpg,dracaena2.jpg
+[17-May-2025 13:37:28 Asia/Jakarta] Cleaned image path: dracaena.jpg
+[17-May-2025 13:37:28 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/dracaena.jpg
+[17-May-2025 13:37:28 Asia/Jakarta] Product: Aglaonema
+[17-May-2025 13:37:28 Asia/Jakarta] Original image path: aglaonema.jpg
+[17-May-2025 13:37:28 Asia/Jakarta] Cleaned image path: aglaonema.jpg
+[17-May-2025 13:37:28 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/aglaonema.jpg
+[17-May-2025 13:37:28 Asia/Jakarta] Product: Bonsai
+[17-May-2025 13:37:28 Asia/Jakarta] Original image path: bonsai.jpg,bonsai2.jpg
+[17-May-2025 13:37:28 Asia/Jakarta] Cleaned image path: bonsai.jpg
+[17-May-2025 13:37:28 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/bonsai.jpg
+[17-May-2025 13:37:28 Asia/Jakarta] Product: Ketapang brazil
+[17-May-2025 13:37:28 Asia/Jakarta] Original image path: Ketapang_brazil1.png
+[17-May-2025 13:37:28 Asia/Jakarta] Cleaned image path: Ketapang_brazil1.png
+[17-May-2025 13:37:28 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Ketapang_brazil1.png
+[17-May-2025 13:37:28 Asia/Jakarta] Product: Peace Lily
+[17-May-2025 13:37:28 Asia/Jakarta] Original image path: peacelily3.jpg
+[17-May-2025 13:37:28 Asia/Jakarta] Cleaned image path: peacelily3.jpg
+[17-May-2025 13:37:28 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/peacelily3.jpg
+[17-May-2025 13:37:28 Asia/Jakarta] Product: Monstera Deliciosa
+[17-May-2025 13:37:28 Asia/Jakarta] Original image path: Monstera_Deliciosa_Care.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Cleaned image path: Monstera_Deliciosa_Care.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Monstera_Deliciosa_Care.jpeg
+[17-May-2025 13:37:28 Asia/Jakarta] Product: Lidah Mertua
+[17-May-2025 13:37:28 Asia/Jakarta] Original image path: lidahmertua10.jpg,lidahmertua25.jpg
+[17-May-2025 13:37:28 Asia/Jakarta] Cleaned image path: lidahmertua10.jpg
+[17-May-2025 13:37:28 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/lidahmertua10.jpg
+[17-May-2025 13:41:41 Asia/Jakarta] Total products in database: 20
+[17-May-2025 13:41:41 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 13:41:41 Asia/Jakarta] Raw product data: Array
+(
+    [0] => Array
+        (
+            [id_product] => 36
+            [nama_product] => String of Pearls
+            [desk_product] => Sukulen unik dengan daun bulat seperti mutiara yang menjuntai indah. Cocok untuk pot gantung.
+            [harga] => 25000.00
+            [stok] => 15
+            [gambar] => String_of_Pearls.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [1] => Array
+        (
+            [id_product] => 35
+            [nama_product] => Fiddle Leaf Fig 
+            [desk_product] => Tanaman hias dengan daun lebar bertekstur seperti biola dan batang ramping. Cocok untuk nuansa tropis-modern. 
+            [harga] => 300000.00
+            [stok] => 20
+            [gambar] => Fiddle_Leaf_Fig_kecil.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [2] => Array
+        (
+            [id_product] => 34
+            [nama_product] => Crassula Ovata - Jade Plant
+            [desk_product] => Sukulen dengan daun tebal berbentuk oval dan batang kayu. Dipercaya membawa energi positif dalam Feng Shui.
+            [harga] => 94000.00
+            [stok] => 23
+            [gambar] => Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [3] => Array
+        (
+            [id_product] => 33
+            [nama_product] => Opuntia Microdasys
+            [desk_product] =>  Kaktus pipih dengan duri halus berwarna emas atau putih. Tumbuh tegak dan cocok untuk dekorasi desktop.
+            [harga] => 55000.00
+            [stok] => 12
+            [gambar] => Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg,Opuntia_Microdasys_Rufida_-_Orange_-_2_5.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [4] => Array
+        (
+            [id_product] => 32
+            [nama_product] => Lavender
+            [desk_product] => Tanaman berbunga ungu dengan aroma khas yang sering digunakan untuk minyak esensial dan pengusir nyamuk.
+            [harga] => 30000.00
+            [stok] => 20
+            [gambar] => Lavendula!.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [5] => Array
+        (
+            [id_product] => 31
+            [nama_product] => Epipremnum Aureum - Pothos
+            [desk_product] => Tanaman merambat dengan daun berbentuk hati dan warna hijau-kuning yang cerah. Bisa ditanam di pot gantung atau media air.
+            [harga] => 93000.00
+            [stok] => 20
+            [gambar] => Epipremnum_aureum_-_Golden_Pothos.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [6] => Array
+        (
+            [id_product] => 30
+            [nama_product] => Zamioculcas Zamiifolia - ZZ
+            [desk_product] => Tanaman dengan daun hijau mengilap dan batang tebal yang tumbuh tegak. Tahan di segala kondisi, bahkan di ruangan minim cahaya.
+            [harga] => 458000.00
+            [stok] => 25
+            [gambar] => Greenery_Unlimited__The_Future_of_Plants.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [7] => Array
+        (
+            [id_product] => 29
+            [nama_product] => Lidah Buaya
+            [desk_product] => Tanaman sukulen dengan daun tebal bergerigi berisi gel bening yang terkenal untuk perawatan kulit, luka bakar, dan rambut.
+            [harga] => 53000.00
+            [stok] => 50
+            [gambar] => 5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [8] => Array
+        (
+            [id_product] => 28
+            [nama_product] => Spider Plant
+            [desk_product] => Tanaman dengan daun panjang bergaris putih-hijau yang menghasilkan anakan menggantung seperti laba-laba. 
+            [harga] => 80000.00
+            [stok] => 20
+            [gambar] => spider_plant.png
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [9] => Array
+        (
+            [id_product] => 27
+            [nama_product] => Echeveria Noble
+            [desk_product] => Sukulen mungil dengan bentuk rosette simetris dan daun tebal berwarna hijau kebiruan. Tanaman ini tahan kekeringan dan cocok untuk dekorasi minimalis.
+            [harga] => 95000.00
+            [stok] => 10
+            [gambar] => Echeveria_Noble_-_4_Inch.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [10] => Array
+        (
+            [id_product] => 26
+            [nama_product] => Orchids
+            [desk_product] => Tanaman eksotis dengan bunga mempesona dan warna-warni mencolok! Anggrek cocok jadi pusat perhatian di ruangan atau taman. Beberapa jenis mekar tahan lama dan memiliki aroma harum.
+            [harga] => 207000.00
+            [stok] => 14
+            [gambar] => Orchids.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [11] => Array
+        (
+            [id_product] => 25
+            [nama_product] => Calathea
+            [desk_product] => Tanaman hias eksklusif dengan daun bercorak indah dan warna memukau! Calathea dikenal sebagai "Prayer Plant" karena daunnya bergerak naik-turun seperti sedang berdoa saat malam hari. Cocok untuk penghias ruangan dengan nuansa tropis yang menenangkan.
+            [harga] => 60000.00
+            [stok] => 35
+            [gambar] => Artificial_2_x_Calathea_Plant.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [12] => Array
+        (
+            [id_product] => 24
+            [nama_product] => Cactus - Opuntia Consolea
+            [desk_product] => Tanaman hias unik dengan bentuk pipih dan tegak, cocok untuk mempercantik ruangan atau taman kering. Opuntia Consolea memiliki duri halus dan tumbuh dengan minimal perawatan, tahan panas & jarang disiram. Ideal untuk pemula atau kolektor tanaman sukulen!
+            [harga] => 59000.00
+            [stok] => 25
+            [gambar] => Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [13] => Array
+        (
+            [id_product] => 23
+            [nama_product] => Dracaena
+            [desk_product] => Dracaena adalah tumbuhan yang tumbuh tegak dengan batang bulat dan beruas-ruas. Daunnya berbentuk tunggal, tidak bertangkai, dan pelepahnya memeluk batang. Daun dracaena bertepi rata, dengan pertulangan daun sejajar dan permukaan licin. Beberapa spesies dracaena memiliki daun sempit berbentuk pedang, sementara yang lain dapat menyerupai pohon dengan mahkota daun. 
+            [harga] => 125000.00
+            [stok] => 47
+            [gambar] => dracaena.jpg,dracaena2.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [14] => Array
+        (
+            [id_product] => 22
+            [nama_product] => Aglaonema
+            [desk_product] => Tanaman aglonema (Aglaonema sp.) adalah tanaman hias daun yang termasuk dalam suku talas-talasan (Araceae). Tanaman ini dikenal juga dengan nama Sri Rejeki atau Chinese Evergreen. 
+            [harga] => 85000.00
+            [stok] => 40
+            [gambar] => aglaonema.jpg
+            [rating] => 5.0
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [15] => Array
+        (
+            [id_product] => 21
+            [nama_product] => Bonsai
+            [desk_product] => Bonsai adalah seni menanam pohon dalam pot dangkal sehingga tampak seperti miniatur pohon besar dan tua. Bonsai merupakan perpaduan antara seni dan hortikultura
+            [harga] => 300000.00
+            [stok] => 2
+            [gambar] => bonsai.jpg,bonsai2.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [16] => Array
+        (
+            [id_product] => 20
+            [nama_product] => Ketapang brazil
+            [desk_product] => Ketapang Brazil, atau Ficus lyrata, adalah tumbuhan hias populer dengan ciri khas daun besar yang menyerupai bentuk biola. Daunnya hijau gelap, mengkilap, dan memiliki urat yang jelas. Tumbuhan ini dikenal sebagai "Biola Cantik" karena bentuk daunnya yang unik. 
+            [harga] => 450000.00
+            [stok] => 28
+            [gambar] => Ketapang_brazil1.png
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [17] => Array
+        (
+            [id_product] => 19
+            [nama_product] => Peace Lily
+            [desk_product] => Peace lily (Spathiphyllum) adalah tanaman hias yang populer dengan daun hijau tua mengilap dan bunga putih yang unik. Tanaman ini memiliki daun oval yang menyempit ke ujung dan tumbuh langsung dari tanah. Bunganya terdiri dari seludang putih yang mengelilingi bunga kecil di bagian tengah. 
+            [harga] => 45000.00
+            [stok] => 48
+            [gambar] => peacelily3.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [18] => Array
+        (
+            [id_product] => 18
+            [nama_product] => Monstera Deliciosa
+            [desk_product] => Monstera adalah tanaman hias daun tropis yang memiliki daun berlubang dan bentuk yang khas. Monstera berasal dari hutan tropis Amerika dan termasuk dalam famili Araceae. 
+            [harga] => 250000.00
+            [stok] => 26
+            [gambar] => Monstera_Deliciosa_Care.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [19] => Array
+        (
+            [id_product] => 16
+            [nama_product] => Lidah Mertua
+            [desk_product] => Lidah mertua (Sansevieria) adalah tanaman hias yang memiliki daun keras, tebal, dan tegak. Tanaman ini memiliki ujung daun yang meruncing. 
+            [harga] => 60000.00
+            [stok] => 10
+            [gambar] => lidahmertua10.jpg,lidahmertua25.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+)
+
+[17-May-2025 13:41:41 Asia/Jakarta] Product: String of Pearls
+[17-May-2025 13:41:41 Asia/Jakarta] Original image path: String_of_Pearls.jpg
+[17-May-2025 13:41:41 Asia/Jakarta] Cleaned image path: String_of_Pearls.jpg
+[17-May-2025 13:41:41 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/String_of_Pearls.jpg
+[17-May-2025 13:41:41 Asia/Jakarta] Product: Fiddle Leaf Fig 
+[17-May-2025 13:41:41 Asia/Jakarta] Original image path: Fiddle_Leaf_Fig_kecil.jpg
+[17-May-2025 13:41:41 Asia/Jakarta] Cleaned image path: Fiddle_Leaf_Fig_kecil.jpg
+[17-May-2025 13:41:41 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Fiddle_Leaf_Fig_kecil.jpg
+[17-May-2025 13:41:41 Asia/Jakarta] Product: Crassula Ovata - Jade Plant
+[17-May-2025 13:41:41 Asia/Jakarta] Original image path: Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Cleaned image path: Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Product: Opuntia Microdasys
+[17-May-2025 13:41:41 Asia/Jakarta] Original image path: Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg,Opuntia_Microdasys_Rufida_-_Orange_-_2_5.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Cleaned image path: Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Product: Lavender
+[17-May-2025 13:41:41 Asia/Jakarta] Original image path: Lavendula!.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Cleaned image path: Lavendula!.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Lavendula!.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Product: Epipremnum Aureum - Pothos
+[17-May-2025 13:41:41 Asia/Jakarta] Original image path: Epipremnum_aureum_-_Golden_Pothos.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Cleaned image path: Epipremnum_aureum_-_Golden_Pothos.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Epipremnum_aureum_-_Golden_Pothos.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Product: Zamioculcas Zamiifolia - ZZ
+[17-May-2025 13:41:41 Asia/Jakarta] Original image path: Greenery_Unlimited__The_Future_of_Plants.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Cleaned image path: Greenery_Unlimited__The_Future_of_Plants.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Greenery_Unlimited__The_Future_of_Plants.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Product: Lidah Buaya
+[17-May-2025 13:41:41 Asia/Jakarta] Original image path: 5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Cleaned image path: 5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Product: Spider Plant
+[17-May-2025 13:41:41 Asia/Jakarta] Original image path: spider_plant.png
+[17-May-2025 13:41:41 Asia/Jakarta] Cleaned image path: spider_plant.png
+[17-May-2025 13:41:41 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/spider_plant.png
+[17-May-2025 13:41:41 Asia/Jakarta] Product: Echeveria Noble
+[17-May-2025 13:41:41 Asia/Jakarta] Original image path: Echeveria_Noble_-_4_Inch.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Cleaned image path: Echeveria_Noble_-_4_Inch.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Echeveria_Noble_-_4_Inch.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Product: Orchids
+[17-May-2025 13:41:41 Asia/Jakarta] Original image path: Orchids.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Cleaned image path: Orchids.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Orchids.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Product: Calathea
+[17-May-2025 13:41:41 Asia/Jakarta] Original image path: Artificial_2_x_Calathea_Plant.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Cleaned image path: Artificial_2_x_Calathea_Plant.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Artificial_2_x_Calathea_Plant.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Product: Cactus - Opuntia Consolea
+[17-May-2025 13:41:41 Asia/Jakarta] Original image path: Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Cleaned image path: Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Product: Dracaena
+[17-May-2025 13:41:41 Asia/Jakarta] Original image path: dracaena.jpg,dracaena2.jpg
+[17-May-2025 13:41:41 Asia/Jakarta] Cleaned image path: dracaena.jpg
+[17-May-2025 13:41:41 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/dracaena.jpg
+[17-May-2025 13:41:41 Asia/Jakarta] Product: Aglaonema
+[17-May-2025 13:41:41 Asia/Jakarta] Original image path: aglaonema.jpg
+[17-May-2025 13:41:41 Asia/Jakarta] Cleaned image path: aglaonema.jpg
+[17-May-2025 13:41:41 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/aglaonema.jpg
+[17-May-2025 13:41:41 Asia/Jakarta] Product: Bonsai
+[17-May-2025 13:41:41 Asia/Jakarta] Original image path: bonsai.jpg,bonsai2.jpg
+[17-May-2025 13:41:41 Asia/Jakarta] Cleaned image path: bonsai.jpg
+[17-May-2025 13:41:41 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/bonsai.jpg
+[17-May-2025 13:41:41 Asia/Jakarta] Product: Ketapang brazil
+[17-May-2025 13:41:41 Asia/Jakarta] Original image path: Ketapang_brazil1.png
+[17-May-2025 13:41:41 Asia/Jakarta] Cleaned image path: Ketapang_brazil1.png
+[17-May-2025 13:41:41 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Ketapang_brazil1.png
+[17-May-2025 13:41:41 Asia/Jakarta] Product: Peace Lily
+[17-May-2025 13:41:41 Asia/Jakarta] Original image path: peacelily3.jpg
+[17-May-2025 13:41:41 Asia/Jakarta] Cleaned image path: peacelily3.jpg
+[17-May-2025 13:41:41 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/peacelily3.jpg
+[17-May-2025 13:41:41 Asia/Jakarta] Product: Monstera Deliciosa
+[17-May-2025 13:41:41 Asia/Jakarta] Original image path: Monstera_Deliciosa_Care.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Cleaned image path: Monstera_Deliciosa_Care.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Monstera_Deliciosa_Care.jpeg
+[17-May-2025 13:41:41 Asia/Jakarta] Product: Lidah Mertua
+[17-May-2025 13:41:41 Asia/Jakarta] Original image path: lidahmertua10.jpg,lidahmertua25.jpg
+[17-May-2025 13:41:41 Asia/Jakarta] Cleaned image path: lidahmertua10.jpg
+[17-May-2025 13:41:41 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/lidahmertua10.jpg
+[17-May-2025 13:55:54 Asia/Jakarta] Total products in database: 20
+[17-May-2025 13:55:54 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 13:55:54 Asia/Jakarta] Raw product data: Array
+(
+    [0] => Array
+        (
+            [id_product] => 36
+            [nama_product] => String of Pearls
+            [desk_product] => Sukulen unik dengan daun bulat seperti mutiara yang menjuntai indah. Cocok untuk pot gantung.
+            [harga] => 25000.00
+            [stok] => 15
+            [gambar] => String_of_Pearls.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [1] => Array
+        (
+            [id_product] => 35
+            [nama_product] => Fiddle Leaf Fig 
+            [desk_product] => Tanaman hias dengan daun lebar bertekstur seperti biola dan batang ramping. Cocok untuk nuansa tropis-modern. 
+            [harga] => 300000.00
+            [stok] => 20
+            [gambar] => Fiddle_Leaf_Fig_kecil.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [2] => Array
+        (
+            [id_product] => 34
+            [nama_product] => Crassula Ovata - Jade Plant
+            [desk_product] => Sukulen dengan daun tebal berbentuk oval dan batang kayu. Dipercaya membawa energi positif dalam Feng Shui.
+            [harga] => 94000.00
+            [stok] => 23
+            [gambar] => Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [3] => Array
+        (
+            [id_product] => 33
+            [nama_product] => Opuntia Microdasys
+            [desk_product] =>  Kaktus pipih dengan duri halus berwarna emas atau putih. Tumbuh tegak dan cocok untuk dekorasi desktop.
+            [harga] => 55000.00
+            [stok] => 12
+            [gambar] => Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg,Opuntia_Microdasys_Rufida_-_Orange_-_2_5.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [4] => Array
+        (
+            [id_product] => 32
+            [nama_product] => Lavender
+            [desk_product] => Tanaman berbunga ungu dengan aroma khas yang sering digunakan untuk minyak esensial dan pengusir nyamuk.
+            [harga] => 30000.00
+            [stok] => 20
+            [gambar] => Lavendula!.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [5] => Array
+        (
+            [id_product] => 31
+            [nama_product] => Epipremnum Aureum - Pothos
+            [desk_product] => Tanaman merambat dengan daun berbentuk hati dan warna hijau-kuning yang cerah. Bisa ditanam di pot gantung atau media air.
+            [harga] => 93000.00
+            [stok] => 20
+            [gambar] => Epipremnum_aureum_-_Golden_Pothos.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [6] => Array
+        (
+            [id_product] => 30
+            [nama_product] => Zamioculcas Zamiifolia - ZZ
+            [desk_product] => Tanaman dengan daun hijau mengilap dan batang tebal yang tumbuh tegak. Tahan di segala kondisi, bahkan di ruangan minim cahaya.
+            [harga] => 458000.00
+            [stok] => 25
+            [gambar] => Greenery_Unlimited__The_Future_of_Plants.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [7] => Array
+        (
+            [id_product] => 29
+            [nama_product] => Lidah Buaya
+            [desk_product] => Tanaman sukulen dengan daun tebal bergerigi berisi gel bening yang terkenal untuk perawatan kulit, luka bakar, dan rambut.
+            [harga] => 53000.00
+            [stok] => 50
+            [gambar] => 5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [8] => Array
+        (
+            [id_product] => 28
+            [nama_product] => Spider Plant
+            [desk_product] => Tanaman dengan daun panjang bergaris putih-hijau yang menghasilkan anakan menggantung seperti laba-laba. 
+            [harga] => 80000.00
+            [stok] => 20
+            [gambar] => spider_plant.png
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [9] => Array
+        (
+            [id_product] => 27
+            [nama_product] => Echeveria Noble
+            [desk_product] => Sukulen mungil dengan bentuk rosette simetris dan daun tebal berwarna hijau kebiruan. Tanaman ini tahan kekeringan dan cocok untuk dekorasi minimalis.
+            [harga] => 95000.00
+            [stok] => 10
+            [gambar] => Echeveria_Noble_-_4_Inch.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [10] => Array
+        (
+            [id_product] => 26
+            [nama_product] => Orchids
+            [desk_product] => Tanaman eksotis dengan bunga mempesona dan warna-warni mencolok! Anggrek cocok jadi pusat perhatian di ruangan atau taman. Beberapa jenis mekar tahan lama dan memiliki aroma harum.
+            [harga] => 207000.00
+            [stok] => 14
+            [gambar] => Orchids.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [11] => Array
+        (
+            [id_product] => 25
+            [nama_product] => Calathea
+            [desk_product] => Tanaman hias eksklusif dengan daun bercorak indah dan warna memukau! Calathea dikenal sebagai "Prayer Plant" karena daunnya bergerak naik-turun seperti sedang berdoa saat malam hari. Cocok untuk penghias ruangan dengan nuansa tropis yang menenangkan.
+            [harga] => 60000.00
+            [stok] => 35
+            [gambar] => Artificial_2_x_Calathea_Plant.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [12] => Array
+        (
+            [id_product] => 24
+            [nama_product] => Cactus - Opuntia Consolea
+            [desk_product] => Tanaman hias unik dengan bentuk pipih dan tegak, cocok untuk mempercantik ruangan atau taman kering. Opuntia Consolea memiliki duri halus dan tumbuh dengan minimal perawatan, tahan panas & jarang disiram. Ideal untuk pemula atau kolektor tanaman sukulen!
+            [harga] => 59000.00
+            [stok] => 25
+            [gambar] => Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [13] => Array
+        (
+            [id_product] => 23
+            [nama_product] => Dracaena
+            [desk_product] => Dracaena adalah tumbuhan yang tumbuh tegak dengan batang bulat dan beruas-ruas. Daunnya berbentuk tunggal, tidak bertangkai, dan pelepahnya memeluk batang. Daun dracaena bertepi rata, dengan pertulangan daun sejajar dan permukaan licin. Beberapa spesies dracaena memiliki daun sempit berbentuk pedang, sementara yang lain dapat menyerupai pohon dengan mahkota daun. 
+            [harga] => 125000.00
+            [stok] => 47
+            [gambar] => dracaena.jpg,dracaena2.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [14] => Array
+        (
+            [id_product] => 22
+            [nama_product] => Aglaonema
+            [desk_product] => Tanaman aglonema (Aglaonema sp.) adalah tanaman hias daun yang termasuk dalam suku talas-talasan (Araceae). Tanaman ini dikenal juga dengan nama Sri Rejeki atau Chinese Evergreen. 
+            [harga] => 85000.00
+            [stok] => 40
+            [gambar] => aglaonema.jpg
+            [rating] => 5.0
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [15] => Array
+        (
+            [id_product] => 21
+            [nama_product] => Bonsai
+            [desk_product] => Bonsai adalah seni menanam pohon dalam pot dangkal sehingga tampak seperti miniatur pohon besar dan tua. Bonsai merupakan perpaduan antara seni dan hortikultura
+            [harga] => 300000.00
+            [stok] => 2
+            [gambar] => bonsai.jpg,bonsai2.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [16] => Array
+        (
+            [id_product] => 20
+            [nama_product] => Ketapang brazil
+            [desk_product] => Ketapang Brazil, atau Ficus lyrata, adalah tumbuhan hias populer dengan ciri khas daun besar yang menyerupai bentuk biola. Daunnya hijau gelap, mengkilap, dan memiliki urat yang jelas. Tumbuhan ini dikenal sebagai "Biola Cantik" karena bentuk daunnya yang unik. 
+            [harga] => 450000.00
+            [stok] => 28
+            [gambar] => Ketapang_brazil1.png
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [17] => Array
+        (
+            [id_product] => 19
+            [nama_product] => Peace Lily
+            [desk_product] => Peace lily (Spathiphyllum) adalah tanaman hias yang populer dengan daun hijau tua mengilap dan bunga putih yang unik. Tanaman ini memiliki daun oval yang menyempit ke ujung dan tumbuh langsung dari tanah. Bunganya terdiri dari seludang putih yang mengelilingi bunga kecil di bagian tengah. 
+            [harga] => 45000.00
+            [stok] => 48
+            [gambar] => peacelily3.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [18] => Array
+        (
+            [id_product] => 18
+            [nama_product] => Monstera Deliciosa
+            [desk_product] => Monstera adalah tanaman hias daun tropis yang memiliki daun berlubang dan bentuk yang khas. Monstera berasal dari hutan tropis Amerika dan termasuk dalam famili Araceae. 
+            [harga] => 250000.00
+            [stok] => 26
+            [gambar] => Monstera_Deliciosa_Care.jpeg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+    [19] => Array
+        (
+            [id_product] => 16
+            [nama_product] => Lidah Mertua
+            [desk_product] => Lidah mertua (Sansevieria) adalah tanaman hias yang memiliki daun keras, tebal, dan tegak. Tanaman ini memiliki ujung daun yang meruncing. 
+            [harga] => 60000.00
+            [stok] => 10
+            [gambar] => lidahmertua10.jpg,lidahmertua25.jpg
+            [rating] => 
+            [nama_kategori] => 
+            [id_kategori] => 
+        )
+
+)
+
+[17-May-2025 13:55:54 Asia/Jakarta] Product: String of Pearls
+[17-May-2025 13:55:54 Asia/Jakarta] Original image path: String_of_Pearls.jpg
+[17-May-2025 13:55:54 Asia/Jakarta] Cleaned image path: String_of_Pearls.jpg
+[17-May-2025 13:55:54 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/String_of_Pearls.jpg
+[17-May-2025 13:55:54 Asia/Jakarta] Product: Fiddle Leaf Fig 
+[17-May-2025 13:55:54 Asia/Jakarta] Original image path: Fiddle_Leaf_Fig_kecil.jpg
+[17-May-2025 13:55:54 Asia/Jakarta] Cleaned image path: Fiddle_Leaf_Fig_kecil.jpg
+[17-May-2025 13:55:54 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Fiddle_Leaf_Fig_kecil.jpg
+[17-May-2025 13:55:54 Asia/Jakarta] Product: Crassula Ovata - Jade Plant
+[17-May-2025 13:55:54 Asia/Jakarta] Original image path: Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Cleaned image path: Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Qué_sucede_si_le_colocas_lentejas_a_tu_árbol_de_Jade2.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Product: Opuntia Microdasys
+[17-May-2025 13:55:54 Asia/Jakarta] Original image path: Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg,Opuntia_Microdasys_Rufida_-_Orange_-_2_5.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Cleaned image path: Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Opuntia_microdasys_-_Bunny_Ear_Cactus.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Product: Lavender
+[17-May-2025 13:55:54 Asia/Jakarta] Original image path: Lavendula!.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Cleaned image path: Lavendula!.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Lavendula!.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Product: Epipremnum Aureum - Pothos
+[17-May-2025 13:55:54 Asia/Jakarta] Original image path: Epipremnum_aureum_-_Golden_Pothos.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Cleaned image path: Epipremnum_aureum_-_Golden_Pothos.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Epipremnum_aureum_-_Golden_Pothos.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Product: Zamioculcas Zamiifolia - ZZ
+[17-May-2025 13:55:54 Asia/Jakarta] Original image path: Greenery_Unlimited__The_Future_of_Plants.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Cleaned image path: Greenery_Unlimited__The_Future_of_Plants.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Greenery_Unlimited__The_Future_of_Plants.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Product: Lidah Buaya
+[17-May-2025 13:55:54 Asia/Jakarta] Original image path: 5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Cleaned image path: 5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/5_Air_Purifying_Plants_Your_Home_Needs.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Product: Spider Plant
+[17-May-2025 13:55:54 Asia/Jakarta] Original image path: spider_plant.png
+[17-May-2025 13:55:54 Asia/Jakarta] Cleaned image path: spider_plant.png
+[17-May-2025 13:55:54 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/spider_plant.png
+[17-May-2025 13:55:54 Asia/Jakarta] Product: Echeveria Noble
+[17-May-2025 13:55:54 Asia/Jakarta] Original image path: Echeveria_Noble_-_4_Inch.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Cleaned image path: Echeveria_Noble_-_4_Inch.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Echeveria_Noble_-_4_Inch.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Product: Orchids
+[17-May-2025 13:55:54 Asia/Jakarta] Original image path: Orchids.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Cleaned image path: Orchids.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Orchids.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Product: Calathea
+[17-May-2025 13:55:54 Asia/Jakarta] Original image path: Artificial_2_x_Calathea_Plant.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Cleaned image path: Artificial_2_x_Calathea_Plant.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Artificial_2_x_Calathea_Plant.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Product: Cactus - Opuntia Consolea
+[17-May-2025 13:55:54 Asia/Jakarta] Original image path: Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Cleaned image path: Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Cactus_(Opuntia_Consolea)_-_Ø17cm_-_?55cm.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Product: Dracaena
+[17-May-2025 13:55:54 Asia/Jakarta] Original image path: dracaena.jpg,dracaena2.jpg
+[17-May-2025 13:55:54 Asia/Jakarta] Cleaned image path: dracaena.jpg
+[17-May-2025 13:55:54 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/dracaena.jpg
+[17-May-2025 13:55:54 Asia/Jakarta] Product: Aglaonema
+[17-May-2025 13:55:54 Asia/Jakarta] Original image path: aglaonema.jpg
+[17-May-2025 13:55:54 Asia/Jakarta] Cleaned image path: aglaonema.jpg
+[17-May-2025 13:55:54 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/aglaonema.jpg
+[17-May-2025 13:55:54 Asia/Jakarta] Product: Bonsai
+[17-May-2025 13:55:54 Asia/Jakarta] Original image path: bonsai.jpg,bonsai2.jpg
+[17-May-2025 13:55:54 Asia/Jakarta] Cleaned image path: bonsai.jpg
+[17-May-2025 13:55:54 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/bonsai.jpg
+[17-May-2025 13:55:54 Asia/Jakarta] Product: Ketapang brazil
+[17-May-2025 13:55:54 Asia/Jakarta] Original image path: Ketapang_brazil1.png
+[17-May-2025 13:55:54 Asia/Jakarta] Cleaned image path: Ketapang_brazil1.png
+[17-May-2025 13:55:54 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Ketapang_brazil1.png
+[17-May-2025 13:55:54 Asia/Jakarta] Product: Peace Lily
+[17-May-2025 13:55:54 Asia/Jakarta] Original image path: peacelily3.jpg
+[17-May-2025 13:55:54 Asia/Jakarta] Cleaned image path: peacelily3.jpg
+[17-May-2025 13:55:54 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/peacelily3.jpg
+[17-May-2025 13:55:54 Asia/Jakarta] Product: Monstera Deliciosa
+[17-May-2025 13:55:54 Asia/Jakarta] Original image path: Monstera_Deliciosa_Care.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Cleaned image path: Monstera_Deliciosa_Care.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/Monstera_Deliciosa_Care.jpeg
+[17-May-2025 13:55:54 Asia/Jakarta] Product: Lidah Mertua
+[17-May-2025 13:55:54 Asia/Jakarta] Original image path: lidahmertua10.jpg,lidahmertua25.jpg
+[17-May-2025 13:55:54 Asia/Jakarta] Cleaned image path: lidahmertua10.jpg
+[17-May-2025 13:55:54 Asia/Jakarta] Full URL would be: https://admin.hijauloka.my.id/uploads/lidahmertua10.jpg
+[17-May-2025 14:24:44 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 14:24:44 Asia/Jakarta] Database connection successful
+[17-May-2025 14:24:44 Asia/Jakarta] Total products in database: 20
+[17-May-2025 14:24:44 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 14:24:44 Asia/Jakarta] JSON output length: 0
+[17-May-2025 14:24:44 Asia/Jakarta] JSON encode error: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:24:44 Asia/Jakarta] General Error: Failed to encode JSON: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:27:16 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 14:27:16 Asia/Jakarta] Database connection successful
+[17-May-2025 14:27:16 Asia/Jakarta] Total products in database: 20
+[17-May-2025 14:27:16 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 14:27:16 Asia/Jakarta] JSON output length: 0
+[17-May-2025 14:27:16 Asia/Jakarta] JSON encode error: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:27:16 Asia/Jakarta] General Error: Failed to encode JSON: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:36:28 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 14:36:28 Asia/Jakarta] Database connection successful
+[17-May-2025 14:36:28 Asia/Jakarta] Total products in database: 20
+[17-May-2025 14:36:28 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 14:36:28 Asia/Jakarta] JSON output length: 0
+[17-May-2025 14:36:28 Asia/Jakarta] JSON encode error: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:36:28 Asia/Jakarta] General Error: Failed to encode JSON: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:36:32 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 14:36:32 Asia/Jakarta] Database connection successful
+[17-May-2025 14:36:32 Asia/Jakarta] Total products in database: 20
+[17-May-2025 14:36:32 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 14:36:32 Asia/Jakarta] JSON output length: 0
+[17-May-2025 14:36:32 Asia/Jakarta] JSON encode error: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:36:32 Asia/Jakarta] General Error: Failed to encode JSON: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:37:49 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 14:37:49 Asia/Jakarta] Database connection successful
+[17-May-2025 14:37:49 Asia/Jakarta] Total products in database: 20
+[17-May-2025 14:37:49 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 14:37:49 Asia/Jakarta] JSON output length: 0
+[17-May-2025 14:37:49 Asia/Jakarta] JSON encode error: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:37:49 Asia/Jakarta] General Error: Failed to encode JSON: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:41:33 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 14:41:33 Asia/Jakarta] Database connection successful
+[17-May-2025 14:41:33 Asia/Jakarta] Total products in database: 20
+[17-May-2025 14:41:33 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 14:41:33 Asia/Jakarta] JSON output length: 0
+[17-May-2025 14:41:33 Asia/Jakarta] JSON encode error: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:41:33 Asia/Jakarta] General Error: Failed to encode JSON: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:45:43 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 14:45:43 Asia/Jakarta] Database connection successful
+[17-May-2025 14:45:43 Asia/Jakarta] Total products in database: 20
+[17-May-2025 14:45:43 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 14:45:43 Asia/Jakarta] JSON output length: 0
+[17-May-2025 14:45:43 Asia/Jakarta] JSON encode error: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:45:43 Asia/Jakarta] General Error: Failed to encode JSON: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:45:51 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 14:45:51 Asia/Jakarta] Database connection successful
+[17-May-2025 14:45:51 Asia/Jakarta] Total products in database: 20
+[17-May-2025 14:45:51 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 14:45:51 Asia/Jakarta] JSON output length: 0
+[17-May-2025 14:45:51 Asia/Jakarta] JSON encode error: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:45:51 Asia/Jakarta] General Error: Failed to encode JSON: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:46:50 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 14:46:50 Asia/Jakarta] Database connection successful
+[17-May-2025 14:46:50 Asia/Jakarta] Total products in database: 20
+[17-May-2025 14:46:50 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 14:46:50 Asia/Jakarta] JSON output length: 0
+[17-May-2025 14:46:50 Asia/Jakarta] JSON encode error: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:46:50 Asia/Jakarta] General Error: Failed to encode JSON: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:47:56 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 14:47:56 Asia/Jakarta] Database connection successful
+[17-May-2025 14:47:56 Asia/Jakarta] Total products in database: 20
+[17-May-2025 14:47:56 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 14:47:56 Asia/Jakarta] JSON output length: 0
+[17-May-2025 14:47:56 Asia/Jakarta] JSON encode error: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:47:56 Asia/Jakarta] General Error: Failed to encode JSON: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:47:59 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 14:47:59 Asia/Jakarta] Database connection successful
+[17-May-2025 14:47:59 Asia/Jakarta] Total products in database: 20
+[17-May-2025 14:47:59 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 14:47:59 Asia/Jakarta] JSON output length: 0
+[17-May-2025 14:47:59 Asia/Jakarta] JSON encode error: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:47:59 Asia/Jakarta] General Error: Failed to encode JSON: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:50:54 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 14:50:54 Asia/Jakarta] Database connection successful
+[17-May-2025 14:50:54 Asia/Jakarta] Total products in database: 20
+[17-May-2025 14:50:54 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 14:50:54 Asia/Jakarta] JSON output length: 0
+[17-May-2025 14:50:54 Asia/Jakarta] JSON encode error: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:50:54 Asia/Jakarta] General Error: Failed to encode JSON: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:50:56 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 14:50:56 Asia/Jakarta] Database connection successful
+[17-May-2025 14:50:56 Asia/Jakarta] Total products in database: 20
+[17-May-2025 14:50:56 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 14:50:56 Asia/Jakarta] JSON output length: 0
+[17-May-2025 14:50:56 Asia/Jakarta] JSON encode error: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:50:56 Asia/Jakarta] General Error: Failed to encode JSON: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:51:02 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 14:51:02 Asia/Jakarta] Database connection successful
+[17-May-2025 14:51:02 Asia/Jakarta] Total products in database: 20
+[17-May-2025 14:51:02 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 14:51:02 Asia/Jakarta] JSON output length: 0
+[17-May-2025 14:51:02 Asia/Jakarta] JSON encode error: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:51:02 Asia/Jakarta] General Error: Failed to encode JSON: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:54:05 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 14:54:05 Asia/Jakarta] Database connection successful
+[17-May-2025 14:54:05 Asia/Jakarta] Total products in database: 20
+[17-May-2025 14:54:05 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 14:54:05 Asia/Jakarta] JSON output length: 0
+[17-May-2025 14:54:05 Asia/Jakarta] JSON encode error: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:54:05 Asia/Jakarta] General Error: Failed to encode JSON: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:54:06 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 14:54:06 Asia/Jakarta] Database connection successful
+[17-May-2025 14:54:06 Asia/Jakarta] Total products in database: 20
+[17-May-2025 14:54:06 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 14:54:06 Asia/Jakarta] JSON output length: 0
+[17-May-2025 14:54:06 Asia/Jakarta] JSON encode error: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:54:06 Asia/Jakarta] General Error: Failed to encode JSON: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:54:38 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 14:54:38 Asia/Jakarta] Database connection successful
+[17-May-2025 14:54:38 Asia/Jakarta] Total products in database: 20
+[17-May-2025 14:54:38 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 14:54:38 Asia/Jakarta] JSON output length: 0
+[17-May-2025 14:54:38 Asia/Jakarta] JSON encode error: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:54:38 Asia/Jakarta] General Error: Failed to encode JSON: Malformed UTF-8 characters, possibly incorrectly encoded
+[17-May-2025 14:58:11 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 14:58:11 Asia/Jakarta] Database connection successful
+[17-May-2025 14:58:11 Asia/Jakarta] Total products in database: 20
+[17-May-2025 14:58:11 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 15:01:51 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 15:01:51 Asia/Jakarta] Database connection successful
+[17-May-2025 15:01:51 Asia/Jakarta] Total products in database: 20
+[17-May-2025 15:01:51 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 15:02:05 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 15:02:05 Asia/Jakarta] Database connection successful
+[17-May-2025 15:02:05 Asia/Jakarta] Total products in database: 20
+[17-May-2025 15:02:05 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 15:08:34 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 15:08:34 Asia/Jakarta] Database connection successful
+[17-May-2025 15:08:34 Asia/Jakarta] Total products in database: 20
+[17-May-2025 15:08:34 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 15:27:19 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 15:27:19 Asia/Jakarta] Database connection successful
+[17-May-2025 15:27:19 Asia/Jakarta] Total products in database: 20
+[17-May-2025 15:27:19 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 15:29:36 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 15:29:36 Asia/Jakarta] Database connection successful
+[17-May-2025 15:29:36 Asia/Jakarta] Total products in database: 20
+[17-May-2025 15:29:36 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 15:31:27 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 15:31:27 Asia/Jakarta] Database connection successful
+[17-May-2025 15:31:27 Asia/Jakarta] Total products in database: 20
+[17-May-2025 15:31:27 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 15:33:06 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 15:33:06 Asia/Jakarta] Database connection successful
+[17-May-2025 15:33:06 Asia/Jakarta] Total products in database: 20
+[17-May-2025 15:33:06 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 15:41:00 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 15:41:00 Asia/Jakarta] Database connection successful
+[17-May-2025 15:41:00 Asia/Jakarta] Total products in database: 20
+[17-May-2025 15:41:00 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 16:07:56 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 16:07:56 Asia/Jakarta] Database connection successful
+[17-May-2025 16:07:56 Asia/Jakarta] Total products in database: 20
+[17-May-2025 16:07:56 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 16:17:10 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 16:17:10 Asia/Jakarta] Database connection successful
+[17-May-2025 16:17:10 Asia/Jakarta] Total products in database: 20
+[17-May-2025 16:17:10 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 18:40:49 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 18:40:49 Asia/Jakarta] Database connection successful
+[17-May-2025 18:40:49 Asia/Jakarta] Total products in database: 20
+[17-May-2025 18:40:49 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 18:47:10 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 18:47:10 Asia/Jakarta] Database connection successful
+[17-May-2025 18:47:10 Asia/Jakarta] Total products in database: 20
+[17-May-2025 18:47:10 Asia/Jakarta] Number of products fetched: 20
+[17-May-2025 19:11:30 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[17-May-2025 19:11:30 Asia/Jakarta] Database connection successful
+[17-May-2025 19:11:30 Asia/Jakarta] Total products in database: 20
+[17-May-2025 19:11:30 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 00:17:10 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 00:17:10 Asia/Jakarta] Database connection successful
+[18-May-2025 00:17:10 Asia/Jakarta] Total products in database: 20
+[18-May-2025 00:17:10 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 07:50:19 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 07:50:19 Asia/Jakarta] Database connection successful
+[18-May-2025 07:50:19 Asia/Jakarta] Total products in database: 20
+[18-May-2025 07:50:19 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 07:58:16 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 07:58:16 Asia/Jakarta] Database connection successful
+[18-May-2025 07:58:16 Asia/Jakarta] Total products in database: 20
+[18-May-2025 07:58:16 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 09:46:34 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 09:46:34 Asia/Jakarta] Database connection successful
+[18-May-2025 09:46:34 Asia/Jakarta] Total products in database: 20
+[18-May-2025 09:46:34 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 09:57:17 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 09:57:17 Asia/Jakarta] Database connection successful
+[18-May-2025 09:57:17 Asia/Jakarta] Total products in database: 20
+[18-May-2025 09:57:17 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 10:09:38 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 10:09:38 Asia/Jakarta] Database connection successful
+[18-May-2025 10:09:38 Asia/Jakarta] Total products in database: 20
+[18-May-2025 10:09:38 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 11:07:58 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 11:07:58 Asia/Jakarta] Database connection successful
+[18-May-2025 11:07:58 Asia/Jakarta] Total products in database: 20
+[18-May-2025 11:07:58 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 11:09:33 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 11:09:33 Asia/Jakarta] Database connection successful
+[18-May-2025 11:09:33 Asia/Jakarta] Total products in database: 20
+[18-May-2025 11:09:33 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 11:10:12 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 11:10:12 Asia/Jakarta] Database connection successful
+[18-May-2025 11:10:12 Asia/Jakarta] Total products in database: 20
+[18-May-2025 11:10:12 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:00:17 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:00:17 Asia/Jakarta] Database connection successful
+[18-May-2025 12:00:17 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:00:17 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:01:11 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:01:11 Asia/Jakarta] Database connection successful
+[18-May-2025 12:01:11 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:01:11 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:02:14 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:02:14 Asia/Jakarta] Database connection successful
+[18-May-2025 12:02:14 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:02:14 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:02:19 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:02:19 Asia/Jakarta] Database connection successful
+[18-May-2025 12:02:19 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:02:19 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:15:47 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:15:47 Asia/Jakarta] Database connection successful
+[18-May-2025 12:15:47 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:15:47 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:31:26 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:31:26 Asia/Jakarta] Database connection successful
+[18-May-2025 12:31:26 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:31:26 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:33:09 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:33:09 Asia/Jakarta] Database connection successful
+[18-May-2025 12:33:09 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:33:09 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:33:29 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:33:29 Asia/Jakarta] Database connection successful
+[18-May-2025 12:33:29 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:33:29 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:33:36 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:33:36 Asia/Jakarta] Database connection successful
+[18-May-2025 12:33:36 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:33:36 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:38:56 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:38:56 Asia/Jakarta] Database connection successful
+[18-May-2025 12:38:56 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:38:56 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:38:58 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:38:58 Asia/Jakarta] Database connection successful
+[18-May-2025 12:38:58 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:38:58 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:39:05 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:39:05 Asia/Jakarta] Database connection successful
+[18-May-2025 12:39:05 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:39:05 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:40:09 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:40:09 Asia/Jakarta] Database connection successful
+[18-May-2025 12:40:09 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:40:09 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:41:01 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:41:01 Asia/Jakarta] Database connection successful
+[18-May-2025 12:41:01 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:41:01 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:41:49 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:41:49 Asia/Jakarta] Database connection successful
+[18-May-2025 12:41:49 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:41:49 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:44:19 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:44:19 Asia/Jakarta] Database connection successful
+[18-May-2025 12:44:19 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:44:19 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:45:38 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:45:38 Asia/Jakarta] Database connection successful
+[18-May-2025 12:45:38 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:45:38 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:46:01 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:46:01 Asia/Jakarta] Database connection successful
+[18-May-2025 12:46:01 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:46:01 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:46:36 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:46:36 Asia/Jakarta] Database connection successful
+[18-May-2025 12:46:36 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:46:36 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:46:39 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:46:39 Asia/Jakarta] Database connection successful
+[18-May-2025 12:46:39 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:46:39 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:46:59 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:46:59 Asia/Jakarta] Database connection successful
+[18-May-2025 12:46:59 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:46:59 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:47:17 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:47:17 Asia/Jakarta] Database connection successful
+[18-May-2025 12:47:17 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:47:17 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:47:36 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:47:36 Asia/Jakarta] Database connection successful
+[18-May-2025 12:47:36 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:47:36 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:47:39 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:47:39 Asia/Jakarta] Database connection successful
+[18-May-2025 12:47:39 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:47:39 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:48:02 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:48:02 Asia/Jakarta] Database connection successful
+[18-May-2025 12:48:02 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:48:02 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:48:05 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:48:05 Asia/Jakarta] Database connection successful
+[18-May-2025 12:48:05 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:48:05 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:48:49 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:48:49 Asia/Jakarta] Database connection successful
+[18-May-2025 12:48:49 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:48:49 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:50:35 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:50:35 Asia/Jakarta] Database connection successful
+[18-May-2025 12:50:35 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:50:35 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:51:00 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:51:00 Asia/Jakarta] Database connection successful
+[18-May-2025 12:51:00 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:51:00 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:51:02 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:51:02 Asia/Jakarta] Database connection successful
+[18-May-2025 12:51:02 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:51:02 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:51:04 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:51:04 Asia/Jakarta] Database connection successful
+[18-May-2025 12:51:04 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:51:04 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:53:55 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:53:55 Asia/Jakarta] Database connection successful
+[18-May-2025 12:53:55 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:53:55 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 12:59:19 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 12:59:19 Asia/Jakarta] Database connection successful
+[18-May-2025 12:59:19 Asia/Jakarta] Total products in database: 20
+[18-May-2025 12:59:19 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 13:00:05 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 13:00:05 Asia/Jakarta] Database connection successful
+[18-May-2025 13:00:05 Asia/Jakarta] Total products in database: 20
+[18-May-2025 13:00:05 Asia/Jakarta] Number of products fetched: 20
+[18-May-2025 14:29:03 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 14:29:03 Asia/Jakarta] Database connection successful
+[18-May-2025 14:29:03 Asia/Jakarta] Total products in database: 25
+[18-May-2025 14:29:03 Asia/Jakarta] Number of products fetched: 25
+[18-May-2025 14:29:33 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 14:29:33 Asia/Jakarta] Database connection successful
+[18-May-2025 14:29:33 Asia/Jakarta] Total products in database: 25
+[18-May-2025 14:29:33 Asia/Jakarta] Number of products fetched: 25
+[18-May-2025 14:30:14 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 14:30:14 Asia/Jakarta] Database connection successful
+[18-May-2025 14:30:14 Asia/Jakarta] Total products in database: 26
+[18-May-2025 14:30:14 Asia/Jakarta] Number of products fetched: 26
+[18-May-2025 14:30:53 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 14:30:53 Asia/Jakarta] Database connection successful
+[18-May-2025 14:30:53 Asia/Jakarta] Total products in database: 26
+[18-May-2025 14:30:53 Asia/Jakarta] Number of products fetched: 26
+[18-May-2025 18:32:22 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 18:32:22 Asia/Jakarta] Database connection successful
+[18-May-2025 18:32:22 Asia/Jakarta] Total products in database: 50
+[18-May-2025 18:32:22 Asia/Jakarta] Number of products fetched: 50
+[18-May-2025 18:56:34 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 18:56:34 Asia/Jakarta] Database connection successful
+[18-May-2025 18:56:34 Asia/Jakarta] Total products in database: 50
+[18-May-2025 18:56:34 Asia/Jakarta] Number of products fetched: 50
+[18-May-2025 21:14:50 Asia/Jakarta] Attempting to connect to database: localhost, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 21:14:50 Asia/Jakarta] Database connection successful
+[18-May-2025 21:14:50 Asia/Jakarta] Total products in database: 50
+[18-May-2025 21:14:50 Asia/Jakarta] Number of products fetched: 50
+[18-May-2025 21:53:48 Asia/Jakarta] Attempting to connect to database: 103.247.11.220, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 21:53:48 Asia/Jakarta] Database connection successful
+[18-May-2025 21:53:48 Asia/Jakarta] Total products in database: 50
+[18-May-2025 21:53:48 Asia/Jakarta] Number of products fetched: 50
+[18-May-2025 22:23:47 Asia/Jakarta] Attempting to connect to database: 103.247.11.220, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 22:23:47 Asia/Jakarta] Database connection successful
+[18-May-2025 22:23:47 Asia/Jakarta] Total products in database: 50
+[18-May-2025 22:23:47 Asia/Jakarta] Number of products fetched: 50
+[18-May-2025 22:25:02 Asia/Jakarta] PHP Warning:  mysqli::__construct(): (HY000/2002): Connection refused in /home/hijc7862/public_html/admin/api/get_cart.php on line 15
+[18-May-2025 22:25:04 Asia/Jakarta] PHP Warning:  mysqli::__construct(): (HY000/2002): Connection refused in /home/hijc7862/public_html/admin/api/get_cart.php on line 15
+[18-May-2025 22:25:05 Asia/Jakarta] PHP Warning:  mysqli::__construct(): (HY000/2002): Connection refused in /home/hijc7862/public_html/admin/api/get_cart.php on line 15
+[18-May-2025 22:25:06 Asia/Jakarta] PHP Warning:  mysqli::__construct(): (HY000/2002): Connection refused in /home/hijc7862/public_html/admin/api/get_cart.php on line 15
+[18-May-2025 22:55:58 Asia/Jakarta] Attempting to connect to database: 103.247.11.220, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 22:55:58 Asia/Jakarta] Database connection successful
+[18-May-2025 22:55:58 Asia/Jakarta] Total products in database: 50
+[18-May-2025 22:55:58 Asia/Jakarta] Number of products fetched: 50
+[18-May-2025 23:10:57 Asia/Jakarta] Attempting to connect to database: 103.247.11.220, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 23:10:57 Asia/Jakarta] Database connection successful
+[18-May-2025 23:10:57 Asia/Jakarta] Total products in database: 50
+[18-May-2025 23:10:57 Asia/Jakarta] Number of products fetched: 50
+[18-May-2025 23:37:07 Asia/Jakarta] Attempting to connect to database: 103.247.11.220, hijc7862_hijauloka, hijc7862_admin
+[18-May-2025 23:37:07 Asia/Jakarta] Database connection successful
+[18-May-2025 23:37:07 Asia/Jakarta] Total products in database: 50
+[18-May-2025 23:37:07 Asia/Jakarta] Number of products fetched: 50
+[19-May-2025 09:18:22 Asia/Jakarta] Attempting to connect to database: 103.247.11.220, hijc7862_hijauloka, hijc7862_admin
+[19-May-2025 09:18:22 Asia/Jakarta] Database connection successful
+[19-May-2025 09:18:22 Asia/Jakarta] Total products in database: 50
+[19-May-2025 09:18:22 Asia/Jakarta] Number of products fetched: 50
+[19-May-2025 09:30:22 Asia/Jakarta] Attempting to connect to database: 103.247.11.220, hijc7862_hijauloka, hijc7862_admin
+[19-May-2025 09:30:22 Asia/Jakarta] Database connection successful
+[19-May-2025 09:30:22 Asia/Jakarta] Total products in database: 50
+[19-May-2025 09:30:22 Asia/Jakarta] Number of products fetched: 50
+[19-May-2025 09:36:57 Asia/Jakarta] Attempting to connect to database: 103.247.11.220, hijc7862_hijauloka, hijc7862_admin
+[19-May-2025 09:36:57 Asia/Jakarta] Database connection successful
+[19-May-2025 09:36:57 Asia/Jakarta] Total products in database: 50
+[19-May-2025 09:36:57 Asia/Jakarta] Number of products fetched: 50
+[19-May-2025 09:39:07 Asia/Jakarta] Attempting to connect to database: 103.247.11.220, hijc7862_hijauloka, hijc7862_admin
+[19-May-2025 09:39:07 Asia/Jakarta] Database connection successful
+[19-May-2025 09:39:07 Asia/Jakarta] Total products in database: 50
+[19-May-2025 09:39:07 Asia/Jakarta] Number of products fetched: 50
+[19-May-2025 09:58:00 Asia/Jakarta] Attempting to connect to database: 103.247.11.220, hijc7862_hijauloka, hijc7862_admin
+[19-May-2025 09:58:00 Asia/Jakarta] Database connection successful
+[19-May-2025 09:58:00 Asia/Jakarta] Total products in database: 50
+[19-May-2025 09:58:00 Asia/Jakarta] Number of products fetched: 50
+[19-May-2025 09:58:06 Asia/Jakarta] Attempting to connect to database: 103.247.11.220, hijc7862_hijauloka, hijc7862_admin
+[19-May-2025 09:58:06 Asia/Jakarta] Database connection successful
+[19-May-2025 09:58:06 Asia/Jakarta] Total products in database: 50
+[19-May-2025 09:58:06 Asia/Jakarta] Number of products fetched: 50
