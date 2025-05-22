@@ -43,6 +43,8 @@
         </div>
 
         <!-- Pesanan Pending -->
+        
+        <a href="<?= base_url('pesanan') ?>">
         <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
             <div class="flex items-center justify-between mb-4">
                 <div class="p-3 rounded-lg bg-red-50">
@@ -58,7 +60,7 @@
                 <span class="ml-2 text-sm text-gray-500">pesanan</span>
             </div>
         </div>
-    </div>
+    </div></a>
 
     <!-- Main Content Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">

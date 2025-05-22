@@ -1,4 +1,3 @@
-
 <?php $this->load->view('includes/sidebar'); ?>
 
 <style>
@@ -287,6 +286,7 @@
                         <th>Harga</th>
                         <th>Stok</th>
                         <th>Gambar</th>
+                        <th>Video</th>
                         <th>Featured</th>
                         <th>Aksi</th>
                     </tr>
@@ -319,6 +319,15 @@
                                     <img src="<?= base_url('uploads/' . trim($gmbr)); ?>" alt="Product Image">
                                 <?php endforeach; ?>
                             </div>
+                        </td>
+                        <td>
+                            <?php if (!empty($p->cara_rawat_video)): ?>
+                                <a href="<?= base_url('uploads/videos/' . $p->cara_rawat_video); ?>" target="_blank" class="text-blue-500 hover:underline flex items-center">
+                                    <i class="fas fa-video mr-1"></i> Lihat Video
+                                </a>
+                            <?php else: ?>
+                                <span class="text-gray-400">Tidak ada video</span>
+                            <?php endif; ?>
                         </td>
                         <td>
                             <button 
@@ -376,73 +385,33 @@
                 <textarea name="desk_product" id="desk_product" class="form-input" rows="3" required></textarea>
             </div>
 
-           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <div class="form-group" style="position: relative;">
-      <label 
-    style="
-        background-color: var(--color-primary, #48BB78);
-        color: white;
-        width: 150px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        font-family: system-ui, sans-serif;
-    "
-    onmouseover="this.style.setProperty('--color-primary', '#38A169')"
-    onmouseout="this.style.setProperty('--color-primary', '#48BB78')"
->
-    Kategori
-</label>
-        <div class="space-y-2">
-            <?php foreach ($kategori as $k): ?>
-            <label style="
-                display: none;
-                align-items: center;
-                opacity: 0;
-                transition: opacity 0.2s;
-            " 
-            onmouseover="this.style.opacity='1';this.style.display='flex'"
-            onmouseout="this.style.opacity='0';this.style.display='none'">
-                <input 
-                    type="checkbox" 
-                    name="id_kategori[]" 
-                    value="<?= $k->id_kategori; ?>" 
-                    style="
-                        border-radius: 0.375rem;
-                        border: 1px solid #d1d5db;
-                        margin-right: 0.5rem;
-                    ">
-                <span style="margin-left: 0.5rem; font-size: 0.875rem; color: #374151;">
-                    <?= $k->nama_kategori; ?>
-                </span>
-            </label>
-            <?php endforeach; ?>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="form-label">Stok</label>
-        <input 
-            type="number" 
-            name="stok" 
-            id="stok" 
-            style="
-                display: block;
-                width: 100%;
-                padding: 0.375rem 0.75rem;
-                border-radius: 0.375rem;
-                border: 1px solid #d1d5db;
-            " 
-            required>
-    </div>
-</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="form-group">
+                    <label class="form-label">Kategori</label>
+                    <div class="space-y-2">
+                        <?php foreach ($kategori as $k): ?>
+                        <label class="inline-flex items-center mr-4">
+                            <input type="checkbox" name="id_kategori[]" value="<?= $k->id_kategori; ?>" class="form-checkbox">
+                            <span class="ml-2"><?= $k->nama_kategori; ?></span>
+                        </label>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Stok</label>
+                    <input type="number" name="stok" id="stok" class="form-input" required>
+                </div>
+            </div>
 
             <div class="form-group">
                 <label class="form-label">Gambar (minimal 1, maksimal 5)</label>
                 <input type="file" name="gambar[]" class="form-input" multiple required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Video Cara Merawat (opsional)</label>
+                <input type="file" name="cara_rawat_video" class="form-input" accept="video/mp4,video/x-m4v,video/*">
+                <small class="text-gray-500">Format yang didukung: MP4, MOV, AVI (maks. 50MB)</small>
             </div>
 
             <div class="flex justify-end gap-3 mt-6">
@@ -498,6 +467,18 @@
                 <!-- Simpan nama file lama dalam format comma separated -->
                 <input type="hidden" name="gambar_lama" id="edit_gambar_lama">
             </div>
+            
+            <div class="mb-4">
+                <label class="block">Video Cara Merawat (opsional)</label>
+                <input type="file" name="cara_rawat_video" class="w-full border p-2 rounded-lg" accept="video/mp4,video/x-m4v,video/*">
+                <small class="text-gray-500">Format yang didukung: MP4, MOV, AVI (maks. 50MB)</small>
+                <div id="current_video_container" class="mt-2 hidden">
+                    <p class="text-sm font-medium">Video saat ini:</p>
+                    <p id="current_video_name" class="text-sm text-gray-600"></p>
+                </div>
+                <input type="hidden" name="video_lama" id="edit_video_lama">
+            </div>
+            
             <div class="text-right">
                 <button type="button" onclick="closeModalEdit()" class="bg-gray-500 text-white px-4 py-2 rounded-md">Batal</button>
                 <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md">Simpan</button>
@@ -515,39 +496,48 @@
     }
 
     function editProduk(id) {
-    console.log("Memanggil editProduk dengan ID:", id);
-    fetch("<?= base_url('produk/edit/') ?>" + id)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("HTTP error! Status: " + response.status);
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log("Data dari server:", data);
-            if (!data.produk) {
-                alert("Data produk tidak ditemukan!");
-                return;
-            }
-            document.getElementById('edit_id_product').value = data.produk.id_product;
-            document.getElementById('edit_nama_product').value = data.produk.nama_product;
-            document.getElementById('edit_desk_product').value = data.produk.desk_product;
-            document.getElementById('edit_harga').value = data.produk.harga;
-            document.getElementById('edit_stok').value = data.produk.stok;
-            document.getElementById('edit_gambar_lama').value = data.produk.gambar;
+        console.log("Memanggil editProduk dengan ID:", id);
+        fetch("<?= base_url('produk/edit/') ?>" + id)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("HTTP error! Status: " + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("Data dari server:", data);
+                if (!data.produk) {
+                    alert("Data produk tidak ditemukan!");
+                    return;
+                }
+                document.getElementById('edit_id_product').value = data.produk.id_product;
+                document.getElementById('edit_nama_product').value = data.produk.nama_product;
+                document.getElementById('edit_desk_product').value = data.produk.desk_product;
+                document.getElementById('edit_harga').value = data.produk.harga;
+                document.getElementById('edit_stok').value = data.produk.stok;
+                document.getElementById('edit_gambar_lama').value = data.produk.gambar;
+                
+                // Handle video data
+                if (data.produk.cara_rawat_video) {
+                    document.getElementById('edit_video_lama').value = data.produk.cara_rawat_video;
+                    document.getElementById('current_video_name').textContent = data.produk.cara_rawat_video;
+                    document.getElementById('current_video_container').classList.remove('hidden');
+                } else {
+                    document.getElementById('current_video_container').classList.add('hidden');
+                }
 
-            let kategoriCheckboxes = document.querySelectorAll('input[name="id_kategori[]"]');
-            kategoriCheckboxes.forEach(checkbox => {
-                checkbox.checked = data.selected_categories.includes(checkbox.value);
+                let kategoriCheckboxes = document.querySelectorAll('input[name="id_kategori[]"]');
+                kategoriCheckboxes.forEach(checkbox => {
+                    checkbox.checked = data.selected_categories.includes(checkbox.value);
+                });
+
+                document.getElementById('modalEditProduk').classList.remove('hidden');
+            })
+            .catch(error => {
+                console.error("Error fetching data:", error);
+                alert("Terjadi kesalahan saat mengambil data produk.");
             });
-
-            document.getElementById('modalEditProduk').classList.remove('hidden');
-        })
-        .catch(error => {
-            console.error("Error fetching data:", error);
-            alert("Terjadi kesalahan saat mengambil data produk.");
-        });
-}
+    }
 
 
     function hapusProduk(id) {

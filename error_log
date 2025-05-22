@@ -1,0 +1,70 @@
+[16-May-2025 14:55:46 Asia/Jakarta] Update order: Array
+(
+    [id_order] => 154
+    [stts_pemesanan] => selesai
+    [stts_pembayaran] => lunas
+)
+
+[18-May-2025 17:20:20 Asia/Jakarta] Update order: Array
+(
+    [id_order] => 165
+    [stts_pemesanan] => dikirim
+    [stts_pembayaran] => lunas
+)
+
+[19-May-2025 08:44:16 Asia/Jakarta] Update order: Array
+(
+    [id_order] => 165
+    [stts_pemesanan] => selesai
+    [stts_pembayaran] => lunas
+)
+
+[19-May-2025 12:17:34 Asia/Jakarta] Update order: Array
+(
+    [id_order] => 181
+    [stts_pemesanan] => selesai
+    [stts_pembayaran] => lunas
+)
+
+[19-May-2025 12:26:01 Asia/Jakarta] Update order: Array
+(
+    [id_order] => 180
+    [stts_pemesanan] => selesai
+    [stts_pembayaran] => lunas
+)
+
+[19-May-2025 12:26:45 Asia/Jakarta] Update order: Array
+(
+    [id_order] => 169
+    [stts_pemesanan] => selesai
+    [stts_pembayaran] => lunas
+)
+
+[19-May-2025 12:27:07 Asia/Jakarta] Update order: Array
+(
+    [id_order] => 166
+    [stts_pemesanan] => selesai
+    [stts_pembayaran] => lunas
+)
+
+[19-May-2025 12:58:17 Asia/Jakarta] Update order: Array
+(
+    [id_order] => 182
+    [stts_pemesanan] => selesai
+    [stts_pembayaran] => belum_dibayar
+)
+
+[20-May-2025 15:46:07 Asia/Jakarta] Update order: Array
+(
+    [id_order] => 185
+    [stts_pemesanan] => dikirim
+    [stts_pembayaran] => lunas
+)
+
+[20-May-2025 15:47:39 Asia/Jakarta] Update order: Array
+(
+    [id_order] => 185
+    [stts_pemesanan] => selesai
+    [stts_pembayaran] => lunas
+)
+

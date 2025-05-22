@@ -48,9 +48,29 @@ class Produk extends CI_Controller {
     }
 
     public function store() {
+        // Validasi input
+        $this->load->library('form_validation');
+        
+        $this->form_validation->set_rules('nama_product', 'Nama Produk', 'required');
+        $this->form_validation->set_rules('desk_product', 'Deskripsi', 'required');
+        $this->form_validation->set_rules('harga', 'Harga', 'required|numeric');
+        $this->form_validation->set_rules('stok', 'Stok', 'required|numeric');
+        $this->form_validation->set_rules('id_kategori[]', 'Kategori', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', validation_errors());
+            redirect('produk');
+            return;
+        }
+
         // Buat folder uploads jika belum ada
         if (!is_dir('./uploads/')) {
             mkdir('./uploads/', 0777, true);
+        }
+
+        // Buat folder uploads/videos jika belum ada
+        if (!is_dir('./uploads/videos/')) {
+            mkdir('./uploads/videos/', 0777, true);
         }
 
         // Konfigurasi upload gambar
@@ -61,6 +81,7 @@ class Produk extends CI_Controller {
 
         $files     = $_FILES;
         $fileCount = isset($files['gambar']['name']) ? count($files['gambar']['name']) : 0;
+        
         if ($fileCount < 1 || $fileCount > 5) {
             $this->session->set_flashdata('error', 'Upload minimal 1 gambar dan maksimal 5 gambar.');
             redirect('produk');
@@ -78,13 +99,44 @@ class Produk extends CI_Controller {
             if ($this->upload->do_upload('gambar')) {
                 $uploadData = $this->upload->data();
                 $images[]   = $uploadData['file_name'];
+            } else {
+                $this->session->set_flashdata('error', 'Gagal mengupload gambar: ' . $this->upload->display_errors());
+                redirect('produk');
+                return;
             }
         }
         $gambar = implode(',', $images);
 
-        $id_admin = $this->session->userdata('id_admin');
+        // Handle video upload
+        $video_name = null;
+        if (!empty($_FILES['cara_rawat_video']['name'])) {
+            $video_config = array(
+                'upload_path'   => './uploads/videos/',
+                'allowed_types' => 'mp4|avi|mov|wmv|flv|mkv',
+                'max_size'      => 51200, // 50MB in kilobytes
+                'encrypt_name'  => TRUE
+            );
+            
+            $this->upload->initialize($video_config);
+            
+            if ($this->upload->do_upload('cara_rawat_video')) {
+                $video_data = $this->upload->data();
+                $video_name = $video_data['file_name'];
+            } else {
+                $this->session->set_flashdata('error', 'Gagal mengupload video: ' . $this->upload->display_errors());
+                redirect('produk');
+                return;
+            }
+        }
 
-        // Siapkan data untuk tabel produk (tanpa kategori, karena akan dimasukkan ke tabel pivot)
+        $id_admin = $this->session->userdata('id_admin');
+        if (!$id_admin) {
+            $this->session->set_flashdata('error', 'Sesi admin tidak ditemukan');
+            redirect('produk');
+            return;
+        }
+
+        // Siapkan data untuk tabel produk
         $data = [
             'nama_product' => $this->input->post('nama_product'),
             'desk_product' => $this->input->post('desk_product'),
@@ -93,12 +145,23 @@ class Produk extends CI_Controller {
             'gambar'       => $gambar,
             'id_admin'     => $id_admin
         ];
+        
+        if ($video_name) {
+            $data['cara_rawat_video'] = $video_name;
+        }
 
-        $this->Produk_model->insert($data);
+        // Insert data produk
+        $insert_result = $this->Produk_model->insert($data);
+        if (!$insert_result) {
+            $this->session->set_flashdata('error', 'Gagal menyimpan data produk');
+            redirect('produk');
+            return;
+        }
+
         $id_product = $this->db->insert_id();
 
-        // Simpan relasi produk-kategori ke tabel pivot (misal: product_category)
-        $kategori_arr = $this->input->post('id_kategori'); // berupa array
+        // Simpan relasi produk-kategori
+        $kategori_arr = $this->input->post('id_kategori');
         if (!empty($kategori_arr) && is_array($kategori_arr)) {
             foreach ($kategori_arr as $kat) {
                 $this->db->insert('product_category', [
@@ -108,30 +171,8 @@ class Produk extends CI_Controller {
             }
         }
 
+        $this->session->set_flashdata('success', 'Data produk berhasil disimpan');
         redirect('produk');
-    }
-
-    public function edit($id) {
-        // Ambil data produk
-        $produk = $this->Produk_model->get_by_id($id);
-
-        // Ambil kategori yang sudah terhubung dengan produk
-        $this->db->select('id_kategori');
-        $this->db->from('product_category');
-        $this->db->where('id_product', $id);
-        $query = $this->db->get();
-        $selected_categories = [];
-        foreach ($query->result() as $row) {
-            $selected_categories[] = $row->id_kategori;
-        }
-
-        $data = [
-            'produk'              => $produk,
-            'selected_categories' => $selected_categories,
-            'kategori'            => $this->Kategori_model->get_all() // jika dibutuhkan di front-end
-        ];
-
-        echo json_encode($data);
     }
 
     public function update() {
@@ -140,6 +181,11 @@ class Produk extends CI_Controller {
         // Buat folder uploads jika belum ada
         if (!is_dir('./uploads/')) {
             mkdir('./uploads/', 0777, true);
+        }
+        
+        // Buat folder uploads/videos jika belum ada
+        if (!is_dir('./uploads/videos/')) {
+            mkdir('./uploads/videos/', 0777, true);
         }
 
         // Konfigurasi upload gambar
@@ -177,6 +223,35 @@ class Produk extends CI_Controller {
         } else {
             $gambar = $gambar_lama;
         }
+        
+        // Handle video upload
+        $video_lama = $this->input->post('video_lama');
+        $video_name = $video_lama; // Default to keeping old video
+        
+        if (!empty($_FILES['cara_rawat_video']['name'])) {
+            // Reset upload config for video
+            $video_config = array(
+                'upload_path'   => './uploads/videos/',
+                'allowed_types' => 'mp4|avi|mov|wmv|flv|mkv',
+                'max_size'      => 51200, // 50MB in kilobytes
+                'encrypt_name'  => TRUE
+            );
+            
+            $this->upload->initialize($video_config);
+            
+            if ($this->upload->do_upload('cara_rawat_video')) {
+                // Delete old video if exists
+                if (!empty($video_lama) && file_exists('./uploads/videos/' . $video_lama)) {
+                    unlink('./uploads/videos/' . $video_lama);
+                }
+                
+                $video_data = $this->upload->data();
+                $video_name = $video_data['file_name'];
+            } else {
+                $error = $this->upload->display_errors();
+                $this->session->set_flashdata('error', 'Gagal mengupload video: ' . $error);
+            }
+        }
 
         // Update data produk (tanpa kategori)
         $data = [
@@ -184,7 +259,8 @@ class Produk extends CI_Controller {
             'desk_product' => $this->input->post('desk_product'),
             'harga'        => $this->input->post('harga'),
             'stok'         => $this->input->post('stok'),
-            'gambar'       => $gambar
+            'gambar'       => $gambar,
+            'cara_rawat_video' => $video_name
         ];
 
         $this->Produk_model->update($id, $data);
@@ -204,6 +280,27 @@ class Produk extends CI_Controller {
         }
 
         redirect('produk');
+    }
+
+    public function edit($id) {
+        // Ambil data produk
+        $produk = $this->Produk_model->get_by_id($id);
+    
+        // Ambil kategori yang sudah terhubung dengan produk
+        $this->db->select('id_kategori');
+        $this->db->from('product_category');
+        $this->db->where('id_product', $id);
+        $query = $this->db->get();
+        $selected_categories = [];
+        foreach ($query->result() as $row) {
+            $selected_categories[] = $row->id_kategori;
+        }
+    
+        // Make sure to include cara_rawat_video in the response
+        echo json_encode([
+            'produk' => $produk,
+            'selected_categories' => $selected_categories
+        ]);
     }
 
     public function delete($id) {

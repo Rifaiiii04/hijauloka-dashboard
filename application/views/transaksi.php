@@ -156,10 +156,10 @@
                                                 <i class="fas fa-eye"></i>
                                             </button>
                                             
-                                            <button onclick="printInvoice(<?= isset($t->id_transaksi) ? $t->id_transaksi : $t->id_order; ?>)" 
-                                                    class="p-1.5 bg-gray-50 text-gray-600 rounded-lg hover:bg-gray-100 transition-colors" title="Cetak Invoice">
-                                                <i class="fas fa-print"></i>
-                                            </button>
+                                            <!--<button onclick="printInvoice(<?= isset($t->id_transaksi) ? $t->id_transaksi : $t->id_order; ?>)" -->
+                                            <!--        class="p-1.5 bg-gray-50 text-gray-600 rounded-lg hover:bg-gray-100 transition-colors" title="Cetak Invoice">-->
+                                            <!--    <i class="fas fa-print"></i>-->
+                                            <!--</button>-->
                                         </div>
                                     </td>
                                 </tr>

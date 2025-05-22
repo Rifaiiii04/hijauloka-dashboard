@@ -171,3 +171,10 @@ Stack trace: #0 /home/hijc7862/public_html/admin/api/order/create_order.php(140)
 2025-05-19 09:30:01 - Order data: {"id_user":"4","payment_method":"midtrans","shipping_method":"hijauloka","shipping_cost":15000,"total":60000,"admin_id":"1"} - Types: issddi
 2025-05-19 09:30:01 - Note: Could not link order with shipping address: Table 'hijc7862_hijauloka.order_shipping_address' doesn't exist
 2025-05-19 09:30:01 - Order created successfully. id_order: 180
+2025-05-19 15:21:21 - Received: {"user_id":"4","user_name":"Dea Amelia","user_email":"dea123@gmail.com","user_phone":"0812444222","shipping_address_id":"1","payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000.0,"subtotal":85000.0,"total":100000.0,"items":[{"product_id":"22","quantity":"1","price":85000.0,"product_name":"Aglaonema"}]}
+2025-05-19 15:21:21 - Database connection successful to 103.247.11.220
+2025-05-19 15:21:21 - Generated order ID: HL-20250519-2663
+2025-05-19 15:21:21 - Shipping address found: {"id":1,"user_id":4,"recipient_name":"Dea Amelia","phone":"0812131311323","address_label":"Rumah","address":"Jl Raya Subang","rt":"020","rw":"050","house_number":"19","postal_code":"04423","jarak":"0.00","detail_address":"Depan Warung","is_primary":1,"created_at":"2025-04-29 09:39:11"}
+2025-05-19 15:21:21 - Order data: {"id_user":"4","payment_method":"cod","shipping_method":"hijauloka","shipping_cost":15000,"total":100000,"admin_id":"1"} - Types: issddi
+2025-05-19 15:21:21 - Note: Could not link order with shipping address: Table 'hijc7862_hijauloka.order_shipping_address' doesn't exist
+2025-05-19 15:21:21 - Order created successfully. id_order: 183

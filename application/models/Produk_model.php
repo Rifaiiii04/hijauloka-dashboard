@@ -22,7 +22,39 @@ class Produk_model extends CI_Model {
     
 
     public function insert($data) {
-        return $this->db->insert('product', $data);
+        try {
+            // Validasi data yang diperlukan
+            if (empty($data['nama_product']) || empty($data['desk_product']) || 
+                !isset($data['harga']) || !isset($data['stok']) || empty($data['gambar'])) {
+                log_message('error', 'Data tidak lengkap: ' . print_r($data, true));
+                return false;
+            }
+
+            // Pastikan harga dan stok adalah angka
+            if (!is_numeric($data['harga']) || !is_numeric($data['stok'])) {
+                log_message('error', 'Harga atau stok bukan angka: ' . print_r($data, true));
+                return false;
+            }
+
+            // Pastikan id_admin ada
+            if (empty($data['id_admin'])) {
+                log_message('error', 'ID Admin tidak ditemukan: ' . print_r($data, true));
+                return false;
+            }
+
+            // Coba insert data
+            $result = $this->db->insert('product', $data);
+            
+            if (!$result) {
+                log_message('error', 'Database error: ' . print_r($this->db->error(), true));
+                return false;
+            }
+
+            return true;
+        } catch (Exception $e) {
+            log_message('error', 'Exception saat insert: ' . $e->getMessage());
+            return false;
+        }
     }
 
     public function update($id, $data) {

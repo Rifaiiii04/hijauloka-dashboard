@@ -215,11 +215,11 @@
                                             class="bg-green-500 text-white p-2 rounded-full hover:bg-green-600 transition-colors">
                                         <i class="fas fa-edit"></i>
                                     </button>
-                                    <a href="<?= site_url('pesanan/delete/' . $p->id_order) ?>" 
-                                       class="bg-red-500 text-white p-2 rounded-full hover:bg-red-600 transition-colors" 
-                                       onclick="return confirm('Apakah Anda yakin ingin menghapus pesanan ini?')">
-                                        <i class="fas fa-trash"></i>
-                                    </a>
+                                    <!--<a href="<?= site_url('pesanan/delete/' . $p->id_order) ?>" -->
+                                    <!--   class="bg-red-500 text-white p-2 rounded-full hover:bg-red-600 transition-colors" -->
+                                    <!--   onclick="return confirm('Apakah Anda yakin ingin menghapus pesanan ini?')">-->
+                                    <!--    <i class="fas fa-trash"></i>-->
+                                    <!--</a>-->
                                 </div>
                             </div>
                         </div>
