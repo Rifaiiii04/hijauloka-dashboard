@@ -35,7 +35,7 @@
     <div class="max-w-7xl mx-auto">
         <!-- Header -->
         <header class="mb-6">
-            <h1 class="text-2xl font-bold text-gray-800">Pesanan</h1>
+            <h1 class="text-2xl font-bold text-gray-800">ANJAY</h1>
         </header>
         
         <!-- Stats Overview -->
