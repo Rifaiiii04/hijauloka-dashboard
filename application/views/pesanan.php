@@ -31,11 +31,11 @@
 <?php endif; ?>
 
 <!-- Main Content -->
-<main class="flex-1 ml-64 p-6 bg-gray-50">
+<main class="flex-1 ml-64 p-6 bg-red-500">
     <div class="max-w-7xl mx-auto">
         <!-- Header -->
         <header class="mb-6">
-            <h1 class="text-2xl font-bold text-gray-800">ANJAY</h1>
+            <h1 class="text-2xl font-bold text-gray-800">Pesanan</h1>
         </header>
         
         <!-- Stats Overview -->
