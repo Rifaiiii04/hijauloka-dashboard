@@ -31,7 +31,7 @@
 <?php endif; ?>
 
 <!-- Main Content -->
-<main class="flex-1 ml-64 p-6 bg-red-500">
+<main class="flex-1 ml-64 p-6 bg-gray-50">
     <div class="max-w-7xl mx-auto">
         <!-- Header -->
         <header class="mb-6">
