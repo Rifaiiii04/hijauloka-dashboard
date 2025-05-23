@@ -217,4 +217,12 @@ class Pesanan_model extends CI_Model {
                         ->get()
                         ->result();
     }
+
+    public function get_order_with_customer($id_order) {
+        $this->db->select('orders.*, user.nama as nama_pelanggan, user.no_tlp');
+        $this->db->from('orders');
+        $this->db->join('user', 'user.id_user = orders.id_user', 'left');
+        $this->db->where('orders.id_order', $id_order);
+        return $this->db->get()->row();
+    }
 }

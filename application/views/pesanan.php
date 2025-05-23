@@ -38,7 +38,7 @@
         </header>
         
         <!-- Stats Overview -->
-        <div class="grid grid-cols-4 gap-4 mb-6">
+        <div class="grid grid-cols-3 gap-4 mb-6">
             <div class="bg-white rounded-lg shadow-sm overflow-hidden">
                 <div class="p-4 bg-green-500 text-white">
                     <div class="flex items-center justify-between">
@@ -66,16 +66,6 @@
                         <i class="fas fa-truck"></i>
                     </div>
                     <p class="text-2xl font-bold mt-1"><?= count(array_filter($pesanan, function($p) { return $p->stts_pemesanan === 'dikirim'; })) ?></p>
-                </div>
-            </div>
-            
-            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
-                <div class="p-4 bg-blue-500 text-white">
-                    <div class="flex items-center justify-between">
-                        <h3 class="font-medium">Selesai</h3>
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <p class="text-2xl font-bold mt-1"><?= count(array_filter($pesanan, function($p) { return $p->stts_pemesanan === 'selesai'; })) ?></p>
                 </div>
             </div>
         </div>
@@ -116,7 +106,6 @@
                             <option value="pending">Pending</option>
                             <option value="diproses">Diproses</option>
                             <option value="dikirim">Dikirim</option>
-                            <option value="selesai">Selesai</option>
                             <option value="dibatalkan">Dibatalkan</option>
                         </select>
                     </div>
@@ -290,7 +279,6 @@
                         <option value="pending">Pending</option>
                         <option value="diproses">Diproses</option>
                         <option value="dikirim">Dikirim</option>
-                        <option value="selesai">Selesai</option>
                         <option value="dibatalkan">Dibatalkan</option>
                     </select>
                 </div>
@@ -325,7 +313,6 @@
             case 'pending': return 'bg-red-500';
             case 'diproses': return 'bg-green-500';
             case 'dikirim': return 'bg-yellow-500';
-            case 'selesai': return 'bg-blue-500';
             case 'dibatalkan': return 'bg-gray-500';
             default: return 'bg-gray-500';
         }

@@ -9,6 +9,7 @@ class Pesanan extends CI_Controller {
         $this->load->model('Produk_model');   // Changed from Product_model
         $this->load->model('User_model');
         $this->load->library('pagination');
+        $this->load->helper('whatsapp'); // Load WhatsApp helper
     }
 
     public function index() {
@@ -133,10 +134,15 @@ class Pesanan extends CI_Controller {
         $stts_pembayaran = $this->input->post('stts_pembayaran');
         $metode_pembayaran = $this->input->post('metode_pembayaran');
     
-        error_log("Update order: " . print_r($this->input->post(), true));
-    
         if (empty($id_order)) {
             $this->session->set_flashdata('error', 'ID pesanan tidak ditemukan.');
+            redirect('pesanan');
+        }
+
+        // Get order details including customer info
+        $order = $this->Pesanan_model->get_order_with_customer($id_order);
+        if (!$order) {
+            $this->session->set_flashdata('error', 'Data pesanan tidak ditemukan.');
             redirect('pesanan');
         }
     
@@ -145,13 +151,23 @@ class Pesanan extends CI_Controller {
             'stts_pembayaran' => $stts_pembayaran
         ];
         
-        // Add payment method to update data if provided
         if (!empty($metode_pembayaran)) {
             $data['metode_pembayaran'] = $metode_pembayaran;
         }
     
         if ($this->Pesanan_model->update_status($id_order, $data)) {
-            $this->session->set_flashdata('success', 'Status pesanan berhasil diperbarui.');
+            // Kirim notifikasi WhatsApp
+            $message = get_status_message($stts_pemesanan, $id_order, $order->nama_pelanggan);
+            
+            if ($stts_pemesanan === 'pending') {
+                // Kirim ke admin
+                send_whatsapp_notification('083836339182', $message);
+            } else {
+                // Kirim ke customer
+                send_whatsapp_notification($order->no_tlp, $message);
+            }
+            
+            $this->session->set_flashdata('success', 'Status pesanan berhasil diperbarui dan notifikasi telah dikirim.');
         } else {
             $this->session->set_flashdata('error', 'Gagal memperbarui status.');
         }
