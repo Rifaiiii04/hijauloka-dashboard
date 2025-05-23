@@ -16,8 +16,18 @@ $dbname = 'hijc7862_hijauloka';
 $username = 'hijc7862_admin';
 $password = 'wyn[=?alPV%.';
 
-// Log connection attempts
-error_log("Attempting to connect to database: $host, $dbname, $username");
+// Check if category ID is provided
+$categoryId = isset($_GET['category_id']) ? intval($_GET['category_id']) : 0;
+
+if ($categoryId <= 0) {
+    $response = array(
+        'success' => false,
+        'message' => 'Invalid category ID',
+        'data' => null
+    );
+    echo json_encode($response);
+    exit;
+}
 
 // Helper function to convert all strings to UTF-8
 function utf8ize($mixed) {
@@ -40,13 +50,9 @@ try {
     $conn->exec("SET NAMES 'utf8mb4'");
 
     error_log("Database connection successful");
+    error_log("Fetching products for category ID: " . $categoryId);
 
-    // Test product count
-    $testStmt = $conn->query("SELECT COUNT(*) FROM product");
-    $productCount = $testStmt->fetchColumn();
-    error_log("Total products in database: " . $productCount);
-
-    // Fetch data
+    // Fetch data for specific category
     $stmt = $conn->prepare("
         SELECT 
             p.id_product,
@@ -60,12 +66,14 @@ try {
             p.id_kategori
         FROM product p
         LEFT JOIN category c ON p.id_kategori = c.id_kategori
+        WHERE p.id_kategori = :categoryId
         ORDER BY p.id_product DESC
     ");
+    $stmt->bindParam(':categoryId', $categoryId, PDO::PARAM_INT);
     $stmt->execute();
     $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    error_log("Number of products fetched: " . count($products));
+    error_log("Number of products fetched for category $categoryId: " . count($products));
 
     $base_img_url = "https://admin.hijauloka.my.id/uploads/";
 
