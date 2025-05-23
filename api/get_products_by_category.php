@@ -33,8 +33,8 @@ try {
               FROM product p 
               INNER JOIN product_category pc ON p.id_product = pc.id_product 
               INNER JOIN category c ON pc.id_kategori = c.id_kategori 
-              WHERE c.id_kategori = ? AND p.is_active = 1 
-              ORDER BY p.created_at DESC";
+              WHERE c.id_kategori = ? 
+              ORDER BY p.id_product DESC";
               
     $stmt = $conn->prepare($query);
     if (!$stmt) {
@@ -64,9 +64,8 @@ try {
             'category_id' => $row['id_kategori'],
             'category' => $row['category_name'],
             'rating' => floatval($row['rating'] ?? 0),
-            'is_active' => (bool)$row['is_active'],
-            'created_at' => $row['created_at'],
-            'updated_at' => $row['updated_at']
+            'created_at' => $row['created_at'] ?? null,
+            'updated_at' => $row['updated_at'] ?? null
         );
         $products[] = $product;
     }
