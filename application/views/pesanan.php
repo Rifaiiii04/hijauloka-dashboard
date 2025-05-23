@@ -268,12 +268,10 @@
         <div class="p-5 border-b border-gray-100">
             <h2 class="text-xl font-bold text-gray-800">Update Status Pesanan</h2>
         </div>
-        
+
         <form id="editForm" method="POST" action="<?= site_url('pesanan/update_status'); ?>">
             <div class="p-5">
                 <input type="hidden" name="id_order" id="edit_id_order">
-                <input type="hidden" name="customer_name" id="edit_customer_name">
-                <input type="hidden" name="customer_phone" id="edit_customer_phone">
                 
                 <div class="mb-4">
                     <label class="block mb-2 font-medium text-gray-700">Status Pesanan</label>
@@ -292,15 +290,6 @@
                         <option value="belum_dibayar">Belum Dibayar</option>
                         <option value="lunas">Lunas</option>
                     </select>
-                </div>
-
-                <!-- WhatsApp Notification Button -->
-                <div class="mb-4">
-                    <button type="button" id="sendWhatsAppBtn" onclick="sendWhatsAppNotification()" 
-                            class="w-full px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors flex items-center justify-center">
-                        <i class="fab fa-whatsapp mr-2"></i>
-                        Kirim Notifikasi WhatsApp
-                    </button>
                 </div>
             </div>
             
@@ -340,8 +329,6 @@
             .then(data => {
                 document.getElementById('edit_id_order').value = id_order;
                 document.getElementById('edit_status').value = data.stts_pemesanan;
-                document.getElementById('edit_customer_name').value = data.nama_pelanggan;
-                document.getElementById('edit_customer_phone').value = data.no_tlp;
                 if (data.stts_pembayaran) {
                     document.getElementById('edit_payment_status').value = data.stts_pembayaran;
                 }
@@ -355,52 +342,6 @@
 
     function closeEditModal() {
         document.getElementById('modalEditPesanan').classList.add('hidden');
-    }
-
-    function sendWhatsAppNotification() {
-        const orderId = document.getElementById('edit_id_order').value;
-        const status = document.getElementById('edit_status').value;
-        const customerName = document.getElementById('edit_customer_name').value;
-        const customerPhone = document.getElementById('edit_customer_phone').value;
-        
-        // Format nomor telepon
-        let phone = customerPhone.replace(/[^0-9]/g, '');
-        if (phone.startsWith('0')) {
-            phone = '62' + phone.substring(1);
-        }
-        
-        // Tentukan nomor tujuan dan pesan
-        let targetPhone = status === 'pending' ? '083836339182' : phone;
-        let message = '';
-        
-        switch(status) {
-            case 'pending':
-                message = `Halo Admin,\n\nAda pesanan baru dari ${customerName}\nID Pesanan: #${orderId}\n\nSilakan proses pesanan ini.`;
-                break;
-            case 'diproses':
-                message = `Halo ${customerName},\n\nPesanan Anda dengan ID #${orderId} sedang diproses.\n\nTerima kasih telah berbelanja di Hijauloka.`;
-                break;
-            case 'dikirim':
-                message = `Halo ${customerName},\n\nPesanan Anda dengan ID #${orderId} telah dikirim.\n\nTerima kasih telah berbelanja di Hijauloka.`;
-                break;
-            case 'dibatalkan':
-                message = `Halo ${customerName},\n\nPesanan Anda dengan ID #${orderId} telah dibatalkan.\n\nJika ada pertanyaan, silakan hubungi kami di 083836339182`;
-                break;
-        }
-
-        // Coba buka WhatsApp Desktop terlebih dahulu
-        const whatsappDesktopUrl = `whatsapp://send?phone=${targetPhone}&text=${encodeURIComponent(message)}`;
-        
-        // Jika WhatsApp Desktop tidak tersedia, buka WhatsApp Web
-        const whatsappWebUrl = `https://web.whatsapp.com/send?phone=${targetPhone}&text=${encodeURIComponent(message)}`;
-        
-        // Coba buka WhatsApp Desktop
-        const desktopWindow = window.open(whatsappDesktopUrl, '_blank');
-        
-        // Jika WhatsApp Desktop tidak terbuka (window null atau undefined), buka WhatsApp Web
-        if (!desktopWindow || desktopWindow.closed || typeof desktopWindow.closed === 'undefined') {
-            window.open(whatsappWebUrl, '_blank');
-        }
     }
 
     // Update search functionality
