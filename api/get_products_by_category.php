@@ -29,10 +29,11 @@ try {
     }
 
     // Prepare and execute the query
-    $query = "SELECT p.*, k.nama_kategori as category_name 
+    $query = "SELECT p.*, c.nama_kategori as category_name 
               FROM product p 
-              LEFT JOIN kategori k ON p.id_kategori = k.id_kategori 
-              WHERE p.id_kategori = ? AND p.is_active = 1 
+              INNER JOIN product_category pc ON p.id_product = pc.id_product 
+              INNER JOIN category c ON pc.id_kategori = c.id_kategori 
+              WHERE c.id_kategori = ? AND p.is_active = 1 
               ORDER BY p.created_at DESC";
               
     $stmt = $conn->prepare($query);
