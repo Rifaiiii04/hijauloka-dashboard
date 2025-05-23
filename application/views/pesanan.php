@@ -387,12 +387,20 @@
                 message = `Halo ${customerName},\n\nPesanan Anda dengan ID #${orderId} telah dibatalkan.\n\nJika ada pertanyaan, silakan hubungi kami di 083836339182`;
                 break;
         }
+
+        // Coba buka WhatsApp Desktop terlebih dahulu
+        const whatsappDesktopUrl = `whatsapp://send?phone=${targetPhone}&text=${encodeURIComponent(message)}`;
         
-        // Buat URL WhatsApp
-        const whatsappUrl = `https://api.whatsapp.com/send?phone=${targetPhone}&text=${encodeURIComponent(message)}`;
+        // Jika WhatsApp Desktop tidak tersedia, buka WhatsApp Web
+        const whatsappWebUrl = `https://web.whatsapp.com/send?phone=${targetPhone}&text=${encodeURIComponent(message)}`;
         
-        // Buka WhatsApp di tab baru
-        window.open(whatsappUrl, '_blank');
+        // Coba buka WhatsApp Desktop
+        const desktopWindow = window.open(whatsappDesktopUrl, '_blank');
+        
+        // Jika WhatsApp Desktop tidak terbuka (window null atau undefined), buka WhatsApp Web
+        if (!desktopWindow || desktopWindow.closed || typeof desktopWindow.closed === 'undefined') {
+            window.open(whatsappWebUrl, '_blank');
+        }
     }
 
     // Update search functionality
