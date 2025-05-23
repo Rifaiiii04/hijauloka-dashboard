@@ -6,10 +6,9 @@ class Pesanan extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Pesanan_model');
-        $this->load->model('Produk_model');   // Changed from Product_model
+        $this->load->model('Produk_model');
         $this->load->model('User_model');
         $this->load->library('pagination');
-        $this->load->helper('whatsapp'); // Load WhatsApp helper
     }
 
     public function index() {
