@@ -3,21 +3,28 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET');
-header('Access-Control-Allow-Headers: Content-Type');
 header('Content-Type: application/json; charset=utf-8');
 
 // Log the start of the request
 error_log("Starting get_products.php request");
 
 try {
-    // Include database connection
-    include 'koneksi.php';
-    
-    if (!isset($koneksi) || !$koneksi) {
+    // Database configuration
+    $host = 'localhost';
+    $username = 'hijc7862_admin';
+    $password = 'wyn[=?alPV%.';
+    $database = 'hijc7862_hijauloka';
+
+    // Create connection
+    $koneksi = mysqli_connect($host, $username, $password, $database);
+
+    // Check connection
+    if (!$koneksi) {
         throw new Exception("Database connection failed: " . mysqli_connect_error());
     }
+
+    // Set charset to utf8
+    mysqli_set_charset($koneksi, "utf8");
     
     error_log("Database connection successful");
 
