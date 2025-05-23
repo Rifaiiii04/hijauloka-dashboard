@@ -1,4 +1,3 @@
-
 <?php $this->load->view('includes/sidebar'); ?>
 
 <!-- Toast Notification -->
@@ -87,18 +86,31 @@
                 <h2 class="font-medium text-gray-700">Filter Pesanan</h2>
             </div>
             <div class="p-4">
-                <div class="flex flex-wrap gap-4">
-                    <div class="flex-1 min-w-[200px]">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <!-- Search Input -->
+                    <div class="col-span-1 md:col-span-2">
                         <div class="relative">
                             <input type="text" 
                                 id="searchInput"
                                 class="w-full h-10 pl-10 pr-4 rounded-lg border border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-500" 
-                                placeholder="Cari nama pelanggan atau ID...">
+                                placeholder="Cari ID, nama pelanggan, produk...">
                             <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
                         </div>
                     </div>
                     
-                    <div class="w-full sm:w-auto">
+                    <!-- Search Type -->
+                    <div>
+                        <select id="searchType" class="w-full h-10 px-3 rounded-lg border border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-500">
+                            <option value="all">Semua</option>
+                            <option value="id">ID Pesanan</option>
+                            <option value="customer">Nama Pelanggan</option>
+                            <option value="product">Nama Produk</option>
+                            <option value="phone">No. Telepon</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Status Filter -->
+                    <div>
                         <select id="statusFilter" class="w-full h-10 px-3 rounded-lg border border-gray-200 focus:border-green-500 focus:ring-1 focus:ring-green-500">
                             <option value="">Semua Status</option>
                             <option value="pending">Pending</option>
@@ -108,8 +120,10 @@
                             <option value="dibatalkan">Dibatalkan</option>
                         </select>
                     </div>
-                    
-                    <button id="searchBtn" class="px-4 h-10 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors">
+                </div>
+                
+                <div class="mt-4 flex justify-end">
+                    <button id="searchBtn" class="px-6 h-10 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors flex items-center">
                         <i class="fas fa-filter mr-2"></i>Filter
                     </button>
                 </div>
@@ -344,9 +358,10 @@
         document.getElementById('modalEditPesanan').classList.add('hidden');
     }
 
-    // Search and filter functionality
+    // Update search functionality
     document.getElementById('searchBtn').addEventListener('click', function() {
         const searchTerm = document.getElementById('searchInput').value;
+        const searchType = document.getElementById('searchType').value;
         const statusFilter = document.getElementById('statusFilter').value;
         
         let url = '<?= site_url('pesanan') ?>';
@@ -354,6 +369,7 @@
         
         if (searchTerm) {
             params.push('search=' + encodeURIComponent(searchTerm));
+            params.push('search_type=' + encodeURIComponent(searchType));
         }
         
         if (statusFilter) {

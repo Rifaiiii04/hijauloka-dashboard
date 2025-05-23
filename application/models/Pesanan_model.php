@@ -63,19 +63,41 @@ class Pesanan_model extends CI_Model {
         return array_values($result);
     }
 
-    public function count_all_orders($keyword = null) {
+    public function count_all_orders($search = null, $search_type = 'all', $status = null) {
         $this->db->select('COUNT(DISTINCT orders.id_order) as total');
         $this->db->from('orders');
         $this->db->join('user', 'user.id_user = orders.id_user', 'left');
         $this->db->join('order_items', 'order_items.id_order = orders.id_order', 'left');
         $this->db->join('product', 'product.id_product = order_items.id_product', 'left');
         
-        if (!empty($keyword)) {
+        // Apply status filter if provided
+        if (!empty($status)) {
+            $this->db->where('orders.stts_pemesanan', $status);
+        }
+        
+        // Apply search based on search type
+        if (!empty($search)) {
             $this->db->group_start();
-            $this->db->like('orders.id_order', $keyword);
-            $this->db->or_like('user.nama', $keyword);
-            $this->db->or_like('orders.stts_pemesanan', $keyword);
-            $this->db->or_like('orders.stts_pembayaran', $keyword);
+            switch ($search_type) {
+                case 'id':
+                    $this->db->like('orders.id_order', $search);
+                    break;
+                case 'customer':
+                    $this->db->like('user.nama', $search);
+                    break;
+                case 'product':
+                    $this->db->like('product.nama_product', $search);
+                    break;
+                case 'phone':
+                    $this->db->like('user.no_tlp', $search);
+                    break;
+                default: // 'all'
+                    $this->db->like('orders.id_order', $search);
+                    $this->db->or_like('user.nama', $search);
+                    $this->db->or_like('product.nama_product', $search);
+                    $this->db->or_like('user.no_tlp', $search);
+                    break;
+            }
             $this->db->group_end();
         }
 
@@ -83,10 +105,11 @@ class Pesanan_model extends CI_Model {
         return (int) $result->total;
     }
 
-    public function get_orders($limit, $start, $keyword = null, $today_only = false) {
+    public function get_orders($limit, $start, $search = null, $search_type = 'all', $status = null) {
         $this->db->select('
             orders.*, 
-            user.nama AS nama_pelanggan, 
+            user.nama AS nama_pelanggan,
+            user.no_tlp,
             order_items.id_product, 
             order_items.quantity, 
             order_items.subtotal, 
@@ -97,16 +120,34 @@ class Pesanan_model extends CI_Model {
         $this->db->join('order_items', 'order_items.id_order = orders.id_order', 'left');
         $this->db->join('product', 'product.id_product = order_items.id_product', 'left');
         
-        if ($today_only) {
-            $this->db->where('DATE(orders.tgl_pemesanan)', date('Y-m-d'));
+        // Apply status filter if provided
+        if (!empty($status)) {
+            $this->db->where('orders.stts_pemesanan', $status);
         }
         
-        if (!empty($keyword)) {
+        // Apply search based on search type
+        if (!empty($search)) {
             $this->db->group_start();
-            $this->db->like('orders.id_order', $keyword);
-            $this->db->or_like('user.nama', $keyword);
-            $this->db->or_like('orders.stts_pemesanan', $keyword);
-            $this->db->or_like('orders.stts_pembayaran', $keyword);
+            switch ($search_type) {
+                case 'id':
+                    $this->db->like('orders.id_order', $search);
+                    break;
+                case 'customer':
+                    $this->db->like('user.nama', $search);
+                    break;
+                case 'product':
+                    $this->db->like('product.nama_product', $search);
+                    break;
+                case 'phone':
+                    $this->db->like('user.no_tlp', $search);
+                    break;
+                default: // 'all'
+                    $this->db->like('orders.id_order', $search);
+                    $this->db->or_like('user.nama', $search);
+                    $this->db->or_like('product.nama_product', $search);
+                    $this->db->or_like('user.no_tlp', $search);
+                    break;
+            }
             $this->db->group_end();
         }
         
@@ -121,6 +162,7 @@ class Pesanan_model extends CI_Model {
                 $result[$id_order] = (object)[
                     'id_order'         => $row->id_order,
                     'nama_pelanggan'   => $row->nama_pelanggan,
+                    'no_tlp'          => $row->no_tlp,
                     'tgl_pemesanan'    => $row->tgl_pemesanan,
                     'stts_pemesanan'   => $row->stts_pemesanan,
                     'stts_pembayaran'  => $row->stts_pembayaran,

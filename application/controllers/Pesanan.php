@@ -12,14 +12,21 @@ class Pesanan extends CI_Controller {
     }
 
     public function index() {
-        $keyword = $this->input->get('cariPesanan');
+        // Get search parameters
+        $search = $this->input->get('search');
+        $search_type = $this->input->get('search_type') ?: 'all';
+        $status = $this->input->get('status');
         $page = ($this->input->get('page')) ? $this->input->get('page') : 1;
         $per_page = 10;
         
-        $total_rows = $this->Pesanan_model->count_all_orders($keyword);
+        // Calculate offset
         $offset = ($page - 1) * $per_page;
         
-        $data['pesanan'] = $this->Pesanan_model->get_orders($per_page, $offset, $keyword);
+        // Get total rows for pagination
+        $total_rows = $this->Pesanan_model->count_all_orders($search, $search_type, $status);
+        
+        // Get orders with search and filter
+        $data['pesanan'] = $this->Pesanan_model->get_orders($per_page, $offset, $search, $search_type, $status);
         $data['products'] = $this->Produk_model->get_all();
         $data['users'] = $this->User_model->get_all();
         
@@ -27,6 +34,11 @@ class Pesanan extends CI_Controller {
         $data['current_page'] = $page;
         $data['per_page'] = $per_page;
         $data['total_rows'] = $total_rows;
+        
+        // Pass search parameters to view
+        $data['search'] = $search;
+        $data['search_type'] = $search_type;
+        $data['status'] = $status;
         
         $this->load->view('pesanan', $data);
     }
