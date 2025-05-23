@@ -124,7 +124,11 @@ class Pesanan extends CI_Controller {
     }
 
     public function get_status($id_order) {
-        $order = $this->Pesanan_model->get_pesanan_by_id($id_order);
+        $order = $this->Pesanan_model->get_order_with_customer($id_order);
+        if (!$order) {
+            echo json_encode(['error' => 'Order not found']);
+            return;
+        }
         echo json_encode($order);
     }
 
@@ -139,13 +143,6 @@ class Pesanan extends CI_Controller {
             redirect('pesanan');
         }
 
-        // Get order details including customer info
-        $order = $this->Pesanan_model->get_order_with_customer($id_order);
-        if (!$order) {
-            $this->session->set_flashdata('error', 'Data pesanan tidak ditemukan.');
-            redirect('pesanan');
-        }
-    
         $data = [
             'stts_pemesanan'  => $stts_pemesanan,
             'stts_pembayaran' => $stts_pembayaran
@@ -156,18 +153,7 @@ class Pesanan extends CI_Controller {
         }
     
         if ($this->Pesanan_model->update_status($id_order, $data)) {
-            // Kirim notifikasi WhatsApp
-            $message = get_status_message($stts_pemesanan, $id_order, $order->nama_pelanggan);
-            
-            if ($stts_pemesanan === 'pending') {
-                // Kirim ke admin
-                send_whatsapp_notification('083836339182', $message);
-            } else {
-                // Kirim ke customer
-                send_whatsapp_notification($order->no_tlp, $message);
-            }
-            
-            $this->session->set_flashdata('success', 'Status pesanan berhasil diperbarui dan notifikasi telah dikirim.');
+            $this->session->set_flashdata('success', 'Status pesanan berhasil diperbarui.');
         } else {
             $this->session->set_flashdata('error', 'Gagal memperbarui status.');
         }
