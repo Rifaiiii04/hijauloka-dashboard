@@ -113,6 +113,14 @@
                         <i class="fa-solid fa-receipt"></i>
                     </div>
                     <span class="text-sm font-medium">Pesanan</span>
+                    <?php 
+                    $pending_count = $this->session->userdata('pending_orders_count');
+                    if ($pending_count > 0): 
+                    ?>
+                    <span class="ml-auto bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full animate-pulse">
+                        <?= $pending_count ?>
+                    </span>
+                    <?php endif; ?>
                 </a>
             </li>
 
@@ -172,3 +180,33 @@
         </a>
     </div>
 </aside>
+
+<script>
+// Function to update pending orders count
+function updatePendingCount() {
+    fetch('<?= base_url('pesanan/get_pending_count') ?>')
+        .then(response => response.json())
+        .then(data => {
+            const badge = document.querySelector('.sidebar-item[href*="pesanan"] .rounded-full');
+            if (data.count > 0) {
+                if (badge) {
+                    badge.textContent = data.count;
+                } else {
+                    const menuItem = document.querySelector('.sidebar-item[href*="pesanan"]');
+                    const newBadge = document.createElement('span');
+                    newBadge.className = 'ml-auto bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full animate-pulse';
+                    newBadge.textContent = data.count;
+                    menuItem.appendChild(newBadge);
+                }
+            } else if (badge) {
+                badge.remove();
+            }
+        });
+}
+
+// Update count every 30 seconds
+setInterval(updatePendingCount, 30000);
+
+// Initial update
+document.addEventListener('DOMContentLoaded', updatePendingCount);
+</script>

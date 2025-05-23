@@ -9,6 +9,10 @@ class Pesanan extends CI_Controller {
         $this->load->model('Produk_model');
         $this->load->model('User_model');
         $this->load->library('pagination');
+        
+        // Get pending orders count for sidebar
+        $pending_count = $this->Pesanan_model->count_pending_orders();
+        $this->session->set_userdata('pending_orders_count', $pending_count);
     }
 
     public function index() {
@@ -157,5 +161,10 @@ class Pesanan extends CI_Controller {
             $this->session->set_flashdata('error', 'Gagal memperbarui status.');
         }
         redirect('pesanan');
+    }
+
+    public function get_pending_count() {
+        $count = $this->Pesanan_model->count_pending_orders();
+        echo json_encode(['count' => $count]);
     }
 }

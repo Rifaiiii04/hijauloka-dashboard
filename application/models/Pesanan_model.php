@@ -225,4 +225,9 @@ class Pesanan_model extends CI_Model {
         $this->db->where('orders.id_order', $id_order);
         return $this->db->get()->row();
     }
+
+    public function count_pending_orders() {
+        $this->db->where('stts_pemesanan', 'pending');
+        return $this->db->count_all_results('orders');
+    }
 }
